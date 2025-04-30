@@ -20,7 +20,6 @@ public class GoogleSteps {
         System.out.println(DataReader.getData("testdata"));
 
         System.out.println("Jenkins");
-        asad
     }
 
     @When("User searches for {string}")

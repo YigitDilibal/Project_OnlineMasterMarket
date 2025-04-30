@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import config.DataReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -16,7 +17,7 @@ public class GoogleSteps {
     public void user_is_on_the_google_homepage() {
 
         driver.get(config.ConfigReader.getProperty("googleUrl"));
-        System.out.println(config.Data.getData("testdata"));
+        System.out.println(DataReader.getData("testdata"));
     }
 
     @When("User searches for {string}")

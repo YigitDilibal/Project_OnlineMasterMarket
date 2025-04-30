@@ -18,6 +18,8 @@ public class GoogleSteps {
 
         driver.get(config.ConfigReader.getProperty("googleUrl"));
         System.out.println(DataReader.getData("testdata"));
+
+        System.out.println("Jenkins");
     }
 
     @When("User searches for {string}")

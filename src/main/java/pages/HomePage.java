@@ -36,6 +36,12 @@ public class HomePage extends BasePage {
     @FindBy (xpath = "(//*[@alt='Logo'])[1]")
     public WebElement anasayfaSiteLogosu;
 
+    @FindBy (xpath = "//*[@class='btn search_service btn-banner']")
+    public WebElement searchButonu;
+
+    @FindBy (xpath = "//*[@name='common_search']")
+    public WebElement aramaMotoru;
+
 
 
 

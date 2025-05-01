@@ -1,4 +1,7 @@
-Feature: Website Access
+Feature: Homepage Access
+
+  # As a user I want to access the homepage
+  # So that I can see the main content of the site
 
   Scenario: URL should be accessable, title should be visible
 

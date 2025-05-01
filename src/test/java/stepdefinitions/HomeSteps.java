@@ -135,4 +135,21 @@ public class HomeSteps {
     }
 
 
+    @And("Anasayfada Search butonunun gorunur ve aktif oldugunu dogrular")
+    public void anasayfadaSearchbutonununGorunurVeAktifOldugunuDogrular() {
+
+        driver.get(config.ConfigReader.getProperty("url"));
+        Assert.assertTrue(homePage.searchButonu.isDisplayed());
+        Assert.assertTrue(homePage.searchButonu.isEnabled());
+
+    }
+
+    @And("Anasayfada arama motorunun gorunur ve aktif oldugunu dogrular")
+    public void anasayfadaAramaMotorununGorunurVeAktifOldugunuDogrular() {
+
+        driver.get(config.ConfigReader.getProperty("url"));
+        Assert.assertTrue(homePage.aramaMotoru.isEnabled());
+        Assert.assertTrue(homePage.aramaMotoru.isDisplayed());
+
+    }
 }

@@ -18,7 +18,7 @@ public class HomeSteps {
     HomePage homePage = new HomePage(driver);
     BasePage basePage = new BasePage(driver);
 
-    @Given("Kullanici {string} adresine gider.")
+    @Given("the user navigates to the {string} address")
     public void kullanici_adresine_gider(String url) {
 
         driver.get(config.ConfigReader.getProperty("url"));

@@ -3,7 +3,7 @@ Feature: US_002
   Scenario: Easy links (Shops,Categories, About Us, Contact Us, Become a Professionel,Become a User)
             should be visible and active on the top bar of the site.
 
-    Given Kullanici "url" adresine gider.
+    Given the user navigates to the "url" address
     Then Siteye erişebildiğini doğrular.
     Then Anasayfada Shops butonunun gorunur ve aktif oldugu dogrulanir
     Then Anasayfada Categories butonunun gorunur ve aktif oldugu dogrulanir
@@ -16,7 +16,7 @@ Feature: US_002
 
   Scenario: Login button should be visible and active on the top bar of the homepage.
 
-    Given Kullanici "url" adresine gider.
+    Given the user navigates to the "url" address
     Then Siteye erişebildiğini doğrular.
     Then senkronizasyon icin 2 saniye bekler
     And Anasayfada Login butonunun gorunur aktif oldugu dogrulanir
@@ -24,7 +24,7 @@ Feature: US_002
 
   Scenario: The site logo should be on the top left of the page and the home page should refresh when clicked.
 
-    Given Kullanici "url" adresine gider.
+    Given the user navigates to the "url" address
     Then Siteye erişebildiğini doğrular.
     Then Site logosunun sayfanın sol üstünde bulundugunu dogrular
     And Site logosuna tiklaninca anasayfanın yenilendigini dogrular

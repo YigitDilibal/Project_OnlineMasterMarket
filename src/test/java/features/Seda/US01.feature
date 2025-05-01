@@ -5,6 +5,6 @@ Feature: Homepage Access
 
   Scenario: URL should be accessable, title should be visible
 
-    Given Kullanici "url" adresine gider.
+    Given the user navigates to the "url" address
     Then Siteye erişebildiğini doğrular.
     And Title'in OnlineMasterMarket oldugunu dogrular.

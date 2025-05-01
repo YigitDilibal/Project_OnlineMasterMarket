@@ -3,14 +3,21 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import pages.BasePage;
 import pages.HomePage;
 import pages.ProviderPage;
+import pages.UserPage;
+import utils.ReusableMethods;
 
 public class ProviderSteps {
 
     WebDriver driver = stepdefinitions.Hooks.getDriver();
     ProviderPage providerPage = new ProviderPage (driver);
+    UserPage userPage = new UserPage(driver);
+    BasePage basePage = new BasePage(driver);
+    HomePage homepage = new HomePage(driver);
 
     @Given("Provider hesabiyla giris yapilir")
     public void provider_hesabiyla_giris_yapilir() {
@@ -66,6 +73,26 @@ public class ProviderSteps {
     @Then("Submit butonuna tiklanarak mesaj gonderilebilir")
     public void submit_butonuna_tiklanarak_mesaj_gonderilebilir() {
 
+    }
+
+    @Then("the user clicks on the Profile icon")
+    public void the_user_clicks_on_the_profile_icon() {
+        basePage.click(userPage.sagUstProfilButonu);
+    }
+    @Given("the Logout button should be visible and clickable")
+    public void the_logout_button_should_be_visible_and_clickable() {
+        ReusableMethods.bekle(500);
+        Assert.assertTrue(providerPage.logoutButonu.isDisplayed());
+        Assert.assertTrue(providerPage.logoutButonu.isEnabled());
+    }
+
+    @When("the user clicks on the Logout link")
+    public void the_user_clicks_on_the_logout_link() {
+        basePage.click(providerPage.logoutButonu);
+    }
+    @Then("the user should be redirected to the login page")
+    public void the_user_should_be_redirected_to_the_login_page() {
+        Assert.assertTrue(homepage.anasayfaLoginButonu.isDisplayed());
     }
 
 }

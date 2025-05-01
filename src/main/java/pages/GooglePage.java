@@ -24,4 +24,5 @@ public class GooglePage extends BasePage{
 
     @FindBy(xpath = "//h3[contains(text(),'Java')]")
     public WebElement searchResult;
+
 }

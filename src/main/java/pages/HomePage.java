@@ -15,5 +15,32 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//*[@class='btn btn-signin']")
     public WebElement anasayfaLoginButonu;
 
+    @FindBy (xpath = "//*[.='Shops']")
+    public WebElement anasayfaShopsButonu;
+
+    @FindBy (xpath = "//*[.='Categories ']")
+    public WebElement anasayfaCategoriesButonu;
+
+    @FindBy (xpath = "//*[.='About US']")
+    public WebElement anasayfaAboutUSButonu;
+
+    @FindBy (xpath = "//*[.='Contact US']")
+    public WebElement anasayfaContactUSButonu;
+
+    @FindBy (xpath = "//*[.='Become a Professional']")
+    public WebElement anasayfaBecomeAProfessionalButonu;
+
+    @FindBy (xpath = "//*[.='Become a User']")
+    public WebElement anasayfaBecomeAUserButonu;
+
+    @FindBy (xpath = "(//*[@alt='Logo'])[1]")
+    public WebElement anasayfaSiteLogosu;
+
+
+
+
+
+
+
 
 }

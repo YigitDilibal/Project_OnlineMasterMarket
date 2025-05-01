@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import config.DataReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,18 +11,11 @@ public class LoginSteps {
 	WebDriver driver = stepdefinitions.Hooks.getDriver();
 	LoginPage loginPage = new LoginPage(driver);
 
-	@Given("the user is on the login page")
-	public void theUserIsOnTheLoginPage() {
-		driver.get(config.ConfigReader.getProperty("url"));
+	@Given("the user logs in with username {string} and password {string}")
+	public void the_user_logs_in_with_username_and_password(String email, String pass) {
+
+		loginPage.login(email,pass);
+
 	}
 
-	@When("the user enters valid credentials")
-	public void theUserEntersValidCredentials() {
-		loginPage.login("testUser", "password123");
-	}
-
-	@Then("the user should see the home page")
-	public void theUserShouldSeeTheHomePage() {
-		// Assertion logic
-	}
 }

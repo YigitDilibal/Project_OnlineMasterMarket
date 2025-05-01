@@ -38,10 +38,10 @@ public class ReusableMethods {
         DriverManager.getDriver().switchTo().window(origin);
     }
 
-    public static void bekle(int saniye){
+    public static void bekle(int ms){
 
         try {
-            Thread.sleep(saniye*1000);
+            Thread.sleep(ms);
         } catch (InterruptedException e) {
             System.out.println("Bekleme yapilamadi");
         }

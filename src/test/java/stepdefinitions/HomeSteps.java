@@ -5,6 +5,7 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
+import pages.BasePage;
 import pages.HomePage;
 import utils.ReusableMethods;
 
@@ -14,6 +15,7 @@ public class HomeSteps {
 
     WebDriver driver = stepdefinitions.Hooks.getDriver();
     HomePage homePage = new HomePage(driver);
+    BasePage basePage = new BasePage(driver);
 
     @Given("Kullanici {string} adresine gider.")
     public void kullanici_adresine_gider(String url) {

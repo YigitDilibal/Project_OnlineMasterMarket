@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import config.ConfigReader;
 import config.DataReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,8 +17,11 @@ public class GoogleSteps {
     @Given("User is on the Google homepage")
     public void user_is_on_the_google_homepage() {
 
-        driver.get(config.ConfigReader.getProperty("googleUrl"));
+        driver.get(config.ConfigReader.getProperty("url"));
         System.out.println(DataReader.getData("testdata"));
+
+        ConfigReader.getProperty("url");
+        DataReader.getData("userPass");
 
         System.out.println("Jenkins");
     }

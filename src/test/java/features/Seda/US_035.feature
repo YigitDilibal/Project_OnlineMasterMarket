@@ -1,4 +1,4 @@
-Feature: Chat with Providers
+Feature: US_035 Chat with Providers
 
   # As a registered user (Provider)
   # I want to be able to send and receive messages with users and administrators

@@ -24,6 +24,29 @@ public class UserPage extends BasePage {
     @FindBy(xpath = "(//*[.='Products'])[3]")
     public WebElement paymentHistoryProductButonu;
 
+    @FindBy(xpath = "//*[.='Services']")
+    public WebElement paymentHistoryServicesButonu;
+
+    @FindBy(xpath = "//*[.='Provider Rejected']")
+    public WebElement paymentProviderRejected;
+
+    @FindBy(xpath = "//*[.='Payment Completed']")
+    public WebElement paymentCompleted;
+
+    @FindBy(xpath = "(//*[.='Name'])[1]")
+    public WebElement paymentName;
+
+    @FindBy(xpath = "(//*[.='Service'])[1]")
+    public WebElement paymentService;
+
+    @FindBy(xpath = "(//*[.='Date'])[1]")
+    public WebElement paymentDate;
+
+    @FindBy(xpath = "(//*[.='Amount'])[1]")
+    public WebElement paymentAmount;
+
+    @FindBy(xpath = "(//*[.='Status'])[1]")
+    public WebElement paymentStatus;
 
 
 

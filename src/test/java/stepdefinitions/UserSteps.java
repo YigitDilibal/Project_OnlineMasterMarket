@@ -109,4 +109,61 @@ public class UserSteps {
     }
 
 
+    @Then("{string} ikonu gorunur ve aktif olmalidir")
+    public void ikonuGorunurVeAktifOlmalidir(String arg0) {
+    }
+
+    @Then("{string} sayfasina yonlendirilir")
+    public void sayfasinaYonlendirilir(String arg0) {
+
+    }
+
+    @Given("Chat sayfasine gidilir")
+    public void chatSayfasineGidilir() {
+
+    }
+
+    @Then("Ust barda Chat ikonu gorunur ve aktif olmalidir")
+    public void ustBardaChatIkonuGorunurVeAktifOlmalidir() {
+
+    }
+
+    @Given("Ust bardaki chat ikonuna tiklanir")
+    public void ustBardakiChatIkonunaTiklanir() {
+
+    }
+
+    @Then("{string} ve {string} linkleri gorunur ve aktif olmalidir")
+    public void veLinkleriGorunurVeAktifOlmalidir(String arg0, String arg1) {
+
+    }
+
+    @Given("Chat menusune gidilir")
+    public void chatMenusuneGidilir() {
+
+    }
+
+    @When("{string} tiklanir")
+    public void tiklanir(String arg0) {
+
+    }
+
+    @Then("Chat sayfasina yonlendirilir")
+    public void chatSayfasinaYonlendirilir() {
+    }
+
+    @Given("Chat sayfasina gidilir")
+    public void chatSayfasinaGidilir() {
+
+    }
+
+    @Then("My Bookings sayfasina yonlendirilir")
+    public void myBookingsSayfasinaYonlendirilir() {
+    }
+
+
+
+
+
+
 }

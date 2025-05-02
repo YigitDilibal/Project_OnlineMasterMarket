@@ -1,4 +1,4 @@
-Feature: Homepage Access
+Feature: US_001 Homepage Access
 
   # As a user I want to access the homepage
   # So that I can see the main content of the site

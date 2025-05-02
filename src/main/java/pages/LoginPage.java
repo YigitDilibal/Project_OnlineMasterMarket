@@ -35,8 +35,9 @@ public class LoginPage extends BasePage {
 	public void login(String email, String pass) {
 		click(homePage.anasayfaLoginButonu);
 		type(mailInput, DataReader.getData(email));
-		ReusableMethods.bekle(200);
+		ReusableMethods.bekle(300);
 		mailInput.sendKeys(Keys.ENTER);
+		ReusableMethods.bekle(200);
 		click(loginPenceresiLoginButonu);
 		type(passwordInput, DataReader.getData(pass));
 		click(enterButton);

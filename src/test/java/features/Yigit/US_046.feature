@@ -29,15 +29,16 @@ Feature: US_046 Payment History Page Functionality (User)
 
     Scenario: Search functionality works correctly in Services and Products sections
       Given the user clicks the Payment link
-      Then the "Search" button should be visible and active in the Services tab
-      When the user enters a service name and clicks "Search"
+      When the Search button should be visible and active in the Services tab
+      And the user enters a service name and clicks Search
       Then the matching service results should be displayed
 
-      And the "Search" button should be visible and active in the Products tab
-      When the user enters a product name and clicks "Search"
+      When the user clicks the Products tab
+      Then the Search button should be visible and active in the Products tab
+      When the user enters a product name and clicks Search
       Then the matching product results should be displayed
 
     Scenario: User can go back to Home page from Payment History page
       Given the user clicks the Payment link
-      When the user clicks the "Home" button
+      When the user clicks the Home button
       Then the user should be redirected to the Home page

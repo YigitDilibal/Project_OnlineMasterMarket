@@ -39,6 +39,9 @@ public class UserPage extends BasePage {
     @FindBy(xpath = "(//*[.='Service'])[1]")
     public WebElement paymentService;
 
+    @FindBy(xpath = "(//*[.='Products'])[4]")
+    public WebElement paymentProducts;
+
     @FindBy(xpath = "(//*[.='Date'])[1]")
     public WebElement paymentDate;
 
@@ -47,6 +50,17 @@ public class UserPage extends BasePage {
 
     @FindBy(xpath = "(//*[.='Status'])[1]")
     public WebElement paymentStatus;
+
+    @FindBy(xpath = "//*[.='Cancelled']")
+    public WebElement orderCancelled;
+
+    @FindBy(xpath = "//*[.='Delivered']")
+    public WebElement orderDelivered;
+
+    @FindBy(xpath = "//*[@type='search']")
+    public WebElement PaymentSearch;
+
+
 
 
 

@@ -3,6 +3,11 @@ Feature: US_043 User Messaging Functionality
   # As a registered user, I want to be able to message with administrators and providers
   # So that I can communicate effectively
 
+  Background: Login and navigate to Dashboard
+    Given the user navigates to the "url" address
+    When the user logs in with username "sedaMail" and password "userPass"
+    Then the user should be redirected to the Dashboard page
+
   Scenario: Access Chat icon from Profile icon
 
     Given Profil ikonuna tiklanir

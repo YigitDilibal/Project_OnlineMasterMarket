@@ -143,6 +143,8 @@ public class UserSteps {
     @When("Profil ikonuna tiklanir")
     public void profil_ikonuna_tiklanir() {
 
+        basePage.click(userPage.sagUstProfilButonu);
+
     }
 
     @Then("{string} linki gorunur ve aktif olmalidir")

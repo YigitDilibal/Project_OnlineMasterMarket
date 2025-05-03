@@ -3,6 +3,11 @@ Feature: US_038 User Dashboard Page
   # As a registered user, I want to have a personal dashboard page
   # So that I can view my bookings, reviews, and notifications
 
+  Background: Login and navigate to Dashboard
+    Given the user navigates to the "url" address
+    When the user logs in with username "sedaMail" and password "userPass"
+    Then the user should be redirected to the Dashboard page
+
   Scenario: Profile icon should be visible and active on the homepage
 
     Given Anasayfaya gidilir

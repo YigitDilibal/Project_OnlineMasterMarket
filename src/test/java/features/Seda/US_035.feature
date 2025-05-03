@@ -11,10 +11,10 @@ Feature: US_035 Chat with Providers
 
   Scenario: Chat link should be visible and active under the Homepage Profile icon.
 
-    Given Provider hesabiyla giris yapilir
-    When Sag ustteki profil ikonuna tiklanir
-    Then Menude "Chat" linkinin gorunup gorunmedigi kontrol edilir.
-    And "Chat" linkine tiklanir
+
+    Given Sag ustteki profil ikonuna tiklanir
+    Then Menude "Chat" ikonu gorunup gorunmedigi kontrol edilir.
+    And "Chat" ikonuna tiklanir
 
 
   Scenario: On the Chats page, the contact search bar should be visible and active.

@@ -75,6 +75,20 @@ public class ProviderPage extends BasePage{
     @FindBy(xpath = "(//*[@class='badge bg-success-light'])[1]")
     public WebElement rewardCreatedSuccessLight;
 
+    @FindBy(xpath = "//*[@class='dropdown-item'])[9]")
+    public WebElement chatIkonu;
+
+    @FindBy(id = "//*[@id='search_chat_list']")
+    public WebElement kisiAramaCubugu;
+
+    @FindBy(id= "//*[@id='chat-message']")
+    public WebElement chatTextBoxButon;
+
+    @FindBy(id= "//*[@class='user-img']")
+    public WebElement profilIkonu;
+
+    @FindBy(id = "//*[@id='submit']")
+    public WebElement chatSubmitButton;
 
 
 }

@@ -60,6 +60,16 @@ public class UserPage extends BasePage {
     @FindBy(xpath = "//*[@type='search']")
     public WebElement PaymentSearch;
 
+    @FindBy(id="(//*[@class='text-muted mb-0 text-truncate'])[1]")
+    public WebElement dashboardBookingsButonu;
+
+    @FindBy(id="(//*[@class='text-muted mb-0 text-truncate'])[2]")
+    public WebElement dashboardReviewsButonu;
+
+    @FindBy(id="(//*[@class='text-muted mb-0 text-truncate'])[3]")
+    public WebElement dashboardNotificationsButonu;
+
+
 
 
 

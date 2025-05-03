@@ -26,6 +26,7 @@ Feature: US_038 User Dashboard Page
     Then Dashboard sayfasina yonlendirilir
 
   Scenario: Dashboard page should display cards
+
     Given Dashboard sayfasina gidilir
     Then "Bookings", "Reviews", ve "Notifications" kartlari gorunur olmalidir
 

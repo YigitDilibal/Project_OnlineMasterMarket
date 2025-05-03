@@ -1,9 +1,11 @@
 package stepdefinitions;
 
 import config.DataReader;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import pages.BasePage;
 import pages.HomePage;
@@ -29,6 +31,23 @@ public class LoginSteps {
 
 		homePage.anasayfaLoginButonu.click();
 		ReusableMethods.bekle(3000);
+
+	}
+
+	@And("Login modalinde bulunan LOGIN ve \\(Access to our Online Master Market) text'lerinin gorunur oldugu dogrulanir")
+	public void loginModalindeBulunanLOGINVeAccessToOurOnlineMasterMarketTextLerininGorunurOlduguDogrulanir() {
+
+		Assert.assertTrue(loginPage.loginModalMasterMarketText.isDisplayed());
+		Assert.assertTrue(loginPage.loginModalLoginText.isDisplayed());
+
+
+	}
+
+	@And("Login modal'ında Email ID textboxi görünür ve aktif oldugu dogrulanmali")
+	public void loginModalIndaEmailIDTextboxiGörünürVeAktifOlduguDogrulanmali() {
+
+		Assert.assertTrue(loginPage.LoginModalEmailIdTextBox.isDisplayed());
+		Assert.assertTrue(loginPage.LoginModalEmailIdTextBox.isEnabled());
 
 	}
 }

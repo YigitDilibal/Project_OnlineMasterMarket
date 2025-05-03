@@ -43,5 +43,17 @@ public class LoginPage extends BasePage {
 		click(enterButton);
 	}
 
+	@FindBy(xpath = "//button[@id='emaillogin_submit']")
+	public WebElement loginModalLoginButonu;
+
+	@FindBy(xpath = "//h3[.='Login']")
+	public WebElement loginModalLoginText;
+
+	@FindBy(xpath = "//*[.='Access to our Online Master Market']")
+	public WebElement loginModalMasterMarketText;
+
+	@FindBy(xpath = "//*[@placeholder='Enter EMail ID']")
+	public WebElement LoginModalEmailIdTextBox;
+
 }
 

@@ -96,5 +96,7 @@ public class ProviderPage extends BasePage{
     @FindBy(xpath = "//*[@class='card'])[3]")
     public WebElement myServicesProvider;
 
+    @FindBy(xpath = "//*[@href='https://qa.onlinemastermarket.com/provider-reviews']")
+    public WebElement reviewsLinkinDashbordPage;
 
 }

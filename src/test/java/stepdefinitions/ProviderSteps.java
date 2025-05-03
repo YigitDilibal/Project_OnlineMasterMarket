@@ -245,8 +245,34 @@ public class ProviderSteps {
 
     }
 
+    @Then("the user verifies that the reviews link in the Dashboard menu is visible and active")
+    public void theUserVerifiesThatTheReviewsLinkInTheDashboardMenuIsVisibleAndActive() {
+        ReusableMethods.scrollDown();
+        ReusableMethods.bekle(5000);
+        Assert.assertTrue(providerPage.reviewsLinkinDashbordPage.isDisplayed());
+        Assert.assertTrue(providerPage.reviewsLinkinDashbordPage.isEnabled());
+
+    }
+
+    @Given("the user clicks on the reviews link in the Dashboard")
+    public void theUserClicksOnTheReviewsLinkInTheDashboard() {
+        ReusableMethods.scrollDown();
+        ReusableMethods.bekle(2000);
+        basePage.click(providerPage.reviewsLinkinDashbordPage);
+    }
+
+    @Then("the user verifies that list of customers placing in orders and visible in reviews page")
+    public void theUserVerifiesThatListOfCustomersPlacingInOrdersAndVisibleInReviewsPage() {
+        ReusableMethods.bekle(2000);
+        ReusableMethods.scrollUp();
+        List<WebElement> satirElementleriList =
+                driver.findElements(By.xpath("//*[@class='review-list']"));
+        System.out.println(ReusableMethods.stringListeDonustur(satirElementleriList));
+        Assert.assertTrue(satirElementleriList.contains("(1)"));
+        Assert.assertTrue(satirElementleriList.size()>1);
 
 
+    }
 
 
 

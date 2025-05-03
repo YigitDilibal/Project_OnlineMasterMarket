@@ -2,13 +2,18 @@ package utils;
 
 import drivers.DriverManager;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class ReusableMethods {
 
@@ -47,5 +52,33 @@ public class ReusableMethods {
         }
     }
 
+    public static void scrollDown() {
+
+        Actions actions = new Actions(DriverManager.getDriver());
+        ReusableMethods.bekle(1);
+
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+
+
+    }
+    public static void scrollUp () {
+
+        Actions actions = new Actions(DriverManager.getDriver());
+        ReusableMethods.bekle(1);
+        actions.sendKeys(Keys.PAGE_UP).perform();
+
+
+    }
+    public static List<String> stringListeDonustur(List<WebElement> webElementList){
+
+        List<String> stringList = new ArrayList<>();
+
+        for (WebElement each: webElementList){
+
+            stringList.add(each.getText());
+        }
+
+        return stringList;
+    }
 
 }

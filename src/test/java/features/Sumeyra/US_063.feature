@@ -1,4 +1,5 @@
 Feature: Manage Service Coupons for Provider
+  #[US-063] As a registered user (provider), I want to have an area where I can see and manage my coupons
 
   Background: Common steps for each Scenerio
     Given the user navigates to the "url" address

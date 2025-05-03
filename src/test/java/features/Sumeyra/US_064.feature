@@ -1,4 +1,5 @@
 Feature: Manage Rewards for Costumers
+  #[US-064] As a registered user (provider), I would like to have an area where I can give rewards to my customers
 
   Background: Common steps for each Scenerio
     Given the user navigates to the "url" address

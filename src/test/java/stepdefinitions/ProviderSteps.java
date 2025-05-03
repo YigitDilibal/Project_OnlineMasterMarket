@@ -44,7 +44,7 @@ public class ProviderSteps {
 
     }
 
-    @Then("{string} ikonuna tiklanir")
+    @Then("{string} linkine tiklanir")
     public void linkine_tiklanir(String string) {
 
         providerPage.click(providerPage.chatIkonu);

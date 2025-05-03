@@ -4,6 +4,11 @@ Feature: US_035 Chat with Providers
   # I want to be able to send and receive messages with users and administrators
   # So that I can communicate effectively
 
+  Background: Login and click Profile icon
+    Given the user navigates to the "url" address
+    When the user logs in with username "providerMail" and password "providerPass"
+    Then the user clicks on the Profile icon
+
   Scenario: Chat link should be visible and active under the Homepage Profile icon.
 
     Given Provider hesabiyla giris yapilir

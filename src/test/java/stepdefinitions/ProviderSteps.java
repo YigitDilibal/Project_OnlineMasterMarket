@@ -1,15 +1,21 @@
 package stepdefinitions;
 
+import config.DataReader;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pages.BasePage;
 import pages.HomePage;
 import pages.ProviderPage;
 import pages.UserPage;
 import utils.ReusableMethods;
+
+import java.util.List;
 
 public class ProviderSteps {
 
@@ -93,6 +99,122 @@ public class ProviderSteps {
     @Then("the user should be redirected to the login page")
     public void the_user_should_be_redirected_to_the_login_page() {
         Assert.assertTrue(homepage.anasayfaLoginButonu.isDisplayed());
+    }
+    @And("the user accesses the dashboard page from the Avatar menu")
+    public void theUserAccessesTheDashboardPageFromTheAvatarMenu() {
+        providerPage.avatarDropdownMenü.click();
+        providerPage.avatarDashbordButtonu.click();
+    }
+
+    @Then("the user verifies that the coupon link in the Dashboard menu is visible and active")
+    public void theUserVerifiesThatTheCouponLinkInTheDashboardMenuIsVisibleAndActive() {
+        Assert.assertTrue(providerPage.couponLinkinDashbordPage.isDisplayed());
+        Assert.assertTrue(providerPage.couponLinkinDashbordPage.isEnabled());
+    }
+
+    @When("the user clicks on the coupon link in the Dashboard")
+    public void theUserClicksOnTheCouponLinkInTheDashboard() {
+        providerPage.couponLinkinDashbordPage.click();
+    }
+
+    @Then("the user verifies that the View Coupon History button is visible and active")
+    public void theUserVerifiesThatTheViewCouponHistoryButtonIsVisibleAndActive() {
+        Assert.assertTrue(providerPage.couponHistoryButton.isDisplayed());
+        Assert.assertTrue(providerPage.couponHistoryButton.isEnabled());
+    }
+
+    @And("selects the checkbox of the service for which they want to create a coupon")
+    public void selectsTheCheckboxOfTheServiceForWhichTheyWantToCreateACoupon() {
+        providerPage.couponSelectCheckbox.click();
+    }
+
+    @Then("the user verifies that the Add Coupon button is active and accessible")
+    public void theUserVerifiesThatTheAddCouponButtonIsActiveAndAccessible() {
+        Assert.assertTrue(providerPage.addCouponButton.isEnabled());
+        //   WebDriverWait wait = new WebDriverWait(driver , Duration.ofSeconds(20));
+        providerPage.addCouponButton.click();
+        //   wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='dropdown-menu dropdown-menu-end']")));
+
+    }
+
+    @Then("the user clicks the Add Coupon button")
+    public void theUserClicksTheAddCouponButton() {
+        providerPage.addCouponButton.click();
+    }
+
+    @And("fills in the desired coupon information in the form that appears")
+    public void fillsInTheDesiredCouponInformationInTheFormThatAppears() {
+        providerPage.couponNameTextBox.sendKeys(DataReader.getData("couponName"));
+        providerPage.couponUserLimit.sendKeys("5");
+        providerPage.couponPriceType.click();
+        providerPage.couponPriceAmount.sendKeys("25");
+        providerPage.couponDate.click();
+        providerPage.couponValidDays.sendKeys("12");
+        providerPage.couponDescription.sendKeys("Use it when you want your home claean better :) ");
+
+    }
+
+    @And("clicks the Save button")
+    public void clicksTheSaveButton() {
+        providerPage.couponSaveButton.click();
+    }
+
+    @Then("the user verifies that the newly created coupon is visible in the list")
+    public void theUserVerifiesThatTheNewlyCreatedCouponIsVisibleInTheList() {
+        // ** 1.yol
+        // String expectedCouponName ="PRO"+DataReader.getData("couponName".toUpperCase());
+        //   String actualCouponName = providerPage.newCouponName.getText();
+        //   Assert.assertEquals(expectedCouponName,actualCouponName);
+        Assert.assertTrue(providerPage.newCouponName.isDisplayed());
+    }
+
+    @Given("the user verifies that the Rewards link in the Dashboard menu is visible and active")
+    public void theUserVerifiesThatTheRewardsLinkInTheDashboardMenuIsVisibleAndActive() {
+        Assert.assertTrue(providerPage.rewardLinkinDashbordPage.isDisplayed());
+        Assert.assertTrue(providerPage.rewardLinkinDashbordPage.isEnabled());
+    }
+
+    @Given("the user clicks on the rewards link in the Dashboard")
+    public void theUserClicksOnTheRewardsLinkInTheDashboard() {
+        providerPage.rewardLinkinDashbordPage.click();
+    }
+
+    @Then("the user verifies that list of customers placing in orders and visible")
+    public void theUserVerifiesThatListOfCustomersPlacingInOrdersAndVisible() {
+        List<WebElement> satirElementleriList =
+                driver.findElements(By.xpath("//tbody/tr"));
+
+        Assert.assertTrue(satirElementleriList.size()>1);
+        Assert.assertFalse(satirElementleriList.isEmpty());
+    }
+
+    @Then("the user verifies that the Add Reward button is visible and active")
+    public void theUserVerifiesThatTheAddRewardButtonIsVisibleAndActive() {
+        Assert.assertTrue(providerPage.addRewardButton.isDisplayed());
+        Assert.assertTrue(providerPage.addRewardButton.isEnabled());
+    }
+
+    @When("the user click Add Reward button for preferred user")
+    public void theUserClickAddRewardButtonForPreferredUser() {
+        providerPage.addRewardButton.click();
+    }
+
+    @And("fills the reward form that appears for costumer")
+    public void fillsTheRewardFormThatAppearsForCostumer() {
+        providerPage.addRewardMessageTextBox.sendKeys("Congrats!");
+    }
+
+    @And("clicks the Add button")
+    public void clicksTheAddButton() {
+        providerPage.addRewardFormSubmitButton.click();
+    }
+
+    @Then("the user verifies that the newly created reward is visible in the list")
+    public void theUserVerifiesThatTheNewlyCreatedRewardIsVisibleInTheList() {
+        Assert.assertTrue(providerPage.rewardCreatedSuccessLight.isDisplayed());
+        // "The user can also go to the history page and
+        // verify the newly created reward by retrieving its message text."
+
     }
 
 }

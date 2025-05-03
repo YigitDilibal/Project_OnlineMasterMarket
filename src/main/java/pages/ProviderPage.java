@@ -90,5 +90,11 @@ public class ProviderPage extends BasePage{
     @FindBy(id = "//*[@id='submit']")
     public WebElement chatSubmitButton;
 
+    @FindBy(xpath = "//*[.='Dashboard']")
+    public WebElement dashboardButton;
+
+    @FindBy(xpath = "//*[@class='card'])[3]")
+    public WebElement myServicesProvider;
+
 
 }

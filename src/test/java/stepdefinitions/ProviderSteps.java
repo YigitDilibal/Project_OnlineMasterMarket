@@ -40,7 +40,7 @@ public class ProviderSteps {
 
     }
 
-    @Then("{string} ikonuna tiklanir")
+    @Then("{string} linkine tiklanir")
     public void linkine_tiklanir(String string) {
 
         providerPage.click(providerPage.chatIkonu);
@@ -128,6 +128,20 @@ public class ProviderSteps {
     @Then("the user should be redirected to the login page")
     public void the_user_should_be_redirected_to_the_login_page() {
         Assert.assertTrue(homepage.anasayfaLoginButonu.isDisplayed());
+    }
+
+    @Then("the provider navigates to the Dashboard page")
+    public void the_provider_navigates_to_the_dashboard_page() {
+        basePage.click(providerPage.profilIkonu);
+        ReusableMethods.bekle(1000);
+        basePage.click(providerPage.dashboardButton);
+    }
+
+    @Given("My services button should be visible and clickable")
+    public void my_services_button_should_be_visible_and_clickable() {
+        ReusableMethods.bekle(500);
+        Assert.assertTrue(providerPage.myServicesProvider.isDisplayed());
+        Assert.assertTrue(providerPage.myServicesProvider.isEnabled());
     }
 
 

@@ -5,9 +5,12 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 import pages.BasePage;
 import pages.HomePage;
 import pages.UserPage;
+import utils.JSUtilities;
+import utils.ReusableMethods;
 
 public class UserSteps {
 
@@ -278,6 +281,92 @@ public class UserSteps {
 
     @Then("My Bookings sayfasina yonlendirilir")
     public void myBookingsSayfasinaYonlendirilir() {
+    }
+
+    @Given("the User clicks the Home Services button")
+    public void the_user_clicks_the_home_services_button() {
+        ReusableMethods.bekle(1000);
+        basePage.click(homePage.anasayfaHomeServicesButonu);
+    }
+
+    @Given("the User clicks Deep Cleaning Service button")
+    public void the_user_clicks_deep_cleaning_service_button() {
+        basePage.click(userPage.DeepCleaningService);
+    }
+
+    @Then("the User clicks the Book Service button")
+    public void the_user_clicks_the_book_service_button() {
+        basePage.click(userPage.BookServiceButton);
+    }
+
+    @Then("the User should be redirected to the Appointment page")
+    public void the_user_should_be_redirected_to_the_appointment_page() {
+        Assert.assertTrue(userPage.SelectStaffddm.isDisplayed());
+    }
+
+    @Given("Confirm Booking button should be visible and active")
+    public void confirm_booking_button_should_be_visible_and_active() {
+        JSUtilities.scrollToElement(driver, userPage.ConfirmBooking);
+        ReusableMethods.bekle(500);
+        Assert.assertTrue(userPage.ConfirmBooking.isDisplayed());
+        Assert.assertTrue(userPage.ConfirmBooking.isEnabled());
+    }
+
+    @Given("Cancel booking button should be visible and active")
+    public void cancel_booking_button_should_be_visible_and_active() {
+        JSUtilities.scrollToElement(driver, userPage.ConfirmBooking);
+        ReusableMethods.bekle(500);
+        Assert.assertTrue(userPage.CancelBooking.isDisplayed());
+        Assert.assertTrue(userPage.CancelBooking.isEnabled());
+    }
+
+    @When("the User tries to click the Confirm Booking button without selecting Staff, Date, or Time Slot")
+    public void the_user_tries_to_click_the_confirm_booking_button_without_selecting_staff_date_or_time_slot() {
+        JSUtilities.scrollToElement(driver, userPage.ConfirmBooking);
+        ReusableMethods.bekle(500);
+        basePage.click(userPage.ConfirmBooking);
+    }
+
+    @Then("the User should see validation messages for required fields")
+    public void the_user_should_see_validation_messages_for_required_fields() {
+        Assert.assertTrue(userPage.PleaseEnterDate.isDisplayed());
+    }
+
+    @Given("the User selects a Staff from the list")
+    public void the_user_selects_a_staff_from_the_list() {
+        Select selectStaff = new Select(userPage.SelectStaffddm);
+        selectStaff.selectByVisibleText("Bella Maison");
+    }
+
+    @Given("the User selects a Date")
+    public void the_user_selects_a_date() {
+        basePage.type(userPage.BookingDateInput, "16-05-2025");
+        userPage.BookingDateInput.sendKeys(Keys.ENTER);
+    }
+
+    @Given("the User selects a Time Slot")
+    public void the_user_selects_a_time_slot() {
+        Select selectTime = new Select(userPage.SelectTimeSlotddm);
+        selectTime.selectByValue("07:00 AM-07:50 AM");
+    }
+
+    @Given("the User clicks the Confirm Booking button")
+    public void the_user_clicks_the_confirm_booking_button() {
+        JSUtilities.scrollToElement(driver, userPage.ConfirmBooking);
+        ReusableMethods.bekle(500);
+        basePage.click(userPage.ConfirmBooking);
+        ReusableMethods.bekle(2000);
+    }
+
+    @Then("the User should see a confirmation message")
+    public void the_user_should_see_a_confirmation_message() {
+        Assert.assertTrue(userPage.BookingAvailable.isDisplayed());
+    }
+
+    @Then("the User's reservation should be saved")
+    public void the_user_s_reservation_should_be_saved() {
+        basePage.click(userPage.OkayButton);
+        Assert.assertTrue(userPage.ProceedToPayment.isDisplayed());
     }
 
 

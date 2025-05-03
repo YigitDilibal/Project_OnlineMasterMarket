@@ -51,6 +51,9 @@ public class HomePage extends BasePage {
     @FindBy (xpath = "(//*[@href='https://qa.onlinemastermarket.com/service-preview/full-house-cleaning?sid=c4ca4238a0b923820dcc509a6f75849b'])[1]")
     public WebElement FullHouseCleaning;
 
+    @FindBy (xpath = "(//*[.='Home Services'])[3]")
+    public WebElement anasayfaHomeServicesButonu;
+
 
 
 

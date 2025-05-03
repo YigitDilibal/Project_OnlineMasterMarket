@@ -68,12 +68,39 @@ public class UserPage extends BasePage {
 
     @FindBy(id="(//*[@class='text-muted mb-0 text-truncate'])[3]")
     public WebElement dashboardNotificationsButonu;
+  
+    @FindBy(xpath = "//*[.='Deep Cleaning Service']")
+    public WebElement DeepCleaningService;
 
+    @FindBy(xpath = "//*[@id='go_book_service']")
+    public WebElement BookServiceButton;
 
+    @FindBy(xpath = "//*[@id='staff_id']")
+    public WebElement SelectStaffddm;
 
+    @FindBy(xpath = "//*[@id='bookingdate']")
+    public WebElement BookingDateInput;
 
+    @FindBy(xpath = "//*[@id='from_time']")
+    public WebElement SelectTimeSlotddm;
 
+    @FindBy(xpath = "//*[.='Confirm Booking']")
+    public WebElement ConfirmBooking;
 
+    @FindBy(xpath = "(//*[.='Cancel Booking'])[1]")
+    public WebElement CancelBooking;
+
+    @FindBy(xpath = "//*[.='Please Enter Date']")
+    public WebElement PleaseEnterDate;
+
+    @FindBy(xpath = "//*[.='Booking Available']")
+    public WebElement BookingAvailable;
+
+    @FindBy(xpath = "//*[.='okay']")
+    public WebElement OkayButton;
+
+    @FindBy(xpath = "//*[@id='submit_button_id']")
+    public WebElement ProceedToPayment;
 
 
 

@@ -134,6 +134,20 @@ public class ProviderSteps {
         Assert.assertTrue(homepage.anasayfaLoginButonu.isDisplayed());
     }
 
+    @Then("the provider navigates to the Dashboard page")
+    public void the_provider_navigates_to_the_dashboard_page() {
+        basePage.click(providerPage.profilIkonu);
+        ReusableMethods.bekle(1000);
+        basePage.click(providerPage.dashboardButton);
+    }
+
+    @Given("My services button should be visible and clickable")
+    public void my_services_button_should_be_visible_and_clickable() {
+        ReusableMethods.bekle(500);
+        Assert.assertTrue(providerPage.myServicesProvider.isDisplayed());
+        Assert.assertTrue(providerPage.myServicesProvider.isEnabled());
+    }
+
     @And("the user accesses the dashboard page from the Avatar menu")
     public void theUserAccessesTheDashboardPageFromTheAvatarMenu() {
         providerPage.avatarDropdownMenü.click();
@@ -230,10 +244,6 @@ public class ProviderSteps {
         // verify the newly created reward by retrieving its message text."
 
     }
-
-
-
-
 
 
 

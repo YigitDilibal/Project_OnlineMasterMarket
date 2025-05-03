@@ -137,47 +137,70 @@ public class UserSteps {
     @Given("Anasayfaya gidilir")
     public void anasayfaya_gidilir() {
 
+        driver.get("https://onlinemastermarket.com");
+
     }
 
     @Then("Profil ikonu gorunur ve aktif olmalidir")
     public void profil_ikonu_gorunur_ve_aktif_olmalidir() {
+
+        Assert.assertTrue(userPage.sagUstProfilButonu.isDisplayed());
+        Assert.assertTrue(userPage.sagUstProfilButonu.isEnabled());
+
 
     }
 
     @When("Profil ikonuna tiklanir")
     public void profil_ikonuna_tiklanir() {
 
-        basePage.click(userPage.sagUstProfilButonu);
+        userPage.click(userPage.sagUstProfilButonu);
 
     }
 
     @Then("{string} linki gorunur ve aktif olmalidir")
     public void linki_gorunur_ve_aktif_olmalidir(String string) {
 
+        Assert.assertTrue(userPage.dropdownDashboardButonu.isDisplayed());
+        Assert.assertTrue(userPage.dropdownDashboardButonu.isEnabled());
+
+
     }
 
     @Given("Profil menusune gidilir")
     public void profil_menusune_gidilir() {
 
+        driver.findElement(By.id("profilButonu")).click();
     }
 
     @When("{string} ikonuna tiklanir")
     public void ikonuna_tiklanir(String string) {
 
+        userPage.click(userPage.dropdownDashboardButonu);
     }
 
     @Then("Dashboard sayfasina yonlendirilir")
     public void dashboard_sayfasina_yonlendirilir() {
+
+        Assert.assertTrue(userPage.dropdownDashboardButonu.isEnabled());
 
     }
 
     @Given("Dashboard sayfasina gidilir")
     public void dashboard_sayfasina_gidilir() {
 
+        userPage.click(userPage.dropdownDashboardButonu);
+
     }
 
     @Then("{string}, {string}, ve {string} kartlari gorunur olmalidir")
     public void ve_kartlari_gorunur_olmalidir(String string, String string2, String string3) {
+
+        Assert.assertTrue(userPage.dashboardBookingsButonu.isDisplayed());
+        Assert.assertTrue(userPage.dashboardBookingsButonu.isEnabled());
+        Assert.assertTrue(userPage.dashboardReviewsButonu.isDisplayed());
+        Assert.assertTrue(userPage.dashboardReviewsButonu.isEnabled());
+        Assert.assertTrue(userPage.dashboardNotificationsButonu.isDisplayed());
+        Assert.assertTrue(userPage.dashboardNotificationsButonu.isEnabled());
 
     }
 

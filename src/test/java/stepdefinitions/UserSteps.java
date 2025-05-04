@@ -1,11 +1,13 @@
 package stepdefinitions;
 
+import config.DataReader;
 import io.cucumber.java.bs.A;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pages.BasePage;
 import pages.HomePage;
@@ -398,16 +400,22 @@ public class UserSteps {
         selectStaff.selectByVisibleText("Bella Maison");
     }
 
-    @Given("the User selects a Date")
-    public void the_user_selects_a_date() {
-        basePage.type(userPage.BookingDateInput, "16-05-2025");
+    @And("the User selects {string} as Date")
+    public void theUserSelectsADate(String date) {
+        basePage.type(userPage.BookingDateInput, date);
         userPage.BookingDateInput.sendKeys(Keys.ENTER);
     }
 
+
     @Given("the User selects a Time Slot")
     public void the_user_selects_a_time_slot() {
+
+    }
+
+    @And("the User selects Time Slot as {string}")
+    public void theUserSelectsTimeSlotAs(String timeSlot) {
         Select selectTime = new Select(userPage.SelectTimeSlotddm);
-        selectTime.selectByValue("07:00 AM-07:50 AM");
+        selectTime.selectByValue(timeSlot);
     }
 
     @Given("the User clicks the Confirm Booking button")
@@ -430,8 +438,103 @@ public class UserSteps {
     }
 
 
+    @Then("The user is redirected to the Checkout page")
+    public void theUserIsRedirectedToTheCheckoutPage() {
+        basePage.click(userPage.ProceedToPayment);
+        ReusableMethods.bekle(1000);
+        basePage.click(userPage.PaymentSuccessOkayButton);
+        ReusableMethods.bekle(1000);
+    }
+
+    @Then("The checkout page should be displayed successfully")
+    public void theCheckoutPageShouldBeDisplayedSuccessfully() {
+        Assert.assertTrue(userPage.StripeButton.isDisplayed());
+    }
+
+    @And("The reserved service name and price should be clearly visible")
+    public void theReservedServiceNameAndPriceShouldBeClearlyVisible() {
+        Assert.assertTrue(userPage.CheckoutServiceName.isDisplayed());
+    }
+
+    @Then("The system should prompt the user to select a payment type")
+    public void theSystemShouldPromptTheUserToSelectAPaymentType() {
+        Assert.assertTrue(userPage.StripeButton.isDisplayed());
+    }
+
+    @When("The user clicks the Stripe option")
+    public void theUserClicksTheStripeOption() {
+        basePage.click(userPage.StripeButton);
+    }
+
+    @Then("The Service Booking window should open")
+    public void theServiceBookingWindowShouldOpen() {
+        ReusableMethods.bekle(1000);
+        WebElement iFrame = driver.findElement(By.xpath("(//iframe)[1]"));
+
+        driver.switchTo().frame(iFrame);
+        ReusableMethods.bekle(1);
+
+        Assert.assertTrue(userPage.PaymentWindowEmail.isEnabled());
+
+        driver.switchTo().defaultContent();
+    }
+
+    @Then("The Email, Card Number, MMYY, and CVC fields should be visible and enabled")
+    public void theEmailCardNumberMMYYAndCVCFieldsShouldBeVisibleAndEnabled() {
+        ReusableMethods.bekle(1000);
+        WebElement iFrame = driver.findElement(By.xpath("(//iframe)[1]"));
+        driver.switchTo().frame(iFrame);
+        ReusableMethods.bekle(1000);
+
+        Assert.assertTrue(userPage.PaymentWindowEmail.isEnabled());
+        Assert.assertTrue(userPage.PaymentWindowCardNumber.isEnabled());
+        Assert.assertTrue(userPage.PaymentWindowMMYY.isEnabled());
+        Assert.assertTrue(userPage.PaymentWindowCVC.isEnabled());
+    }
+
+    @And("The Pay button should be visible and enabled")
+    public void thePayButtonShouldBeVisibleAndEnabled() {
+        ReusableMethods.bekle(1000);
+        Assert.assertTrue(userPage.PaymentWindowPayButton.isDisplayed());
+        Assert.assertTrue(userPage.PaymentWindowPayButton.isEnabled());
+    }
+
+    @When("The user enters valid payment details and clicks Pay")
+    public void theUserEntersValidPaymentDetailsAndClicksPay() {
+        basePage.type(userPage.PaymentWindowEmail, DataReader.getData("ValidEmail"));
+        ReusableMethods.bekle(500);
+        basePage.type(userPage.PaymentWindowCardNumber,"4242");
+        ReusableMethods.bekle(200);
+        basePage.type(userPage.PaymentWindowCardNumber,"4242");
+        ReusableMethods.bekle(200);
+        basePage.type(userPage.PaymentWindowCardNumber,"4242");
+        ReusableMethods.bekle(200);
+        basePage.type(userPage.PaymentWindowCardNumber,"4242");
+        ReusableMethods.bekle(500);
+        basePage.type(userPage.PaymentWindowMMYY, "12");
+        ReusableMethods.bekle(200);
+        basePage.type(userPage.PaymentWindowMMYY, "30");
+        ReusableMethods.bekle(500);
+        basePage.type(userPage.PaymentWindowCVC, "123");
+        ReusableMethods.bekle(1000);
+        basePage.click(userPage.PaymentWindowPayButton);
+        ReusableMethods.bekle(1000);
+        driver.switchTo().defaultContent();
+        ReusableMethods.bekle(1000);
 
 
+
+
+
+    }
+
+    @Then("The Payment Success text should be displayed")
+    public void thePaymentSuccessTextShouldBeDisplayed() {
+        Assert.assertTrue(userPage.PaymentSuccess.isDisplayed());
+        ReusableMethods.bekle(1000);
+        basePage.click(userPage.PaymentSuccessOkayButton);
+        ReusableMethods.bekle(2000);
+    }
 
 
 

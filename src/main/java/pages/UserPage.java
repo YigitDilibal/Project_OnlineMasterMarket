@@ -102,6 +102,27 @@ public class UserPage extends BasePage {
     @FindBy(xpath = "//*[@id='submit_button_id']")
     public WebElement ProceedToPayment;
 
+    @FindBy(xpath = "//*[@class='breadcrumb-item']")
+    public WebElement homeButonu;
+
+    @FindBy(xpath = "(//*[@class='dropdown-item'])[7]")
+    public WebElement chatIkonu;
+
+    @FindBy(xpath = "//*[@class='feather-message-circle noti-icon']")
+    public WebElement ustBarChatIkonu;
+
+    @FindBy(xpath = "(//*[@class='topnav-dropdown-footer'])[2]")
+    public WebElement ustBarChatIkonuViewAllButonu;
+
+    @FindBy(xpath = "//*[@class='clear-noti chat_clear_all']")
+    public WebElement ustBarChatIkonuClearAllButonu;
+
+    @FindBy(xpath = "//a[@href='https://qa.onlinemastermarket.com/user-bookings' and text()='Booking']")
+    public WebElement chatBookingButonu;
+
+
+
+
 
 
 

@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.bs.A;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -207,25 +208,52 @@ public class UserSteps {
     @Given("Dashboard sayfasina gidilr")
     public void dashboard_sayfasina_gidilr() {
 
+        userPage.click(userPage.dropdownDashboardButonu);
+
     }
 
     @When("{string} kartina tiklanir")
     public void kartina_tiklanir(String string) {
+
+        userPage.click(userPage.dashboardBookingsButonu);
+        userPage.click(userPage.dashboardReviewsButonu);
+        userPage.click(userPage.dashboardNotificationsButonu);
+
+
 
     }
 
     @Then("{string} kartina yonlendirilir")
     public void kartina_yonlendirilir(String string) {
 
+        Assert.assertTrue(userPage.dashboardBookingsButonu.isDisplayed());
+        Assert.assertTrue(userPage.dashboardBookingsButonu.isSelected());
+        Assert.assertTrue(userPage.dashboardBookingsButonu.isEnabled());
+        Assert.assertTrue(userPage.dashboardReviewsButonu.isDisplayed());
+        Assert.assertTrue(userPage.dashboardReviewsButonu.isSelected());
+        Assert.assertTrue(userPage.dashboardReviewsButonu.isEnabled());
+        Assert.assertTrue(userPage.dashboardNotificationsButonu.isDisplayed());
+        Assert.assertTrue(userPage.dashboardNotificationsButonu.isSelected());
+        Assert.assertTrue(userPage.dashboardNotificationsButonu.isEnabled());
+
+
+
+
     }
 
     @When("{string} linki veya logosuna tiklanir")
     public void linki_veya_logosuna_tiklanir(String string) {
 
+        userPage.click(userPage.homeButonu);
+
     }
 
     @Then("Anasayfaya yonlendirilir")
     public void anasayfaya_yonlendirilir() {
+
+        Assert.assertTrue(userPage.homeButonu.isDisplayed());
+        Assert.assertTrue(userPage.homeButonu.isSelected());
+        Assert.assertTrue(userPage.homeButonu.isEnabled());
 
 
     }
@@ -233,54 +261,86 @@ public class UserSteps {
 
     @Then("{string} ikonu gorunur ve aktif olmalidir")
     public void ikonuGorunurVeAktifOlmalidir(String arg0) {
+
+        userPage.click(userPage.sagUstProfilButonu);
     }
 
     @Then("{string} sayfasina yonlendirilir")
     public void sayfasinaYonlendirilir(String arg0) {
+
+        Assert.assertTrue(userPage.chatIkonu.isDisplayed());
+        Assert.assertTrue(userPage.chatIkonu.isEnabled());
 
     }
 
     @Given("Chat sayfasine gidilir")
     public void chatSayfasineGidilir() {
 
+        Assert.assertTrue(userPage.chatIkonu.isEnabled());
+        userPage.click(userPage.chatIkonu);
+
     }
 
     @Then("Ust barda Chat ikonu gorunur ve aktif olmalidir")
     public void ustBardaChatIkonuGorunurVeAktifOlmalidir() {
+
+        Assert.assertTrue(userPage.ustBarChatIkonu.isDisplayed());
+        Assert.assertTrue(userPage.ustBarChatIkonu.isEnabled());
 
     }
 
     @Given("Ust bardaki chat ikonuna tiklanir")
     public void ustBardakiChatIkonunaTiklanir() {
 
+        userPage.click(userPage.ustBarChatIkonu);
+
     }
 
     @Then("{string} ve {string} linkleri gorunur ve aktif olmalidir")
     public void veLinkleriGorunurVeAktifOlmalidir(String arg0, String arg1) {
+
+        Assert.assertTrue(userPage.ustBarChatIkonuViewAllButonu.isDisplayed());
+        Assert.assertTrue(userPage.ustBarChatIkonuViewAllButonu.isEnabled());
+        Assert.assertTrue(userPage.ustBarChatIkonuClearAllButonu.isDisplayed());
+        Assert.assertTrue(userPage.ustBarChatIkonuClearAllButonu.isEnabled());
 
     }
 
     @Given("Chat menusune gidilir")
     public void chatMenusuneGidilir() {
 
+        Assert.assertTrue(userPage.chatIkonu.isEnabled());
+        userPage.click(userPage.chatIkonu);
+
     }
 
     @When("{string} tiklanir")
     public void tiklanir(String arg0) {
 
+        userPage.click(userPage.ustBarChatIkonuViewAllButonu);
+
     }
 
     @Then("Chat sayfasina yonlendirilir")
     public void chatSayfasinaYonlendirilir() {
+
+        Assert.assertTrue(userPage.chatIkonu.isDisplayed());
+        Assert.assertTrue(userPage.chatIkonu.isEnabled());
     }
 
     @Given("Chat sayfasina gidilir")
     public void chatSayfasinaGidilir() {
 
+        Assert.assertTrue(userPage.chatIkonu.isEnabled());
+        userPage.click(userPage.chatIkonu);
+
     }
 
     @Then("My Bookings sayfasina yonlendirilir")
     public void myBookingsSayfasinaYonlendirilir() {
+
+        Assert.assertTrue(userPage.chatBookingButonu.isDisplayed());
+        userPage.click(userPage.chatBookingButonu);
     }
 
     @Given("the User clicks the Home Services button")

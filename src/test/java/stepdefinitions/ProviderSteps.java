@@ -117,6 +117,8 @@ public class ProviderSteps {
     @Then("the user clicks on the Profile icon")
     public void the_user_clicks_on_the_profile_icon() {
         basePage.click(userPage.sagUstProfilButonu);
+        ReusableMethods.bekle(500);
+
     }
     @Given("the Logout button should be visible and clickable")
     public void the_logout_button_should_be_visible_and_clickable() {
@@ -136,9 +138,8 @@ public class ProviderSteps {
 
     @Then("the provider navigates to the Dashboard page")
     public void the_provider_navigates_to_the_dashboard_page() {
-        basePage.click(providerPage.profilIkonu);
         ReusableMethods.bekle(1000);
-        basePage.click(providerPage.dashboardButton);
+        basePage.click(userPage.dropdownDashboardButonu);
     }
 
     @Given("My services button should be visible and clickable")

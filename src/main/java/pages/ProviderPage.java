@@ -84,7 +84,7 @@ public class ProviderPage extends BasePage{
     @FindBy(id= "//*[@id='chat-message']")
     public WebElement chatTextBoxButon;
 
-    @FindBy(id= "//*[@class='user-img']")
+    @FindBy(xpath= "//*[@class='user-img']")
     public WebElement profilIkonu;
 
     @FindBy(id = "//*[@id='submit']")

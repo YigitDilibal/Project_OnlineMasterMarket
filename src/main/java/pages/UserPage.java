@@ -120,6 +120,34 @@ public class UserPage extends BasePage {
     @FindBy(xpath = "//a[@href='https://qa.onlinemastermarket.com/user-bookings' and text()='Booking']")
     public WebElement chatBookingButonu;
 
+    @FindBy(xpath = "//*[@id='stripe']")
+    public WebElement StripeButton;
+
+    @FindBy(xpath = "//*[@class='my-0']")
+    public WebElement CheckoutServiceName;
+
+    @FindBy(xpath = "//*[@id='email']")
+    public WebElement PaymentWindowEmail;
+
+    @FindBy(xpath = "//*[@id='card_number']")
+    public WebElement PaymentWindowCardNumber;
+
+    @FindBy(xpath = "//*[@id='cc-exp']")
+    public WebElement PaymentWindowMMYY;
+
+    @FindBy(xpath = "//*[@id='cc-csc']")
+    public WebElement PaymentWindowCVC;
+
+    @FindBy(xpath = "//*[@id='submitButton']")
+    public WebElement PaymentWindowPayButton;
+
+    @FindBy(xpath = "//*[.='Payment Success']")
+    public WebElement PaymentSuccess;
+
+    @FindBy(xpath = "//*[@class='swal-button swal-button--confirm']")
+    public WebElement PaymentSuccessOkayButton;
+
+
 
 
 

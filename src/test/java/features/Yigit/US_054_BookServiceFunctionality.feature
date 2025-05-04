@@ -21,7 +21,7 @@ Feature: US_054 Book Service functionality
 
   Scenario: Booking should be confirmed when all required fields are filled
     Given the User selects a Staff from the list
-    And the User selects a Date
+    And the User selects "16-05-2025" as Date
     And the User selects a Time Slot
     And the User clicks the Confirm Booking button
     Then the User should see a confirmation message

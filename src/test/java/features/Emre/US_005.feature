@@ -19,3 +19,5 @@ Feature:
     Then Siteye erişebildiğini doğrular.
     Then Anasayfada Login butonuna tiklar
     And Login modal'ında Email ID textboxi görünür ve aktif oldugu dogrulanmali
+
+

@@ -2,6 +2,7 @@ package pages;
 
 import com.fasterxml.jackson.databind.ser.Serializers;
 import config.DataReader;
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,14 +18,14 @@ public class LoginPage extends BasePage {
 	}
 
 	HomePage homePage = new HomePage(driver);
-	BasePage basePage = new BasePage(driver);
+
 
 
 	@FindBy(id = "login_email")
-	private WebElement mailInput;
+    public WebElement mailInput;
 
 	@FindBy(id = "emaillogin_submit")
-	private WebElement loginPenceresiLoginButonu;
+    public WebElement loginPenceresiLoginButonu;
 
 	@FindBy(id = "login_password")
 	private WebElement passwordInput;
@@ -53,7 +54,27 @@ public class LoginPage extends BasePage {
 	public WebElement loginModalMasterMarketText;
 
 	@FindBy(xpath = "//*[@placeholder='Enter EMail ID']")
-	public WebElement LoginModalEmailIdTextBox;
+	public WebElement loginModalEmailIdTextBox;
+
+	@FindBy(xpath = "//h3[.='Password']")
+	public WebElement loginModalPasswordText;
+
+	@FindBy(xpath = "(//*[.='Verification your account'])[4]")
+	public WebElement loginModalVerificationYourAccountText;
+
+	@FindBy(xpath = "//*[@name='login_password']")
+	public WebElement loginModalPasswordTextBox;
+
+	@FindBy (xpath = "//button[@id='emailregistration_finals']")
+	public WebElement loginModalEnterButonu;
+
+	@FindBy (xpath = " //*[.=' Click to Get Link']")
+	public WebElement loginModalClicktoGetLink;
+
+	@FindBy (xpath = "//*[@class='feather-bell noti-icon']")
+	public WebElement siteBildirimSimgesi;
+
+
 
 }
 

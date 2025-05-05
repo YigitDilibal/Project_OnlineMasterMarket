@@ -54,6 +54,9 @@ public class HomePage extends BasePage {
     @FindBy (xpath = "(//*[.='Home Services'])[3]")
     public WebElement anasayfaHomeServicesButonu;
 
+    @FindBy (xpath = "//a[.='Repairs & Maintenance']")
+    public WebElement RepairsVeMaintenanceBasligi;
+
 
 
 

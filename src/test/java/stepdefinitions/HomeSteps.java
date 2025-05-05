@@ -3,9 +3,11 @@ package stepdefinitions;
 import config.ConfigReader;
 import io.cucumber.java.bs.A;
 import io.cucumber.java.en.*;
+import io.cucumber.java.en_old.Ac;
 import org.junit.Assert;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import pages.BasePage;
 import pages.HomePage;
 import utils.ReusableMethods;
@@ -17,6 +19,7 @@ public class HomeSteps {
     WebDriver driver = stepdefinitions.Hooks.getDriver();
     HomePage homePage = new HomePage(driver);
     BasePage basePage = new BasePage(driver);
+
 
     @Given("the user navigates to the {string} address")
     public void kullanici_adresine_gider(String url) {
@@ -206,10 +209,34 @@ public class HomeSteps {
         homePage.PersonalizedFitnessPrograms.click();
         Assert.assertEquals(PersonalizedFitnessProgramsUrl,driver.getCurrentUrl());
 
-
     }
 
 
+    @Then("Kullanici anasayfada bulunan Categories basliginin üstüne gelir")
+    public void kullaniciAnasayfadaBulunanCategoriesBasligininÜstüneGelir() {
+
+        Actions actions = new Actions(driver);
+        actions.moveToElement(homePage.anasayfaCategoriesButonu).perform();
+        ReusableMethods.bekle(1500);
 
 
+    }
+
+    @Then("Kullanici Repairs & Maintenance basliginin gorunur oldugunu dogrular")
+    public void kullaniciRepairsMaintenanceBasligininGorunurOldugunuDogrular() {
+
+        Assert.assertTrue(homePage.RepairsVeMaintenanceBasligi.isDisplayed());
+
+    }
+
+    @And("Kullanici Repairs & Maintenance basliginin aktif oldugunu dogrular")
+    public void kullaniciRepairsMaintenanceBasligininAktifOldugunuDogrular() {
+
+        homePage.RepairsVeMaintenanceBasligi.click();
+        String beklenenUrl = "https://qa.onlinemastermarket.com/search/repairs-and-maintenance";
+        String gidilenUrl = driver.getCurrentUrl();
+        Assert.assertEquals(beklenenUrl,gidilenUrl);
+
+
+    }
 }

@@ -232,11 +232,32 @@ public class HomeSteps {
     @And("Kullanici Repairs & Maintenance basliginin aktif oldugunu dogrular")
     public void kullaniciRepairsMaintenanceBasligininAktifOldugunuDogrular() {
 
-        homePage.RepairsVeMaintenanceBasligi.click();
         String beklenenUrl = "https://qa.onlinemastermarket.com/search/repairs-and-maintenance";
         String gidilenUrl = driver.getCurrentUrl();
         Assert.assertEquals(beklenenUrl,gidilenUrl);
 
+
+    }
+
+    @Then("Kullanici Repairs & Maintenance basligina tiklar")
+    public void kullaniciRepairsMaintenanceBasliginaTiklar() {
+
+        homePage.RepairsVeMaintenanceBasligi.click();
+    }
+
+    @Then("Gidilen sayfada Shops butonunun gorunur ve aktif oldugu dogrulanir")
+    public void gidilenSayfadaShopsButonununGorunurVeAktifOlduguDogrulanir() {
+
+        Assert.assertTrue(homePage.shopsButonu.isDisplayed());
+        Assert.assertTrue(homePage.shopsButonu.isEnabled());
+    }
+
+
+    @Then("Gidilen sayfada Service butonunun gorunur ve aktif oldugu dogrulanir")
+    public void gidilenSayfadaServiceButonununGorunurVeAktifOlduguDogrulanir() {
+
+        Assert.assertTrue(homePage.serviceButonu.isEnabled());
+        Assert.assertTrue(homePage.serviceButonu.isDisplayed());
 
     }
 }

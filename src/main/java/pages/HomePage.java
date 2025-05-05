@@ -63,7 +63,26 @@ public class HomePage extends BasePage {
     @FindBy (xpath = "//*[.='Service']")
     public WebElement serviceButonu;
 
+    @FindBy (xpath = "(//img[@class='me-2'])[3]")
+    public WebElement filtrelemeButonu;
 
+    @FindBy (xpath = "//*[@class='form-control location pac-target-input']")
+    public WebElement filtrelemeLocationButonu;
+
+    @FindBy (xpath = "(//span[@class='select2-selection__rendered'])[1]")
+    public WebElement filtrelemeSortByButonu;
+
+    @FindBy (xpath = "(//span[@class='select2-selection__rendered'])[2]")
+    public WebElement filtrelemeCategoriesButonu;
+
+    @FindBy (xpath = "(//span[@class='select2-selection__rendered'])[3]")
+    public  WebElement filtrelemeSubCategoryButonu;
+
+    @FindBy (xpath = "//*[@class='form-control common_search location']")
+    public WebElement filtrelemeKeywordButonu;
+
+    @FindBy (xpath = "//*[@class='ui-slider-range ui-corner-all ui-widget-header']")
+    public WebElement filtrelemePriceRangeButonu;
 
 
 

@@ -260,4 +260,62 @@ public class HomeSteps {
         Assert.assertTrue(homePage.serviceButonu.isDisplayed());
 
     }
+
+    @And("Gidilen sayfada filtreleme butonuna tiklanir")
+    public void gidilenSayfadaFiltrelemeButonunaTiklanir() {
+
+        ReusableMethods.bekle(2000);
+        homePage.filtrelemeButonu.click();
+        ReusableMethods.bekle(2000);
+
+    }
+
+    @Then("Kullanici Location butonunun gorunur ve aktif oldugunu dogrular")
+    public void kullaniciLocationButonununGorunurVeAktifOldugunuDogrular() {
+
+        Assert.assertTrue(homePage.filtrelemeLocationButonu.isDisplayed());
+        Assert.assertTrue(homePage.filtrelemeLocationButonu.isEnabled());
+
+    }
+
+    @Then("Kullanici Sort By butonunun gorunur ve aktif oldugunu dogrular")
+    public void kullaniciSortByButonununGorunurVeAktifOldugunuDogrular() {
+
+        Assert.assertTrue(homePage.filtrelemeSortByButonu.isDisplayed());
+        Assert.assertTrue(homePage.filtrelemeSortByButonu.isEnabled());
+
+
+    }
+
+    @Then("Kullanici Keyword butonunun gorunur ve aktif oldugunu dogrular")
+    public void kullaniciKeywordButonununGorunurVeAktifOldugunuDogrular() {
+
+        Assert.assertTrue(homePage.filtrelemeKeywordButonu.isDisplayed());
+        Assert.assertTrue(homePage.filtrelemeKeywordButonu.isEnabled());
+
+    }
+
+    @Then("Kullanici Categories butonunun gorunur ve aktif oldugunu dogrular")
+    public void kullaniciCategoriesButonununGorunurVeAktifOldugunuDogrular() {
+
+        Assert.assertTrue(homePage.filtrelemeCategoriesButonu.isDisplayed());
+        Assert.assertTrue(homePage.filtrelemeCategoriesButonu.isEnabled());
+
+    }
+
+    @Then("Kullanici Sub Category butonunun gorunur ve aktif oldugunu dogrular")
+    public void kullaniciSubCategoryButonununGorunurVeAktifOldugunuDogrular() {
+
+        Assert.assertTrue(homePage.filtrelemeSubCategoryButonu.isDisplayed());
+        Assert.assertTrue(homePage.filtrelemeSubCategoryButonu.isEnabled());
+
+    }
+
+    @Then("Kullanici Price Range butonunun gorunur ve aktif oldugunu dogrular")
+    public void kullaniciPriceRangeButonununGorunurVeAktifOldugunuDogrular() {
+
+        Assert.assertTrue(homePage.filtrelemePriceRangeButonu.isDisplayed());
+        Assert.assertTrue(homePage.filtrelemePriceRangeButonu.isEnabled());
+
+    }
 }

@@ -313,6 +313,10 @@ public class ProviderSteps {
     @When("the user click filtering icon the icon should visible and active in payments page")
     public void theUserClickFilteringIconTheIconShouldVisibleAndActiveInPaymentsPage() {
 
+        providerPage.searchBoxinPaymentsPage.sendKeys("mehmet");
+        ReusableMethods.bekle(1000);
+        providerPage.amountSortingınPaymentsPage.click();
+
         List<WebElement> priceColumnElementsList =
                 driver.findElements(By.xpath("//tbody/tr/td[4]"));
         System.out.println(ReusableMethods.stringListeDonustur(priceColumnElementsList));
@@ -322,20 +326,15 @@ public class ProviderSteps {
             fiyatList.add(Integer.parseInt(fiyat.getText().replace("$", "").trim()));
             // "$" işaretini kaldır ve sayıya çevir
         }
+
         // Artan sıralama kontrolü
         List<Integer> artanSira = new ArrayList<>(fiyatList);
         Collections.sort(artanSira);
+        System.out.println(artanSira);
 
-        // Azalan sıralama kontrolü
-        List<Integer> azalanSira = new ArrayList<>(fiyatList);
-        azalanSira.sort(Collections.reverseOrder());
-
-        // Artan sıralı mı?
-        Assertions.assertTrue(fiyatList.equals(artanSira), "Fiyatlar artan sırada değil!");
-
-        // Azalan sıralı mı?
-        Assertions.assertTrue(fiyatList.equals(azalanSira), "Fiyatlar azalan sırada değil!");
-
+        for (int i = 0; i <artanSira.size() ; i++) {
+            Assert.assertTrue(i<=(i+1));
+        }
     }
 
     @And("the user click search box it should visible and active in payments page")

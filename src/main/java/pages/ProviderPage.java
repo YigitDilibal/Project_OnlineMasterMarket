@@ -105,5 +105,8 @@ public class ProviderPage extends BasePage{
     @FindBy(xpath = "//*[@type='search']")
     public WebElement searchBoxinPaymentsPage;
 
+    @FindBy(xpath = "(//*[@class='sorting'])[4]")
+    public WebElement amountSortingınPaymentsPage;
+
 
 }

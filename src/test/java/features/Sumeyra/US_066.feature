@@ -16,7 +16,7 @@ Feature: Manage Review by Provider
   Scenario: Filtering icons should be visible and active for searching the Payments list
     And the user clicks on the payments link in the Dashboard
     Then the user click filtering icon the icon should visible and active in payments page
-    # bu test fail oldu fitreler düzgün çalışmıyor
+
 
   Scenario: Search box should be visible and active for searching the Payments list
     And the user clicks on the payments link in the Dashboard

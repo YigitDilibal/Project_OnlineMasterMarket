@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
@@ -14,9 +15,13 @@ import pages.BasePage;
 import pages.HomePage;
 import pages.ProviderPage;
 import pages.UserPage;
+import utils.JSUtilities;
 import utils.ReusableMethods;
 import config.DataReader;
 import io.cucumber.java.en.And;
+
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ProviderSteps {
@@ -273,6 +278,74 @@ public class ProviderSteps {
         Assert.assertTrue(satirElementleriList.size()>1);
 
 
+    }
+    @Then("the user verifies that the payments link in the Dashboard menu is visible and active")
+    public void theUserVerifiesThatThePaymentsLinkInTheDashboardMenuIsVisibleAndActive() {
+        JSUtilities.scrollToElement(driver,providerPage.paymentLinkinDashbordPage);
+        Assert.assertTrue(providerPage.paymentLinkinDashbordPage.isDisplayed());
+        Assert.assertTrue(providerPage.paymentLinkinDashbordPage.isEnabled());
+
+    }
+
+    @And("the user clicks on the payments link in the Dashboard")
+    public void theUserClicksOnThePaymentsLinkInTheDashboard() {
+        ReusableMethods.scrollDown();
+        ReusableMethods.bekle(1000);
+        providerPage.paymentLinkinDashbordPage.click();
+        ReusableMethods.bekle(1000);
+        ReusableMethods.scrollUp();
+
+    }
+
+    @Then("the user verifies that list of customers placing in orders and visible in payments page")
+    public void theUserVerifiesThatListOfCustomersPlacingInOrdersAndVisibleInPaymentsPage() {
+
+        List<WebElement> costumerColumnElementsList =
+                driver.findElements(By.xpath("//table//tr/td[2]"));
+        List<String> costumerNamesList = ReusableMethods.stringListeDonustur(costumerColumnElementsList);
+        System.out.println(costumerNamesList);
+        Assert.assertFalse(costumerNamesList.isEmpty());
+
+
+
+    }
+
+    @When("the user click filtering icon the icon should visible and active in payments page")
+    public void theUserClickFilteringIconTheIconShouldVisibleAndActiveInPaymentsPage() {
+
+        List<WebElement> priceColumnElementsList =
+                driver.findElements(By.xpath("//tbody/tr/td[4]"));
+        System.out.println(ReusableMethods.stringListeDonustur(priceColumnElementsList));
+
+        List<Integer> fiyatList = new ArrayList<>();
+        for (WebElement fiyat : priceColumnElementsList) {
+            fiyatList.add(Integer.parseInt(fiyat.getText().replace("$", "").trim()));
+            // "$" işaretini kaldır ve sayıya çevir
+        }
+        // Artan sıralama kontrolü
+        List<Integer> artanSira = new ArrayList<>(fiyatList);
+        Collections.sort(artanSira);
+
+        // Azalan sıralama kontrolü
+        List<Integer> azalanSira = new ArrayList<>(fiyatList);
+        azalanSira.sort(Collections.reverseOrder());
+
+        // Artan sıralı mı?
+        Assertions.assertTrue(fiyatList.equals(artanSira), "Fiyatlar artan sırada değil!");
+
+        // Azalan sıralı mı?
+        Assertions.assertTrue(fiyatList.equals(azalanSira), "Fiyatlar azalan sırada değil!");
+
+    }
+
+    @And("the user click search box it should visible and active in payments page")
+    public void theUserClickSearchBoxItShouldVisibleAndActiveInPaymentsPage() {
+        Assert.assertTrue(providerPage.searchBoxinPaymentsPage.isDisplayed());
+        Assert.assertTrue(providerPage.searchBoxinPaymentsPage.isEnabled());
+        providerPage.searchBoxinPaymentsPage.sendKeys("seda budak");
+        WebElement arananIsim = driver.findElement(By.xpath("//tr/td[text()=\" seda budak\t\t\t\t\t\t\t\t\t\t\t\t\"]"));
+
+        Assert.assertTrue(arananIsim.isDisplayed());
     }
 
 

@@ -49,6 +49,23 @@ Feature: US_018
     Then Kullanici Washing Machine Repair (Service Call Fee) servisinin goruntulendigini ve aktif oldugunu dogrular
     Then Kullanici Oven Repair servisinin goruntulendigini ve aktif oldugunu dogrular
 
+  Scenario: Shops ikonuna tıklandıgında ilgili servisler görüntülenmeli ve Servis kartında Visit Store ikonu gorunur ve aktif olmalidir.
+            İstenilen servis secildiginde (Shop Detail,Shop Availability,Services) servis adedi ve genel bilgilere erişilebilmelidir.
+
+    Given the user navigates to the "url" address
+    Then Siteye erişebildiğini doğrular.
+    Then Kullanici anasayfada bulunan Shops basliginin üstüne gelir
+    Then Kullanici Shops & Services butonunun gorunur oldugunu dogrular
+    Then Kullanici Products butonunun gorunur oldugunu dogrular
+    Then Kullanici Shops & Service butonuna tiklar
+    Then Kullanici gidilen sayfada Visit Store ikonunun gorunur ve aktif oldugunu dogrular
+    Then Kullanici Miracle Maid servisini secer
+    Then Kullanici gidilen sayfada servis adedeni ve genel bilgilerin goruldugunu dogrular
+
+
+
+
+
 
 
 

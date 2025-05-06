@@ -74,6 +74,9 @@ public class LoginPage extends BasePage {
 	@FindBy (xpath = "//*[@class='feather-bell noti-icon']")
 	public WebElement siteBildirimSimgesi;
 
+	@FindBy(xpath = "//*[@class='nav-item']")
+	public WebElement homeLoginButton;
+
 
 
 }

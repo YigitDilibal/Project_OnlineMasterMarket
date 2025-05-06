@@ -105,25 +105,59 @@ public class HomePage extends BasePage {
     @FindBy (xpath = "(//img[@alt='Service Image'])[7]")
     public WebElement ovenRepair;
 
+    @FindBy(xpath = "//*[@class='breadcrumb-item']")
+    public WebElement homeText;
 
+    @FindBy(xpath = "//*[@class='banner-head']/h3")
+    public WebElement homeVerification;
 
+    @FindBy(xpath = "//*[@id='services-tab']")
+    public WebElement serviceButton;
 
+    @FindBy(xpath = "(//*[@class='counts'])[1]")
+    public WebElement shopsFoundText;
 
+    @FindBy(xpath = "(//*[@class='counts'])[2]")
+    public WebElement serviceFoundText;
 
+    @FindBy(xpath = "(//*[@class='fas fa-chevron-down'])[2]")
+    public WebElement categoriesDropDownButton;
 
+    @FindBy(xpath = "((//*[@class='submenu'])[2]/li)[6]")
+    public WebElement categoriesHomeServicesButton;
 
+    @FindBy(xpath = "((//*[@class='submenu'])[2]/li)[4]")
+    public WebElement categoriesEventsButton;
 
+    @FindBy(xpath = "((//*[@class='submenu'])[2]/li)[5]")
+    public WebElement categoriesPersonalServicesButton;
 
+    @FindBy(xpath = "((//*[@class='submenu'])[2]/li)[1]")
+    public WebElement categoriesBusinessServicesButton;
 
+    @FindBy(xpath = "((//*[@class='submenu'])[2]/li)[2]")
+    public WebElement categoriesRepairsButton;
 
+    @FindBy(xpath = "((//*[@class='submenu'])[2]/li)[3]")
+    public WebElement categoriesMovingButton;
 
+    @FindBy(xpath = "//*[@class='user-img']")
+    public WebElement profileIcon;
 
+    @FindBy(xpath = "(//*[@class='dropdown-item'])[4]")
+    public WebElement bookServiceButton;
 
+    @FindBy(xpath = "(//*[@class='featute-info'])[1]/h4/a")
+    public WebElement deepCleaningServiceTitle;
 
+    @FindBy(xpath = " //*[@id='go_book_service']")
+    public WebElement deepCleaningBookServiceButton;
 
+    @FindBy(xpath = "(//*[@class='dropdown-item'])[8]")
+    public WebElement logoutButton;
 
-
-
+    @FindBy(xpath = "//*[@class='user-img']")
+    public WebElement sagUstProfilIconu;
 
 
 }

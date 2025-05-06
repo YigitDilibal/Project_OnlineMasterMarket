@@ -147,6 +147,59 @@ public class UserPage extends BasePage {
     @FindBy(xpath = "//*[@class='swal-button swal-button--confirm']")
     public WebElement PaymentSuccessOkayButton;
 
+    @FindBy(xpath = "(//*[@class='btn btn-sm bg-success-light'])[1]")
+    public WebElement invoicesExportButton;
+
+    @FindBy(xpath = "//*[@id='from_date']")
+    public WebElement fromDateBox;
+
+    @FindBy(xpath = "//*[@id='to_date']")
+    public WebElement toDateBox;
+
+    @FindBy(xpath = "(//*[@class='ui-state-default'])[7]")
+    public WebElement fromDateEighthDay;
+
+    @FindBy(xpath = "(//*[@class='ui-state-default'])[13]")
+    public WebElement toDateFourteenthDay;
+
+    @FindBy(xpath = "(//*[@class='fa fa-search'])[1]")
+    public WebElement invoicesSearchButton;
+
+    @FindBy(xpath = "(//*[@class='fa fa-times'])[1]")
+    public WebElement invoicesDeleteButton;
+
+    @FindBy(xpath = "(//*[text()='Booking Date'])[1]")
+    public WebElement invoicesBookingDateVerification;
+
+    @FindBy(xpath = "//*[@class='breadcrumb-item']")
+    public WebElement homeText;
+
+    @FindBy(xpath = "//*[@class='banner-head']/h3")
+    public WebElement homeVerification;
+
+    @FindBy(xpath = "//*[@class='far fa-calendar-alt']")
+    public WebElement dashboardInvoices;
+
+    @FindBy(xpath = "(//*[@class='breadcrumb-title'])[1]")
+    public WebElement dashboardInvoicesTitle;
+
+    @FindBy(xpath = "(//*[@class='breadcrumb-title'])/h2")
+    public WebElement dashboardReviewsTitle;
+
+    @FindBy(xpath = "(//*[@class='nav-item'])[2]")
+    public WebElement dashboardReviewsIcon;
+
+    @FindBy(xpath = "((//*[@class='review-info'])/p)[1]")
+    public WebElement reviewsFirstComment;
+
+    @FindBy(xpath = "(//*[@class='review-date'])[1]")
+    public WebElement reviewsFirstDate;
+
+    @FindBy(xpath = "(//*[@class='rating'])[1]")
+    public WebElement reviewsFirstRating;
+
+
+
 
 
 

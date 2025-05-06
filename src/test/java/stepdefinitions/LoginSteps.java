@@ -168,4 +168,10 @@ public class LoginSteps {
 		Assert.assertTrue(loginPage.siteBildirimSimgesi.isDisplayed());
 
 	}
+
+	@When("kullanıcı, {string} kullanıcı adı ve {string} şifresi ile giriş yapar")
+	public void kullanıcı_kullanıcı_adı_ve_şifresi_ile_giriş_yapar(String email, String pass) {
+
+		loginPage.login(email,pass);
+	}
 }

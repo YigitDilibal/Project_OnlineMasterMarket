@@ -4,6 +4,7 @@ import config.DataReader;
 import io.cucumber.java.bs.A;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +15,8 @@ import pages.HomePage;
 import pages.UserPage;
 import utils.JSUtilities;
 import utils.ReusableMethods;
+
+import java.util.List;
 
 public class UserSteps {
 
@@ -534,6 +537,174 @@ public class UserSteps {
         ReusableMethods.bekle(1000);
         basePage.click(userPage.PaymentSuccessOkayButton);
         ReusableMethods.bekle(2000);
+    }
+
+    @Then("Kullanıcı Invoices'a tıkladığında tamamlanmış rezervasyon faturaları görüntülenir")
+    public void kullanıcı_butonuna_tıklar() {
+
+        ReusableMethods.bekle(1000);
+        userPage.dashboardInvoices.click();
+    }
+
+    @When("Invoices sayfasına gittiğini doğrular")
+    public void sayfasına_gittiğini_doğrular() {
+
+        ReusableMethods.bekle(1000);
+        Assert.assertTrue(userPage.dashboardInvoicesTitle.isDisplayed());
+    }
+
+    @When("Kullanıcı, listelenen faturalardan Export butonuna tıklar")
+    public void kullanıcı_listelenen_faturalardan_export_butonuna_tıklar() {
+
+        ReusableMethods.bekle(1000);
+        userPage.invoicesExportButton.click();
+        ReusableMethods.bekle(1000);
+    }
+
+    @Then("Sistem, kullanıcının ilgili hizmetin detay sayfasına yönlendirildiğini doğrular")
+    public void sistem_kullanıcının_ilgili_hizmetin_detay_sayfasına_yönlendirildiğini_doğrular() {
+
+        driver.get(config.ConfigReader.getProperty("exportUrl"));
+        String expectedUrl = "https://qa.onlinemastermarket.com/user/dashboard/export_invoice/310";
+        String actualUrl = driver.getCurrentUrl();
+
+        Assert.assertEquals(expectedUrl,actualUrl);
+    }
+
+    @Then("Search alanı görünür ve aktif olmalı")
+    public void search_alanı_görünür_ve_aktif_olmalı() {
+
+        Assert.assertTrue(userPage.invoicesSearchButton.isDisplayed());
+        Assert.assertTrue(userPage.invoicesSearchButton.isEnabled());
+    }
+
+    @Then("Çarpı butonu görünür ve aktif olmalı")
+    public void çarpı_butonu_görünür_ve_aktif_olmalı() {
+
+        Assert.assertTrue(userPage.invoicesDeleteButton.isDisplayed());
+        Assert.assertTrue(userPage.invoicesDeleteButton.isEnabled());
+    }
+
+    @When("Kullanıcı tarih aralığı girebilmeli")
+    public void kullanıcı_tarih_aralığı_girebilmeli() {
+
+        userPage.fromDateBox.click();
+        userPage.fromDateEighthDay.click();
+        userPage.toDateBox.click();
+        userPage.toDateFourteenthDay.click();
+        userPage.invoicesSearchButton.click();
+        ReusableMethods.bekle(1000);
+    }
+
+    @Then("sadece seçilen tarih aralığındaki faturalar listelenmeli")
+    public void sadece_seçilen_tarih_aralığındaki_faturalar_listelenmeli() {
+
+        ReusableMethods.bekle(1000);
+        Assertions.assertTrue(userPage.invoicesBookingDateVerification.isDisplayed());
+    }
+
+    @When("kullanıcı Çarpı butonuna tıklar tüm faturalar yeniden listelenmeli")
+    public void kullanıcı_çarpı_butonuna_tıklar_tüm_faturalar_yeniden_listelenmeli() {
+
+        ReusableMethods.bekle(1000);
+        userPage.invoicesDeleteButton.click();
+
+        ReusableMethods.bekle(1000);
+        Assertions.assertTrue(userPage.invoicesBookingDateVerification.isDisplayed());
+    }
+
+    @Then("From Date ve To Date kutuları görünür ve aktif olmalı")
+    public void from_date_ve_to_date_kutuları_görünür_ve_aktif_olmalı() {
+
+        Assert.assertTrue(userPage.fromDateBox.isDisplayed());
+        Assert.assertTrue(userPage.fromDateBox.isEnabled());
+
+        Assert.assertTrue(userPage.toDateBox.isDisplayed());
+        Assert.assertTrue(userPage.toDateBox.isEnabled());
+    }
+
+    @When("kullanıcı seçtiği tarihi From Date kutusuna girer")
+    public void kullanıcı_seçtiği_tarihi_from_date_kutusuna_girer() {
+
+        userPage.fromDateBox.click();
+        userPage.fromDateEighthDay.click();
+    }
+
+    @When("kullanıcı seçtiği tarihi To Date kutusuna girer")
+    public void kullanıcı_seçtiği_tarihi_to_date_kutusuna_girer() {
+
+        userPage.toDateBox.click();
+        userPage.toDateFourteenthDay.click();
+    }
+
+    @When("kullanıcı Search butonuna tıklar")
+    public void kullanıcı_search_butonuna_tıklar() {
+
+        userPage.invoicesSearchButton.click();
+    }
+
+    @Then("sadece seçtiği tarihler arasında tamamlanmış rezervasyonlara ait faturalar listelendiğini doğrular")
+    public void sadece_seçtiği_tarihler_arasında_tamamlanmış_rezervasyonlara_ait_faturalar_listelenmelidir() {
+
+        ReusableMethods.bekle(1000);
+        Assertions.assertTrue(userPage.invoicesBookingDateVerification.isDisplayed());
+    }
+
+    @When("kullanıcı Home butonuna tıklar")
+    public void kullanıcı_home_butonuna_tıklar() {
+
+        homePage.homeText.click();
+    }
+
+    @Then("kullanıcı Home sayfasına geçiş yaptığını test eder")
+    public void kullanıcı_home_sayfasına_geçiş_yaptığını_test_eder() {
+
+        ReusableMethods.bekle(1000);
+        Assertions.assertTrue(homePage.homeVerification.isDisplayed());
+    }
+
+    @Then("kullanıcı Dashboard sayfasına yönlendirilmeli")
+    public void kullanıcı_dashboard_sayfasına_yönlendirilmeli() {
+
+        basePage.click(userPage.sagUstProfilButonu);
+        basePage.click(userPage.dropdownDashboardButonu);
+    }
+
+    @Then("Reviews ikonu görünür ve aktif olmalıdır")
+    public void reviews_ikonu_görünür_ve_aktif_olmalıdır() {
+
+        Assert.assertTrue(userPage.dashboardReviewsIcon.isDisplayed());
+        Assert.assertTrue(userPage.dashboardReviewsIcon.isEnabled());
+    }
+
+    @Then("Reviews ikonuna tıklandığında ilgili sayfaya gittiğini test eder")
+    public void reviews_ikonuna_tıklandığında_ilgili_sayfaya_gittiğini_test_eder() {
+
+        userPage.dashboardReviewsIcon.click();
+        Assert.assertTrue(userPage.dashboardReviewsTitle.isDisplayed());
+    }
+
+    @Then("Reviews ikonuna basar")
+    public void reviews_ikonuna_basar() {
+
+        userPage.dashboardReviewsIcon.click();
+    }
+
+    @Then("Her bir yorum için yorum metni, tarih ve puan görünür olmalı")
+    public void her_bir_yorum_için_yorum_metni_tarih_ve_puan_görünür_olmalı() {
+
+        List<WebElement> yorumlar = driver.findElements(By.xpath("((//*[@class='review-info'])/p)[1]"));
+        Assert.assertFalse("Hiç yorum bulunamadı.", yorumlar.isEmpty());
+
+        for (WebElement yorum : yorumlar) {
+            WebElement metin =yorum.findElement(By.xpath("(//*[@class='review-info'])[1]"));
+            WebElement tarih = yorum.findElement(By.xpath("(//*[@class='review-date'])[1]"));
+            WebElement puan = yorum.findElement(By.xpath("(//*[@class='rating'])[1]"));
+
+            Assert.assertTrue(metin.isDisplayed());
+            Assert.assertTrue(tarih.isDisplayed());
+            Assert.assertTrue(puan.isDisplayed());
+        }
     }
 
 

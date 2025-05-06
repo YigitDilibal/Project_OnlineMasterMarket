@@ -7,6 +7,7 @@ import io.cucumber.java.en_old.Ac;
 import org.junit.Assert;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.BasePage;
 import pages.HomePage;
@@ -411,7 +412,228 @@ public class HomeSteps {
         String beklenenUrl = "https://qa.onlinemastermarket.com/service-preview/oven-repair?sid=f7177163c833dff4b38fc8d2872f1ec6";
         String gidilenUrl = driver.getCurrentUrl();
         Assert.assertEquals(beklenenUrl,gidilenUrl);
+    }
+
+    @Then("üst barda Shops menü başlığı görünür ve aktif olmalı")
+    public void üst_barda_shops_menü_başlığı_görünür_ve_aktif_olmalı() {
+
+        Assert.assertTrue(homePage.anasayfaShopsButonu.isDisplayed());
+        Assert.assertTrue(homePage.anasayfaShopsButonu.isEnabled());
+    }
+
+    @When("kullanıcı Shops menü başlığına tıklar")
+    public void kullanıcı_shops_menü_başlığına_tıklar() {
+
+        homePage.anasayfaShopsButonu.click();
+    }
+
+    @Then("kullanıcı şirketler ve şirketlere ait hizmetlerin listelendiği sayfaya yönlendirildiği doğrulanmalı")
+    public void kullanıcı_şirketler_ve_şirketlere_ait_hizmetlerin_listelendiği_sayfaya_yönlendirildiği_doğrulanmalı() {
+
+        Assert.assertTrue(homePage.shopsFoundText.isDisplayed());
+
+        homePage.serviceButton.click();
+
+        Assert.assertTrue(homePage.serviceFoundText.isDisplayed());
+    }
+
+    @Given("kullanıcı {string} adresine gider")
+    public void kullanıcı_url_adresine_gider(String url) {
+
+        driver.get(config.ConfigReader.getProperty("url"));
+    }
+
+    @When("Sayfanın üst barındaki {string} menüsü tıklanır")
+    public void sayfanın_üst_barındaki_menüsü_tıklanır(String category) {
+
+        homePage.categoriesDropDownButton.click();
+    }
+
+    @Then("{string} aşağıdaki kategoriler görünür olmalıdır:")
+    public void aşağıdaki_kategoriler_görünür_olmalıdır(String titleSummary) {
+
+        WebElement Title = null;
+
+        switch (titleSummary){
+            case "BusinessServices":
+                Title = homePage.categoriesBusinessServicesButton;
+                Assert.assertTrue(Title.isDisplayed());
+                break;
+            case "Repairs":
+                Title = homePage.categoriesRepairsButton;
+                Assert.assertTrue(Title.isDisplayed());
+                break;
+            case "Moving":
+                Title = homePage.categoriesMovingButton;
+                Assert.assertTrue(Title.isDisplayed());
+                break;
+            case "Events":
+                Title = homePage.categoriesEventsButton;
+                Assert.assertTrue(Title.isDisplayed());
+                break;
+            case "PersonalServices":
+                Title = homePage.categoriesPersonalServicesButton;
+                Assert.assertTrue(Title.isDisplayed());
+                break;
+            case "HomeServices":
+                Title = homePage.categoriesHomeServicesButton;
+                Assert.assertTrue(Title.isDisplayed());
+                break;
+        }
+    }
+
+    @Then("{string} her bir kategori bağlantısı tıklanabilir olmalı ve doğru sayfaya yönlendirmelidir:")
+    public void her_bir_kategori_bağlantısı_tıklanabilir_olmalı_ve_doğru_sayfaya_yönlendirmelidir(String titleSummary) {
+
+        WebElement Title = null;
 
 
+        switch (titleSummary){
+            case "BusinessServices":
+                Title = homePage.categoriesBusinessServicesButton;
+                Assert.assertTrue(Title.isEnabled());
+                homePage.categoriesBusinessServicesButton.click();
+
+                driver.get(config.DataReader.getData("BusinessService"));
+                String expectedBusinessUrl = "https://qa.onlinemastermarket.com/search/business-services";
+                String actualBusinessUrl = driver.getCurrentUrl();
+
+                Assert.assertEquals(expectedBusinessUrl,actualBusinessUrl);
+                break;
+
+            case "Repairs":
+                Title = homePage.categoriesRepairsButton;
+                Assert.assertTrue(Title.isEnabled());
+                homePage.categoriesRepairsButton.click();
+
+                driver.get(config.DataReader.getData("Repairs"));
+                String expectedRepairsUrl = "https://qa.onlinemastermarket.com/search/repairs";
+                String actualRepairsUrl = driver.getCurrentUrl();
+
+                Assert.assertEquals(expectedRepairsUrl,actualRepairsUrl);
+                break;
+
+            case "Moving":
+                Title = homePage.categoriesMovingButton;
+                Assert.assertTrue(Title.isEnabled());
+                homePage.categoriesMovingButton.click();
+
+                driver.get(config.DataReader.getData("Moving"));
+                String expectedMovingUrl = "https://qa.onlinemastermarket.com/search/moving";
+                String actualMovingUrl = driver.getCurrentUrl();
+
+                Assert.assertEquals(expectedMovingUrl,actualMovingUrl);
+                break;
+
+            case "Events":
+                Title = homePage.categoriesEventsButton;
+                Assert.assertTrue(Title.isEnabled());
+                homePage.categoriesEventsButton.click();
+
+                driver.get(config.DataReader.getData("Events"));
+                String expectedEventsUrl = "https://qa.onlinemastermarket.com/search/events";
+                String actualEventsUrl = driver.getCurrentUrl();
+
+                Assert.assertEquals(expectedEventsUrl,actualEventsUrl);
+                break;
+
+            case "PersonalServices":
+                Title = homePage.categoriesPersonalServicesButton;
+                Assert.assertTrue(Title.isEnabled());
+                homePage.categoriesPersonalServicesButton.click();
+
+                driver.get(config.DataReader.getData("PersonalServices"));
+                String expectedPersonalUrl ="https://qa.onlinemastermarket.com/search/personal-services";
+                String actualPersonalUrl = driver.getCurrentUrl();
+
+                Assert.assertEquals(expectedPersonalUrl,actualPersonalUrl);
+                break;
+
+            case "HomeServices":
+                Title = homePage.categoriesHomeServicesButton;
+                Assert.assertTrue(Title.isEnabled());
+                homePage.categoriesHomeServicesButton.click();
+
+                driver.get(config.DataReader.getData("HomeServices"));
+                String expectedHomeUrl = "https://qa.onlinemastermarket.com/search/home-services";
+                String actualHomeUrl = driver.getCurrentUrl();
+
+                Assert.assertEquals(expectedHomeUrl,actualHomeUrl);
+                break;
+        }
+
+    }
+
+    @When("Profil ikonuna tıklanır")
+    public void profil_ikonuna_tıklanır() {
+
+        homePage.profileIcon.click();
+    }
+
+    @Then("Book Service ikonu görünür ve aktif olmalıdır")
+    public void book_service_ikonu_görünür_ve_aktif_olmalıdır() {
+
+        Assert.assertTrue(homePage.bookServiceButton.isEnabled());
+        Assert.assertTrue(homePage.bookServiceButton.isDisplayed());
+    }
+
+    @When("Book Service ikonuna tıklanır")
+    public void book_service_ikonuna_tıklanır() {
+
+        homePage.bookServiceButton.click();
+    }
+
+    @Then("Kullanıcı, şirketler ve hizmetleri sayfasına yönlendirilmelidir.")
+    public void kullanıcı_şirketler_ve_hizmetleri_sayfasına_yönlendirilmelidir() {
+
+        driver.get(config.DataReader.getData("AllServices"));
+        String expectedAllServicesUrl = "https://qa.onlinemastermarket.com/all-services";
+        String actualAllServicesUrl = driver.getCurrentUrl();
+
+        Assert.assertEquals(expectedAllServicesUrl,actualAllServicesUrl);
+    }
+
+    @When("Service ikonuna tıklanır")
+    public void service_ikonuna_tıklanır() {
+
+        homePage.serviceButton.click();
+    }
+
+    @When("Deep Cleanin Service hizmetine tıklanır")
+    public void deep_cleanin_service_hizmetine_tıklanır() {
+
+        homePage.deepCleaningServiceTitle.click();
+    }
+
+    @Then("Açılan Deep Cleanin Service sayfasında Book Service ikonu görünür ve aktif olmalıdır")
+    public void açılan_deep_cleanin_service_sayfasında_book_service_ikonu_görünür_ve_aktif_olmalıdır() {
+
+        Assert.assertTrue(homePage.deepCleaningBookServiceButton.isEnabled());
+        Assert.assertTrue(homePage.deepCleaningBookServiceButton.isDisplayed());
+    }
+
+    @Then("kullanıcı profil ikonuna tıklar")
+    public void kullanıcı_profil_ikonuna_tıklar() {
+
+        homePage.sagUstProfilIconu.click();
+    }
+
+    @Then("logout ikonu görünür ve tıklanırbilir olmalı")
+    public void logout_ikonu_görünür_ve_tıklanırbilir_olmalı() {
+
+        Assert.assertTrue(homePage.logoutButton.isDisplayed());
+        Assert.assertTrue(homePage.logoutButton.isEnabled());
+    }
+
+    @Then("logout ikonuna tıklar")
+    public void logout_ikonuna_tıklar() {
+
+        homePage.logoutButton.click();
+    }
+
+    @Then("login butonu görünürlüğü ile çıkış doğrulanır")
+    public void login_butonu_görünürlüğü_ile_çıkış_doğrulanır() {
+
+        Assert.assertTrue(homePage.anasayfaLoginButonu.isDisplayed());
     }
 }

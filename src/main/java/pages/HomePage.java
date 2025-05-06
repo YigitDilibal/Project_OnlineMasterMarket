@@ -114,7 +114,7 @@ public class HomePage extends BasePage {
     @FindBy (xpath = "(//*[.='Visit Store '])[1]")
     public WebElement visitStoreButonu;
 
-    @FindBy (xpath = "Shop Details")
+    @FindBy (xpath = "//*[.='Shop Details']")
     public WebElement genelBilgiler;
 
     @FindBy (xpath = "//*[.='2 Services']")

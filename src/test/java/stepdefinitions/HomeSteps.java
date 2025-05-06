@@ -414,4 +414,60 @@ public class HomeSteps {
 
 
     }
+
+    @Then("Kullanici anasayfada bulunan Shops basliginin üstüne gelir")
+    public void kullaniciAnasayfadaBulunanShopsBasligininÜstüneGelir() {
+
+        Actions actions = new Actions(driver);
+        actions.moveToElement(homePage.anasayfaShopsButonu).perform();
+        ReusableMethods.bekle(1500);
+
+    }
+
+
+    @Then("Kullanici Shops & Services butonunun gorunur oldugunu dogrular")
+    public void kullaniciShopsServicesButonununGorunurOldugunuDogrular() {
+
+        Assert.assertTrue(homePage.anasayfaShopsAndServicesButonu.isDisplayed());
+
+    }
+
+    @Then("Kullanici Products butonunun gorunur oldugunu dogrular")
+    public void kullaniciProductsButonununGorunurOldugunuDogrular() {
+
+        Assert.assertTrue(homePage.anasayfaProductsButonu.isDisplayed());
+
+    }
+
+    @Then("Kullanici Shops & Service butonuna tiklar")
+    public void kullaniciShopsServiceButonunaTiklar() {
+
+        homePage.anasayfaShopsAndServicesButonu.click();
+
+    }
+
+    @Then("Kullanici gidilen sayfada Visit Store ikonunun gorunur ve aktif oldugunu dogrular")
+    public void kullaniciGidilenSayfadaVisitStoreIkonununGorunurVeAktifOldugunuDogrular() {
+
+        Assert.assertTrue(homePage.visitStoreButonu.isDisplayed());
+        Assert.assertTrue(homePage.visitStoreButonu.isEnabled());
+
+    }
+
+    @Then("Kullanici Miracle Maid servisini secer")
+    public void kullaniciMiracleMaidServisiniSecer() {
+
+        homePage.visitStoreButonu.click();
+
+    }
+
+
+
+    @Then("Kullanici gidilen sayfada servis adedeni ve genel bilgilerin goruldugunu dogrular")
+    public void kullaniciGidilenSayfadaServisAdedeniVeGenelBilgilerinGoruldugunuDogrular() {
+
+        ReusableMethods.bekle(3000);
+        Assert.assertTrue(homePage.servisAdedi.isDisplayed());
+        Assert.assertTrue(homePage.genelBilgiler.isDisplayed());
+    }
 }

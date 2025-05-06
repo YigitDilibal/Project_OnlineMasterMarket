@@ -105,6 +105,22 @@ public class HomePage extends BasePage {
     @FindBy (xpath = "(//img[@alt='Service Image'])[7]")
     public WebElement ovenRepair;
 
+    @FindBy (xpath = "//a[.='Shops & Services']")
+    public WebElement anasayfaShopsAndServicesButonu;
+
+    @FindBy (xpath = "//a[.='Products']")
+    public WebElement anasayfaProductsButonu;
+
+    @FindBy (xpath = "(//*[.='Visit Store '])[1]")
+    public WebElement visitStoreButonu;
+
+    @FindBy (xpath = "Shop Details")
+    public WebElement genelBilgiler;
+
+    @FindBy (xpath = "//*[.='2 Services']")
+    public WebElement servisAdedi;
+
+
 
 
 

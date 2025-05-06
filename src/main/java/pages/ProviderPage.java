@@ -78,16 +78,16 @@ public class ProviderPage extends BasePage{
     @FindBy(xpath = "//*[@class='dropdown-item'])[9]")
     public WebElement chatIkonu;
 
-    @FindBy(id = "//*[@id='search_chat_list']")
+    @FindBy(xpath = "//*[@id='search_chat_list']")
     public WebElement kisiAramaCubugu;
 
-    @FindBy(id= "//*[@id='chat-message']")
+    @FindBy(xpath = "//*[@id='chat-message']")
     public WebElement chatTextBoxButon;
 
     @FindBy(xpath= "//*[@class='user-img']")
     public WebElement profilIkonu;
 
-    @FindBy(id = "//*[@id='submit']")
+    @FindBy(xpath = "//*[@id='submit']")
     public WebElement chatSubmitButton;
 
     @FindBy(xpath = "//*[.='Dashboard']")

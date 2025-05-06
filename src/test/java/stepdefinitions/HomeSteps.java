@@ -3,9 +3,11 @@ package stepdefinitions;
 import config.ConfigReader;
 import io.cucumber.java.bs.A;
 import io.cucumber.java.en.*;
+import io.cucumber.java.en_old.Ac;
 import org.junit.Assert;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import pages.BasePage;
 import pages.HomePage;
 import utils.ReusableMethods;
@@ -17,6 +19,7 @@ public class HomeSteps {
     WebDriver driver = stepdefinitions.Hooks.getDriver();
     HomePage homePage = new HomePage(driver);
     BasePage basePage = new BasePage(driver);
+
 
     @Given("the user navigates to the {string} address")
     public void kullanici_adresine_gider(String url) {
@@ -206,10 +209,113 @@ public class HomeSteps {
         homePage.PersonalizedFitnessPrograms.click();
         Assert.assertEquals(PersonalizedFitnessProgramsUrl,driver.getCurrentUrl());
 
-
     }
 
 
+    @Then("Kullanici anasayfada bulunan Categories basliginin üstüne gelir")
+    public void kullaniciAnasayfadaBulunanCategoriesBasligininÜstüneGelir() {
+
+        Actions actions = new Actions(driver);
+        actions.moveToElement(homePage.anasayfaCategoriesButonu).perform();
+        ReusableMethods.bekle(1500);
 
 
+    }
+
+    @Then("Kullanici Repairs & Maintenance basliginin gorunur oldugunu dogrular")
+    public void kullaniciRepairsMaintenanceBasligininGorunurOldugunuDogrular() {
+
+        Assert.assertTrue(homePage.RepairsVeMaintenanceBasligi.isDisplayed());
+
+    }
+
+    @And("Kullanici Repairs & Maintenance basliginin aktif oldugunu dogrular")
+    public void kullaniciRepairsMaintenanceBasligininAktifOldugunuDogrular() {
+
+        String beklenenUrl = "https://qa.onlinemastermarket.com/search/repairs-and-maintenance";
+        String gidilenUrl = driver.getCurrentUrl();
+        Assert.assertEquals(beklenenUrl,gidilenUrl);
+
+
+    }
+
+    @Then("Kullanici Repairs & Maintenance basligina tiklar")
+    public void kullaniciRepairsMaintenanceBasliginaTiklar() {
+
+        homePage.RepairsVeMaintenanceBasligi.click();
+    }
+
+    @Then("Gidilen sayfada Shops butonunun gorunur ve aktif oldugu dogrulanir")
+    public void gidilenSayfadaShopsButonununGorunurVeAktifOlduguDogrulanir() {
+
+        Assert.assertTrue(homePage.shopsButonu.isDisplayed());
+        Assert.assertTrue(homePage.shopsButonu.isEnabled());
+    }
+
+
+    @Then("Gidilen sayfada Service butonunun gorunur ve aktif oldugu dogrulanir")
+    public void gidilenSayfadaServiceButonununGorunurVeAktifOlduguDogrulanir() {
+
+        Assert.assertTrue(homePage.serviceButonu.isEnabled());
+        Assert.assertTrue(homePage.serviceButonu.isDisplayed());
+
+    }
+
+    @And("Gidilen sayfada filtreleme butonuna tiklanir")
+    public void gidilenSayfadaFiltrelemeButonunaTiklanir() {
+
+        ReusableMethods.bekle(2000);
+        homePage.filtrelemeButonu.click();
+        ReusableMethods.bekle(2000);
+
+    }
+
+    @Then("Kullanici Location butonunun gorunur ve aktif oldugunu dogrular")
+    public void kullaniciLocationButonununGorunurVeAktifOldugunuDogrular() {
+
+        Assert.assertTrue(homePage.filtrelemeLocationButonu.isDisplayed());
+        Assert.assertTrue(homePage.filtrelemeLocationButonu.isEnabled());
+
+    }
+
+    @Then("Kullanici Sort By butonunun gorunur ve aktif oldugunu dogrular")
+    public void kullaniciSortByButonununGorunurVeAktifOldugunuDogrular() {
+
+        Assert.assertTrue(homePage.filtrelemeSortByButonu.isDisplayed());
+        Assert.assertTrue(homePage.filtrelemeSortByButonu.isEnabled());
+
+
+    }
+
+    @Then("Kullanici Keyword butonunun gorunur ve aktif oldugunu dogrular")
+    public void kullaniciKeywordButonununGorunurVeAktifOldugunuDogrular() {
+
+        Assert.assertTrue(homePage.filtrelemeKeywordButonu.isDisplayed());
+        Assert.assertTrue(homePage.filtrelemeKeywordButonu.isEnabled());
+
+    }
+
+    @Then("Kullanici Categories butonunun gorunur ve aktif oldugunu dogrular")
+    public void kullaniciCategoriesButonununGorunurVeAktifOldugunuDogrular() {
+
+        Assert.assertTrue(homePage.filtrelemeCategoriesButonu.isDisplayed());
+        Assert.assertTrue(homePage.filtrelemeCategoriesButonu.isEnabled());
+
+    }
+
+    @Then("Kullanici Sub Category butonunun gorunur ve aktif oldugunu dogrular")
+    public void kullaniciSubCategoryButonununGorunurVeAktifOldugunuDogrular() {
+
+        Assert.assertTrue(homePage.filtrelemeSubCategoryButonu.isDisplayed());
+        Assert.assertTrue(homePage.filtrelemeSubCategoryButonu.isEnabled());
+
+    }
+
+    @Then("Kullanici Price Range butonunun gorunur ve aktif oldugunu dogrular")
+    public void kullaniciPriceRangeButonununGorunurVeAktifOldugunuDogrular() {
+
+        Assert.assertTrue(homePage.filtrelemePriceRangeButonu.isDisplayed());
+        Assert.assertTrue(homePage.filtrelemePriceRangeButonu.isEnabled());
+
+    }
 }

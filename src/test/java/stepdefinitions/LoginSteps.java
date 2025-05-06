@@ -32,6 +32,7 @@ public class LoginSteps {
 	@Then("Anasayfada Login butonuna tiklar")
 	public void anasayfadaLoginButonunaTiklar() {
 
+		ReusableMethods.bekle(2500);
 		homePage.anasayfaLoginButonu.click();
 
 	}

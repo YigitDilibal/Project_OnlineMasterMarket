@@ -108,5 +108,65 @@ public class ProviderPage extends BasePage{
     @FindBy(xpath = "(//*[@class='sorting'])[4]")
     public WebElement amountSortingınPaymentsPage;
 
+    @FindBy(xpath = "(//*[@class='nav-link active'])[2]")
+    public WebElement activeServicesButton;
+
+    @FindBy(xpath = "(//*[@class='nav-link'])")
+    public WebElement inactiveServicesButton;
+
+    @FindBy(xpath = "(//*[@class='si-delete-service text-danger'])[1]")
+    public WebElement serviceInactivation;
+
+    @FindBy(xpath = "(//*[@class='btn btn-success si_accept_confirm'])")
+    public WebElement serviceInactivationConfirmation;
+
+    @FindBy(xpath = "((//*[@class='btn btn-info btn-sm'])[1]")
+    public WebElement applyOfferButton;
+
+    @FindBy(xpath = "(//*[@class='form-control number offercls'])")
+    public WebElement offerPercentageField;
+
+    @FindBy(xpath = "(//*[@class='form-control datetimepicker-start offercls'])")
+    public WebElement startDate;
+
+    @FindBy(xpath = "(//*[@class='form-control datetimepicker-end offercls'])")
+    public WebElement endDate;
+
+    @FindBy(xpath = "(//*[@class='form-control form-select offercls'])[1]")
+    public WebElement startTime;
+
+    @FindBy(xpath = "(//*[@class='form-control form-select offercls'])[2]")
+    public WebElement endTime;
+
+    @FindBy(xpath = "(//*[@class='btn btn-success'])[1]")
+    public WebElement offerSave;
+
+    @FindBy(xpath = "(//*[@class='mb-0'])[1]")
+    public WebElement serviceDetails;
+
+    @FindBy(xpath = "(//*[@class='btn btn-primary btn-lg btn-block'])")
+    public WebElement editServiceButton;
+
+    @FindBy(xpath = "(//*[@class='label-amount'])")
+    public WebElement priceInformation;
+
+    @FindBy(xpath = "(//*[@class='ser-provider-name'])")
+    public WebElement serviceProviderName;
+
+    @FindBy(xpath = "(//*[@class='card-body'])[3]")
+    public WebElement serviceAvailability;
+
+    @FindBy(xpath = "(//*[@class='service-card'])[2]")
+    public WebElement additionalServices;
+
+    @FindBy(xpath = "(//*[@class='service-card'])[3]")
+    public WebElement serviceReviews;
+
+    @FindBy(xpath = "(//*[@class='card-body'])[4]")
+    public WebElement serviceGallery;
+
+    @FindBy(xpath = "(//*[@class='card-title service-related'])")
+    public WebElement relatedServices;
+
 
 }

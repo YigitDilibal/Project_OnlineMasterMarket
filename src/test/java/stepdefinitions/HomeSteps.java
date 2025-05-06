@@ -318,4 +318,100 @@ public class HomeSteps {
         Assert.assertTrue(homePage.filtrelemePriceRangeButonu.isEnabled());
 
     }
+
+    @Then("Kullanici gidilen sayfada bulunan Service butonuna tiklar")
+    public void kullaniciGidilenSayfadaBulunanServiceButonunaTiklar() {
+
+        homePage.serviceButonu.click();
+        ReusableMethods.bekle(1000);
+
+    }
+
+    @Then("Kullanici Flooring Reapir servisinin goruntulendigini ve aktif oldugunu dogrular")
+    public void kullaniciFlooringReapirServisininGoruntulendiginiVeAktifOldugunuDogrular() {
+
+        homePage.flooringRepair.click();
+        String beklenenUrl="https://qa.onlinemastermarket.com/service-preview/flooring-repair?sid=6c8349cc7260ae62e3b1396831a8398f";
+        String gidilenUrl = driver.getCurrentUrl();
+
+        Assert.assertEquals(beklenenUrl,gidilenUrl);
+        driver.navigate().back();
+        homePage.serviceButonu.click();
+
+
+
+    }
+
+    @Then("Kullanici Window and Door Repair servisinin goruntulendigini ve aktif oldugunu dogrular")
+    public void kullaniciWindowAndDoorRepairServisininGoruntulendiginiVeAktifOldugunuDogrular() {
+
+        homePage.windowandDoorRepair.click();
+        String beklenenUrl = "https://qa.onlinemastermarket.com/service-preview/window-and-door-repair?sid=d9d4f495e875a2e075a1a4a6e1b9770f";
+        String gidilenUrl = driver.getCurrentUrl();
+        Assert.assertEquals(beklenenUrl,gidilenUrl);
+        driver.navigate().back();
+        homePage.serviceButonu.click();
+
+    }
+
+    @Then("Kullanici Smart Home Installation servisinin goruntulendigini ve aktif oldugunu dogrular")
+    public void kullaniciSmartHomeInstallationServisininGoruntulendiginiVeAktifOldugunuDogrular() {
+
+        homePage.smartHomeInstallation.click();
+        String beklenenUrl = "https://qa.onlinemastermarket.com/service-preview/smart-home-installation?sid=67c6a1e7ce56d3d6fa748ab6d9af3fd7";
+        String gidilenUrl = driver.getCurrentUrl();
+        Assert.assertEquals(beklenenUrl,gidilenUrl);
+        driver.navigate().back();
+        homePage.serviceButonu.click();
+
+    }
+
+    @Then("Kullanici Locksmith Services \\(Service Call Fee) servisinin goruntulendigini ve aktif oldugunu dogrular")
+    public void kullaniciLocksmithServicesServiceCallFeeServisininGoruntulendiginiVeAktifOldugunuDogrular() {
+
+        homePage.locksmithServices.click();
+        String beklenenUrl = "https://qa.onlinemastermarket.com/service-preview/locksmith-services-service-call-fee?sid=642e92efb79421734881b53e1e1b18b6";
+        String gidilenUrl = driver.getCurrentUrl();
+        Assert.assertEquals(beklenenUrl,gidilenUrl);
+        driver.navigate().back();
+        homePage.serviceButonu.click();
+
+
+    }
+
+    @Then("Kullanici Refrigerator Repair \\(Service Call Fee) servisinin goruntulendigini ve aktif oldugunu dogrular")
+    public void kullaniciRefrigeratorRepairServiceCallFeeServisininGoruntulendiginiVeAktifOldugunuDogrular() {
+
+        homePage.refrigeratorRepair.click();
+        String beklenenUrl = "https://qa.onlinemastermarket.com/service-preview/refrigerator-repair-service-call-fee?sid=a1d0c6e83f027327d8461063f4ac58a6";
+        String gidilenUrl = driver.getCurrentUrl();
+        Assert.assertEquals(beklenenUrl,gidilenUrl);
+        driver.navigate().back();
+        homePage.serviceButonu.click();
+
+    }
+
+    @Then("Kullanici Washing Machine Repair \\(Service Call Fee) servisinin goruntulendigini ve aktif oldugunu dogrular")
+    public void kullaniciWashingMachineRepairServiceCallFeeServisininGoruntulendiginiVeAktifOldugunuDogrular() {
+
+        homePage.washingMachineRepair.click();
+        String beklenenUrl = "https://qa.onlinemastermarket.com/service-preview/washing-machine-repair-service-call-fee?sid=17e62166fc8586dfa4d1bc0e1742c08b";
+        String gidilenUrl = driver.getCurrentUrl();
+        Assert.assertEquals(beklenenUrl,gidilenUrl);
+        driver.navigate().back();
+        homePage.serviceButonu.click();
+
+
+    }
+
+    @Then("Kullanici Oven Repair servisinin goruntulendigini ve aktif oldugunu dogrular")
+    public void kullaniciOvenRepairServisininGoruntulendiginiVeAktifOldugunuDogrular() {
+
+        homePage.ovenRepair.click();
+        String beklenenUrl = "https://qa.onlinemastermarket.com/service-preview/oven-repair?sid=f7177163c833dff4b38fc8d2872f1ec6";
+        String gidilenUrl = driver.getCurrentUrl();
+        Assert.assertEquals(beklenenUrl,gidilenUrl);
+
+
+    }
 }

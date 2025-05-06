@@ -34,6 +34,23 @@ Feature: US_018
     Then Kullanici Price Range butonunun gorunur ve aktif oldugunu dogrular
 
 
+  Scenario: Repairs & Maintenance sayfasında bulunan servisler görüntülenmeli ve ilerleyen sayfalara gecilebilmelidir.
+
+    Given the user navigates to the "url" address
+    Then Siteye erişebildiğini doğrular.
+    Then Kullanici anasayfada bulunan Categories basliginin üstüne gelir
+    Then Kullanici Repairs & Maintenance basligina tiklar
+    Then Kullanici gidilen sayfada bulunan Service butonuna tiklar
+    Then Kullanici Flooring Reapir servisinin goruntulendigini ve aktif oldugunu dogrular
+    Then Kullanici Window and Door Repair servisinin goruntulendigini ve aktif oldugunu dogrular
+    Then Kullanici Smart Home Installation servisinin goruntulendigini ve aktif oldugunu dogrular
+    Then Kullanici Locksmith Services (Service Call Fee) servisinin goruntulendigini ve aktif oldugunu dogrular
+    Then Kullanici Refrigerator Repair (Service Call Fee) servisinin goruntulendigini ve aktif oldugunu dogrular
+    Then Kullanici Washing Machine Repair (Service Call Fee) servisinin goruntulendigini ve aktif oldugunu dogrular
+    Then Kullanici Oven Repair servisinin goruntulendigini ve aktif oldugunu dogrular
+
+
+
 
 
 

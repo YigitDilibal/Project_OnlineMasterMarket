@@ -11,6 +11,7 @@ Feature: US_046 Payment History Page Functionality (User)
       Then the user clicks the Payment link
       And the user should be navigated to the Payment History page
 
+      @test
     Scenario: Services and Products buttons are visible and functional
       Given the user clicks the Payment link
       Then the Services button should be visible and clickable

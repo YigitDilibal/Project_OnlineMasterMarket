@@ -3,6 +3,7 @@ package stepdefinitions;
 import config.DataReader;
 import io.cucumber.java.bs.A;
 import io.cucumber.java.en.*;
+import lombok.extern.log4j.Log4j;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
@@ -13,13 +14,20 @@ import org.openqa.selenium.support.ui.Select;
 import pages.BasePage;
 import pages.HomePage;
 import pages.UserPage;
+import runners.TestRunner;
 import utils.JSUtilities;
+import utils.LoggerHelper;
 import utils.ReusableMethods;
 
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class UserSteps {
 
+
+
+    private static final Logger logger = LogManager.getLogger(UserSteps.class);
     WebDriver driver = stepdefinitions.Hooks.getDriver();
     BasePage basePage = new BasePage(driver);
     UserPage userPage = new UserPage(driver);
@@ -53,7 +61,13 @@ public class UserSteps {
     @Then("the Services button should be visible and clickable")
     public void the_services_button_should_be_visible_and_clickable() {
         Assert.assertTrue(userPage.paymentHistoryServicesButonu.isDisplayed());
-        Assert.assertTrue(userPage.paymentHistoryServicesButonu.isEnabled());
+        logger.info("test");
+        Assert.assertTrue("Buton etkin degil",userPage.paymentHistoryServicesButonu.isEnabled());
+
+        logger.error("error");
+
+
+
     }
     @Then("the Products button should be visible and clickable")
     public void the_products_button_should_be_visible_and_clickable() {

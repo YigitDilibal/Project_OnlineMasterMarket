@@ -1,0 +1,5 @@
+2025-05-06 22:21:41 [main] INFO  stepdefinitions.UserSteps - test
+2025-05-06 22:21:41 [main] ERROR stepdefinitions.UserSteps - error
+2025-05-06 22:33:40 [main] INFO  runners.TestRunner - Cucumber Test Runner Baslatiliyor..
+2025-05-06 22:33:46 [main] INFO  stepdefinitions.UserSteps - test
+2025-05-06 22:33:46 [main] ERROR stepdefinitions.UserSteps - error

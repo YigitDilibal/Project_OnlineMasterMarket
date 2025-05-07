@@ -558,6 +558,7 @@ public class UserSteps {
 
         ReusableMethods.bekle(1000);
         userPage.dashboardInvoices.click();
+        logger.info("Kullanıcı Invoices'a tıkladığında tamamlanmış rezervasyon faturaları görüntülendi");
     }
 
     @When("Invoices sayfasına gittiğini doğrular")
@@ -565,6 +566,7 @@ public class UserSteps {
 
         ReusableMethods.bekle(1000);
         Assert.assertTrue(userPage.dashboardInvoicesTitle.isDisplayed());
+        logger.info("Invoices sayfasına gittiği doğrulandı");
     }
 
     @When("Kullanıcı, listelenen faturalardan Export butonuna tıklar")
@@ -572,7 +574,9 @@ public class UserSteps {
 
         ReusableMethods.bekle(1000);
         userPage.invoicesExportButton.click();
+        logger.info("Kullanıcı, listelenen faturalardan Export butonuna tıkladı");
         ReusableMethods.bekle(1000);
+
     }
 
     @Then("Sistem, kullanıcının ilgili hizmetin detay sayfasına yönlendirildiğini doğrular")
@@ -583,6 +587,7 @@ public class UserSteps {
         String actualUrl = driver.getCurrentUrl();
 
         Assert.assertEquals(expectedUrl,actualUrl);
+        logger.info("Kullanıcının ilgili hizmetin detay sayfasına yönlendirildiği doğrulandı");
     }
 
     @Then("Search alanı görünür ve aktif olmalı")
@@ -590,6 +595,7 @@ public class UserSteps {
 
         Assert.assertTrue(userPage.invoicesSearchButton.isDisplayed());
         Assert.assertTrue(userPage.invoicesSearchButton.isEnabled());
+        logger.info("Search alanı görünür ve aktif");
     }
 
     @Then("Çarpı butonu görünür ve aktif olmalı")
@@ -597,6 +603,7 @@ public class UserSteps {
 
         Assert.assertTrue(userPage.invoicesDeleteButton.isDisplayed());
         Assert.assertTrue(userPage.invoicesDeleteButton.isEnabled());
+        logger.info("Çarpı butonu görünür ve aktif");
     }
 
     @When("Kullanıcı tarih aralığı girebilmeli")
@@ -607,6 +614,7 @@ public class UserSteps {
         userPage.toDateBox.click();
         userPage.toDateFourteenthDay.click();
         userPage.invoicesSearchButton.click();
+        logger.info("Kullanıcı tarih aralığı girebildi");
         ReusableMethods.bekle(1000);
     }
 
@@ -615,6 +623,7 @@ public class UserSteps {
 
         ReusableMethods.bekle(1000);
         Assertions.assertTrue(userPage.invoicesBookingDateVerification.isDisplayed());
+        logger.info("Seçilen tarih aralığındaki faturalar listelendi");
     }
 
     @When("kullanıcı Çarpı butonuna tıklar tüm faturalar yeniden listelenmeli")
@@ -622,9 +631,9 @@ public class UserSteps {
 
         ReusableMethods.bekle(1000);
         userPage.invoicesDeleteButton.click();
-
         ReusableMethods.bekle(1000);
         Assertions.assertTrue(userPage.invoicesBookingDateVerification.isDisplayed());
+        logger.info("Kullanıcı Çarpı butonuna tıkladı ve tüm faturalar listelendi");
     }
 
     @Then("From Date ve To Date kutuları görünür ve aktif olmalı")
@@ -635,6 +644,8 @@ public class UserSteps {
 
         Assert.assertTrue(userPage.toDateBox.isDisplayed());
         Assert.assertTrue(userPage.toDateBox.isEnabled());
+
+        logger.info("From Date ve To Date kutuları görünür ve aktif");
     }
 
     @When("kullanıcı seçtiği tarihi From Date kutusuna girer")
@@ -642,6 +653,7 @@ public class UserSteps {
 
         userPage.fromDateBox.click();
         userPage.fromDateEighthDay.click();
+        logger.info("Kullanıcı seçtiği tarihi From Date kutusuna girdi");
     }
 
     @When("kullanıcı seçtiği tarihi To Date kutusuna girer")
@@ -649,12 +661,14 @@ public class UserSteps {
 
         userPage.toDateBox.click();
         userPage.toDateFourteenthDay.click();
+        logger.info("Kullanıcı seçtiği tarihi To Date kutusuna girdi");
     }
 
     @When("kullanıcı Search butonuna tıklar")
     public void kullanıcı_search_butonuna_tıklar() {
 
         userPage.invoicesSearchButton.click();
+        logger.info("Kullanıcı Search butonuna tıkladı");
     }
 
     @Then("sadece seçtiği tarihler arasında tamamlanmış rezervasyonlara ait faturalar listelendiğini doğrular")
@@ -662,12 +676,15 @@ public class UserSteps {
 
         ReusableMethods.bekle(1000);
         Assertions.assertTrue(userPage.invoicesBookingDateVerification.isDisplayed());
+        logger.info("Seçtiği tarih arasında tamamlanmış rezervasyonlara ait faturalar listelendiğini doğrulandı");
     }
 
     @When("kullanıcı Home butonuna tıklar")
     public void kullanıcı_home_butonuna_tıklar() {
 
         homePage.homeText.click();
+        logger.info("kullanıcı Home butonuna tıkladı");
+
     }
 
     @Then("kullanıcı Home sayfasına geçiş yaptığını test eder")
@@ -675,6 +692,7 @@ public class UserSteps {
 
         ReusableMethods.bekle(1000);
         Assertions.assertTrue(homePage.homeVerification.isDisplayed());
+        logger.info("kullanıcı Home sayfasına geçiş yaptığını test edildi");
     }
 
     @Then("kullanıcı Dashboard sayfasına yönlendirilmeli")
@@ -682,13 +700,15 @@ public class UserSteps {
 
         basePage.click(userPage.sagUstProfilButonu);
         basePage.click(userPage.dropdownDashboardButonu);
+        logger.info("Kullanıcı Dashboard sayfasına yönlendirildi");
     }
 
-    @Then("Reviews ikonu görünür ve aktif olmalıdır")
-    public void reviews_ikonu_görünür_ve_aktif_olmalıdır() {
+    @Then("Reviews ikonu görünür ve aktif olmalı")
+    public void reviews_ikonu_görünür_ve_aktif_olmalı() {
 
         Assert.assertTrue(userPage.dashboardReviewsIcon.isDisplayed());
         Assert.assertTrue(userPage.dashboardReviewsIcon.isEnabled());
+        logger.info("Reviews ikonu görünür ve aktif");
     }
 
     @Then("Reviews ikonuna tıklandığında ilgili sayfaya gittiğini test eder")
@@ -696,12 +716,14 @@ public class UserSteps {
 
         userPage.dashboardReviewsIcon.click();
         Assert.assertTrue(userPage.dashboardReviewsTitle.isDisplayed());
+        logger.info("Reviews ikonuna tıklandığında ilgili sayfaya gidildiği test edildi");
     }
 
-    @Then("Reviews ikonuna basar")
-    public void reviews_ikonuna_basar() {
+    @Then("Reviews ikonuna tıklar")
+    public void reviews_ikonuna_tıklar() {
 
         userPage.dashboardReviewsIcon.click();
+        logger.info("Reviews ikonuna tıklandı");
     }
 
     @Then("Her bir yorum için yorum metni, tarih ve puan görünür olmalı")
@@ -719,6 +741,7 @@ public class UserSteps {
             Assert.assertTrue(tarih.isDisplayed());
             Assert.assertTrue(puan.isDisplayed());
         }
+        logger.info("Her bir yorum için yorum metni, tarih ve puan göründü");
     }
 
 

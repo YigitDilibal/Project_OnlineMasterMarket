@@ -4,6 +4,8 @@ import config.ConfigReader;
 import io.cucumber.java.bs.A;
 import io.cucumber.java.en.*;
 import io.cucumber.java.en_old.Ac;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
@@ -17,9 +19,11 @@ import java.io.ObjectInputFilter;
 
 public class HomeSteps {
 
+    private static final Logger logger = LogManager.getLogger(HomeSteps.class);
     WebDriver driver = stepdefinitions.Hooks.getDriver();
     HomePage homePage = new HomePage(driver);
     BasePage basePage = new BasePage(driver);
+
 
 
     @Given("the user navigates to the {string} address")
@@ -419,34 +423,37 @@ public class HomeSteps {
 
         Assert.assertTrue(homePage.anasayfaShopsButonu.isDisplayed());
         Assert.assertTrue(homePage.anasayfaShopsButonu.isEnabled());
+        logger.info("Üst barda Shops menü başlığı görünür ve aktif");
     }
 
     @When("kullanıcı Shops menü başlığına tıklar")
     public void kullanıcı_shops_menü_başlığına_tıklar() {
 
         homePage.anasayfaShopsButonu.click();
+        logger.info("Kullanıcı Shops menü başlığına tıklandı");
     }
 
     @Then("kullanıcı şirketler ve şirketlere ait hizmetlerin listelendiği sayfaya yönlendirildiği doğrulanmalı")
     public void kullanıcı_şirketler_ve_şirketlere_ait_hizmetlerin_listelendiği_sayfaya_yönlendirildiği_doğrulanmalı() {
 
         Assert.assertTrue(homePage.shopsFoundText.isDisplayed());
-
         homePage.serviceButton.click();
-
         Assert.assertTrue(homePage.serviceFoundText.isDisplayed());
+        logger.info("kullanıcı şirketler ve şirketlere ait hizmetlerin listelendiği sayfaya yönlendirildiği doğrulandı");
     }
 
     @Given("kullanıcı {string} adresine gider")
     public void kullanıcı_url_adresine_gider(String url) {
 
         driver.get(config.ConfigReader.getProperty("url"));
+        logger.info("İlgili URL'e gidildi");
     }
 
     @When("Sayfanın üst barındaki {string} menüsü tıklanır")
     public void sayfanın_üst_barındaki_menüsü_tıklanır(String category) {
 
         homePage.categoriesDropDownButton.click();
+        logger.info("Sayfanın üst barındaki Categories menüsüne tıklandı");
     }
 
     @Then("{string} aşağıdaki kategoriler görünür olmalıdır:")
@@ -458,26 +465,32 @@ public class HomeSteps {
             case "BusinessServices":
                 Title = homePage.categoriesBusinessServicesButton;
                 Assert.assertTrue(Title.isDisplayed());
+                logger.info("Business Services butonu görünür");
                 break;
             case "Repairs":
                 Title = homePage.categoriesRepairsButton;
                 Assert.assertTrue(Title.isDisplayed());
+                logger.info("Repairs butonu görünür");
                 break;
             case "Moving":
                 Title = homePage.categoriesMovingButton;
                 Assert.assertTrue(Title.isDisplayed());
+                logger.info("Moving butonu görünür");
                 break;
             case "Events":
                 Title = homePage.categoriesEventsButton;
                 Assert.assertTrue(Title.isDisplayed());
+                logger.info("Events butonu görünür");
                 break;
             case "PersonalServices":
                 Title = homePage.categoriesPersonalServicesButton;
                 Assert.assertTrue(Title.isDisplayed());
+                logger.info("Personal Services butonu görünür");
                 break;
             case "HomeServices":
                 Title = homePage.categoriesHomeServicesButton;
                 Assert.assertTrue(Title.isDisplayed());
+                logger.info("Home Services butonu görünür");
                 break;
         }
     }
@@ -499,8 +512,8 @@ public class HomeSteps {
                 String actualBusinessUrl = driver.getCurrentUrl();
 
                 Assert.assertEquals(expectedBusinessUrl,actualBusinessUrl);
+                logger.info("Business Services kategori bağlantısına tıklandı ve doğrulandı");
                 break;
-
             case "Repairs":
                 Title = homePage.categoriesRepairsButton;
                 Assert.assertTrue(Title.isEnabled());
@@ -511,6 +524,7 @@ public class HomeSteps {
                 String actualRepairsUrl = driver.getCurrentUrl();
 
                 Assert.assertEquals(expectedRepairsUrl,actualRepairsUrl);
+                logger.info("Repairs kategori bağlantısına tıklandı ve doğrulandı");
                 break;
 
             case "Moving":
@@ -523,6 +537,7 @@ public class HomeSteps {
                 String actualMovingUrl = driver.getCurrentUrl();
 
                 Assert.assertEquals(expectedMovingUrl,actualMovingUrl);
+                logger.info("Moving kategori bağlantısına tıklandı ve doğrulandı");
                 break;
 
             case "Events":
@@ -535,6 +550,7 @@ public class HomeSteps {
                 String actualEventsUrl = driver.getCurrentUrl();
 
                 Assert.assertEquals(expectedEventsUrl,actualEventsUrl);
+                logger.info("Events kategori bağlantısına tıklandı ve doğrulandı");
                 break;
 
             case "PersonalServices":
@@ -547,6 +563,7 @@ public class HomeSteps {
                 String actualPersonalUrl = driver.getCurrentUrl();
 
                 Assert.assertEquals(expectedPersonalUrl,actualPersonalUrl);
+                logger.info("Personal Services kategori bağlantısına tıklandı ve doğrulandı");
                 break;
 
             case "HomeServices":
@@ -559,6 +576,7 @@ public class HomeSteps {
                 String actualHomeUrl = driver.getCurrentUrl();
 
                 Assert.assertEquals(expectedHomeUrl,actualHomeUrl);
+                logger.info("Home Services kategori bağlantısına tıklandı ve doğrulandı");
                 break;
         }
 
@@ -568,6 +586,7 @@ public class HomeSteps {
     public void profil_ikonuna_tıklanır() {
 
         homePage.profileIcon.click();
+        logger.info("Profil ikonuna tıklandı");
     }
 
     @Then("Book Service ikonu görünür ve aktif olmalıdır")
@@ -575,12 +594,14 @@ public class HomeSteps {
 
         Assert.assertTrue(homePage.bookServiceButton.isEnabled());
         Assert.assertTrue(homePage.bookServiceButton.isDisplayed());
+        logger.info("Book Service ikonu görünür ve aktif");
     }
 
     @When("Book Service ikonuna tıklanır")
     public void book_service_ikonuna_tıklanır() {
 
         homePage.bookServiceButton.click();
+        logger.info("Book Service ikonuna tıklandı");
     }
 
     @Then("Kullanıcı, şirketler ve hizmetleri sayfasına yönlendirilmelidir.")
@@ -591,18 +612,22 @@ public class HomeSteps {
         String actualAllServicesUrl = driver.getCurrentUrl();
 
         Assert.assertEquals(expectedAllServicesUrl,actualAllServicesUrl);
+        logger.info("Kullanıcı, şirketler ve hizmetleri sayfasına yönlendirildiği doğrulandı");
+
     }
 
     @When("Service ikonuna tıklanır")
     public void service_ikonuna_tıklanır() {
 
         homePage.serviceButton.click();
+        logger.info("Service ikonuna tıklandı");
     }
 
     @When("Deep Cleanin Service hizmetine tıklanır")
     public void deep_cleanin_service_hizmetine_tıklanır() {
 
         homePage.deepCleaningServiceTitle.click();
+        logger.info("Deep Cleanin ikonuna tıklandı");
     }
 
     @Then("Açılan Deep Cleanin Service sayfasında Book Service ikonu görünür ve aktif olmalıdır")
@@ -610,31 +635,36 @@ public class HomeSteps {
 
         Assert.assertTrue(homePage.deepCleaningBookServiceButton.isEnabled());
         Assert.assertTrue(homePage.deepCleaningBookServiceButton.isDisplayed());
+        logger.info("Açılan Deep Cleanin Service sayfasında Book Service ikonu görünür ve aktif");
     }
 
     @Then("kullanıcı profil ikonuna tıklar")
     public void kullanıcı_profil_ikonuna_tıklar() {
 
         homePage.sagUstProfilIconu.click();
+        logger.info("Kullanıcı profil ikonuna tıkladı");
     }
 
-    @Then("logout ikonu görünür ve tıklanırbilir olmalı")
-    public void logout_ikonu_görünür_ve_tıklanırbilir_olmalı() {
+    @Then("logout ikonu görünür ve tıklanabilir olmalı")
+    public void logout_ikonu_görünür_ve_tıklanabilir_olmalı() {
 
         Assert.assertTrue(homePage.logoutButton.isDisplayed());
         Assert.assertTrue(homePage.logoutButton.isEnabled());
+        logger.info("Logout ikonu görünür ve tıklanabilir");
     }
 
     @Then("logout ikonuna tıklar")
     public void logout_ikonuna_tıklar() {
 
         homePage.logoutButton.click();
+        logger.info("Logout ikonuna tıklandı");
     }
 
     @Then("login butonu görünürlüğü ile çıkış doğrulanır")
     public void login_butonu_görünürlüğü_ile_çıkış_doğrulanır() {
 
         Assert.assertTrue(homePage.anasayfaLoginButonu.isDisplayed());
+        logger.info("Login butonu görünürlüğü ve çıkışı doğrulandı");
     }
 
     @Then("Kullanici anasayfada bulunan Shops basliginin üstüne gelir")

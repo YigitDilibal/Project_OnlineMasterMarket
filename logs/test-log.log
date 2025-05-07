@@ -3,3 +3,43 @@
 2025-05-06 22:33:40 [main] INFO  runners.TestRunner - Cucumber Test Runner Baslatiliyor..
 2025-05-06 22:33:46 [main] INFO  stepdefinitions.UserSteps - test
 2025-05-06 22:33:46 [main] ERROR stepdefinitions.UserSteps - error
+2025-05-07 17:12:32 [main] INFO  stepdefinitions.HomeSteps - İlgili URL'e gidildi
+2025-05-07 17:12:34 [main] INFO  stepdefinitions.LoginSteps - Kullanıcı verilen kullanıcı adı ve şifre ile giriş yaptı
+2025-05-07 17:12:36 [main] INFO  stepdefinitions.HomeSteps - Kullanıcı profil ikonuna tıkladı
+2025-05-07 17:12:36 [main] INFO  stepdefinitions.HomeSteps - Logout ikonu görünür ve tıklanabilir
+2025-05-07 17:12:41 [main] INFO  stepdefinitions.HomeSteps - İlgili URL'e gidildi
+2025-05-07 17:12:43 [main] INFO  stepdefinitions.LoginSteps - Kullanıcı verilen kullanıcı adı ve şifre ile giriş yaptı
+2025-05-07 17:12:45 [main] INFO  stepdefinitions.HomeSteps - Kullanıcı profil ikonuna tıkladı
+2025-05-07 17:12:47 [main] INFO  stepdefinitions.HomeSteps - Logout ikonuna tıklandı
+2025-05-07 17:12:47 [main] INFO  stepdefinitions.HomeSteps - Login butonu görünürlüğü ve çıkışı doğrulandı
+2025-05-07 17:37:52 [main] INFO  stepdefinitions.HomeSteps - İlgili URL'e gidildi
+2025-05-07 17:37:52 [main] INFO  stepdefinitions.HomeSteps - Üst barda Shops menü başlığı görünür ve aktif
+2025-05-07 17:37:53 [main] INFO  stepdefinitions.HomeSteps - Kullanıcı Shops menü başlığına tıklandı
+2025-05-07 17:37:53 [main] INFO  stepdefinitions.HomeSteps - kullanıcı şirketler ve şirketlere ait hizmetlerin listelendiği sayfaya yönlendirildiği doğrulandı
+2025-05-07 17:37:58 [main] INFO  stepdefinitions.HomeSteps - İlgili URL'e gidildi
+2025-05-07 17:37:59 [main] INFO  stepdefinitions.HomeSteps - Sayfanın üst barındaki Categories menüsüne tıklandı
+2025-05-07 17:38:05 [main] INFO  stepdefinitions.HomeSteps - İlgili URL'e gidildi
+2025-05-07 17:38:06 [main] INFO  stepdefinitions.HomeSteps - Sayfanın üst barındaki Categories menüsüne tıklandı
+2025-05-07 17:38:10 [main] INFO  stepdefinitions.HomeSteps - İlgili URL'e gidildi
+2025-05-07 17:38:11 [main] INFO  stepdefinitions.HomeSteps - Sayfanın üst barındaki Categories menüsüne tıklandı
+2025-05-07 17:38:17 [main] INFO  stepdefinitions.HomeSteps - İlgili URL'e gidildi
+2025-05-07 17:38:17 [main] INFO  stepdefinitions.HomeSteps - Sayfanın üst barındaki Categories menüsüne tıklandı
+2025-05-07 17:38:17 [main] INFO  stepdefinitions.HomeSteps - Events butonu görünür
+2025-05-07 17:38:19 [main] INFO  stepdefinitions.HomeSteps - Events kategori bağlantısına tıklandı ve doğrulandı
+2025-05-07 17:38:24 [main] INFO  stepdefinitions.HomeSteps - İlgili URL'e gidildi
+2025-05-07 17:38:24 [main] INFO  stepdefinitions.HomeSteps - Sayfanın üst barındaki Categories menüsüne tıklandı
+2025-05-07 17:38:29 [main] INFO  stepdefinitions.HomeSteps - İlgili URL'e gidildi
+2025-05-07 17:38:30 [main] INFO  stepdefinitions.HomeSteps - Sayfanın üst barındaki Categories menüsüne tıklandı
+2025-05-07 17:38:35 [main] INFO  stepdefinitions.HomeSteps - İlgili URL'e gidildi
+2025-05-07 17:38:37 [main] INFO  stepdefinitions.LoginSteps - Kullanıcı verilen kullanıcı adı ve şifre ile giriş yaptı
+2025-05-07 17:38:39 [main] INFO  stepdefinitions.HomeSteps - Profil ikonuna tıklandı
+2025-05-07 17:38:39 [main] INFO  stepdefinitions.HomeSteps - Book Service ikonu görünür ve aktif
+2025-05-07 17:38:40 [main] INFO  stepdefinitions.HomeSteps - Book Service ikonuna tıklandı
+2025-05-07 17:38:40 [main] INFO  stepdefinitions.HomeSteps - Kullanıcı, şirketler ve hizmetleri sayfasına yönlendirildiği doğrulandı
+2025-05-07 17:38:45 [main] INFO  stepdefinitions.HomeSteps - İlgili URL'e gidildi
+2025-05-07 17:38:47 [main] INFO  stepdefinitions.LoginSteps - Kullanıcı verilen kullanıcı adı ve şifre ile giriş yaptı
+2025-05-07 17:38:48 [main] INFO  stepdefinitions.HomeSteps - Profil ikonuna tıklandı
+2025-05-07 17:38:49 [main] INFO  stepdefinitions.HomeSteps - Book Service ikonuna tıklandı
+2025-05-07 17:38:49 [main] INFO  stepdefinitions.HomeSteps - Service ikonuna tıklandı
+2025-05-07 17:38:51 [main] INFO  stepdefinitions.HomeSteps - Deep Cleanin ikonuna tıklandı
+2025-05-07 17:38:51 [main] INFO  stepdefinitions.HomeSteps - Açılan Deep Cleanin Service sayfasında Book Service ikonu görünür ve aktif

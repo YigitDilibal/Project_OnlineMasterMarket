@@ -5,6 +5,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +18,7 @@ import utils.ReusableMethods;
 import java.security.Key;
 
 public class LoginSteps {
+	private static final Logger logger = LogManager.getLogger(LoginSteps.class);
 	WebDriver driver = stepdefinitions.Hooks.getDriver();
 	LoginPage loginPage = new LoginPage(driver);
 	BasePage basePage = new BasePage(driver);
@@ -173,5 +176,6 @@ public class LoginSteps {
 	public void kullanıcı_kullanıcı_adı_ve_şifresi_ile_giriş_yapar(String email, String pass) {
 
 		loginPage.login(email,pass);
+		logger.info("Kullanıcı verilen kullanıcı adı ve şifre ile giriş yaptı");
 	}
 }

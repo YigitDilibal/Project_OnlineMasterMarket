@@ -374,6 +374,7 @@ public class ProviderSteps {
     @And("the provider should be able to create a discount for the service")
     public void theProviderShouldBeAbleToCreateADiscountForTheService() {
 
+        basePage.click(providerPage.offerSave);
     }
 
     @Given("the provider selects a service")
@@ -425,11 +426,52 @@ public class ProviderSteps {
     @And("the provider should be able to edit discount for a service")
     public void theProviderShouldBeAbleToEditDiscountForAService() {
         basePage.click(providerPage.editOfferButton);
+
+        basePage.click(providerPage.editOfferSave);
     }
 
     @And("the provider should be able to delete a discounted service")
     public void theProviderShouldBeAbleToDeleteADiscountedService() {
         basePage.click(providerPage.deleteOffer);
         basePage.click(providerPage.deleteOfferConfirmation);
+    }
+
+    @Given("booking list button should be visible and clickable")
+    public void bookingListButtonShouldBeVisibleAndClickable() {
+        ReusableMethods.bekle(500);
+        Assert.assertTrue(providerPage.bookingListLink.isDisplayed());
+        Assert.assertTrue(providerPage.bookingListLink.isEnabled());
+    }
+
+    @Given("the provider navigates to the Booking List page")
+    public void theProviderNavigatesToTheBookingListPage() {
+        basePage.click(providerPage.bookingListLink);
+    }
+
+    @Then("the provider completes the service through Complete Request to user")
+    public void theProviderCompletesTheServiceThroughCompleteRequestToUser() {
+        basePage.click(providerPage.completeRequestToUser);
+        basePage.click(providerPage.completeRequestToUserConfirmation);
+    }
+
+    @Then("the provider completes the service through Cancel the Service")
+    public void theProviderCompletesTheServiceThroughCancelTheService() {
+        basePage.click(providerPage.cancelTheService);
+        basePage.click(providerPage.cancelTheServiceConfirmation);
+    }
+
+    @And("the provider chats with the user through Chat")
+    public void theProviderChatsWithTheUserThroughChat() {
+        basePage.click(providerPage.chatWithUser);
+
+        basePage.click(providerPage.chatSendButton);
+    }
+
+    @Then("booking date, User, Location and Staffs information should be displayed")
+    public void bookingDateUserLocationAndStaffsInformationShouldBeDisplayed() {
+        Assert.assertTrue(providerPage.bookingDate.isDisplayed());
+        Assert.assertTrue(providerPage.bookingListUser.isDisplayed());
+        Assert.assertTrue(providerPage.location.isDisplayed());
+        Assert.assertTrue(providerPage.staffs.isDisplayed());
     }
 }

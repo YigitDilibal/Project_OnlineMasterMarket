@@ -132,14 +132,14 @@ public class ProviderPage extends BasePage{
     @FindBy(xpath = "(//*[@class='select2-selection__rendered'][2])")
     public WebElement serviceSubCategoryDropDown;
 
+    @FindBy(xpath = "(//*[@id='service_title'])")
+    public WebElement serviceNameField;
+
     @FindBy(xpath = "(//*[@class='select2-selection__rendered'][3])")
     public WebElement serviceShopsDropDown;
 
     @FindBy(xpath = "(//*[@class='select2-selection__rendered'][4])")
     public WebElement serviceStaff;
-
-    @FindBy(xpath = "(//*[@id='service_title'])")
-    public WebElement serviceNameField;
 
     @FindBy(xpath = "(//*[@id='service_amount'])")
     public WebElement serviceAmountField;
@@ -157,7 +157,7 @@ public class ProviderPage extends BasePage{
     public WebElement additionalServicesDuration;
 
     @FindBy(xpath = "(//*[@class='add-additional'])")
-    public WebElement addMoreadditionalServicesButton;
+    public WebElement addMoreAdditionalServicesButton;
 
     @FindBy(xpath = "(//*[@id='about'])")
     public WebElement serviceDescriptionField;
@@ -246,11 +246,11 @@ public class ProviderPage extends BasePage{
     @FindBy(xpath = "//th[text()='Created Date']")
     public WebElement serviceOfferServiceCreatedDate;
 
-    @FindBy(xpath = "(//*[@class='form-control number eoffercls'])")
-    public WebElement editOfferPercentageField;
-
     @FindBy(xpath = "(//*[@class='btn btn-sm bg-success-light editServiceOffers'])")
     public WebElement editOfferButton;
+
+    @FindBy(xpath = "(//*[@class='form-control number eoffercls'])")
+    public WebElement editOfferPercentageField;
 
     @FindBy(xpath = "(//*[@class='form-control datetimepicker-start eoffercls'])")
     public WebElement editOfferStartDate;
@@ -272,6 +272,45 @@ public class ProviderPage extends BasePage{
 
     @FindBy(xpath = "(//*[@class='btn btn-success si_accept_confirm'])")
     public WebElement deleteOfferConfirmation;
+
+    @FindBy(xpath = "(//*[@href='https://qa.onlinemastermarket.com/provider-bookings'])[2]")
+    public WebElement bookingListLink;
+
+    @FindBy(xpath = "(//*[@class='form-control-sm custom-select searchFilter'])")
+    public WebElement bookingListDropDown;
+
+    @FindBy(xpath = "(//*[@class='btn btn-sm bg-success-light update_pro_booking_status'])[1]")
+    public WebElement completeRequestToUser;
+
+    @FindBy(xpath = "(//*[@class='btn btn-default'])[1]")
+    public WebElement completeRequestToUserConfirmation;
+
+    @FindBy(xpath = "(//*[@class='btn btn-sm bg-danger-light myCancel '])[1]")
+    public WebElement cancelTheService;
+
+    @FindBy(xpath = "(//*[@class='btn btn-theme py-2 px-4 text-white mx-auto btn-primary'])")
+    public WebElement cancelTheServiceConfirmation;
+
+    @FindBy(xpath = "(//*[@class='btn btn-sm bg-info-light'])[1]")
+    public WebElement chatWithUser;
+
+    @FindBy(xpath = "(//*[@class='form-control type_msg mh-auto empty_check'])")
+    public WebElement chatMessageField;
+
+    @FindBy(xpath = "(//*[@class='btn btn-primary btn_send'])")
+    public WebElement chatSendButton;
+
+    @FindBy(xpath = "(//span[text()='Booking Date'])[1]")
+    public WebElement bookingDate;
+
+    @FindBy(xpath = "(//span[text()='User'])[1]")
+    public WebElement bookingListUser;
+
+    @FindBy(xpath = "(//span[text()='Location'])[1]")
+    public WebElement location;
+
+    @FindBy(xpath = "(//span[text()='Staffs'])[1]")
+    public WebElement staffs;
 
 
 }

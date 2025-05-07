@@ -10,14 +10,14 @@ Feature: US_059 View and manage ordered services for Providers
   Scenario: Booking List link is visible and clickable on the Dashboard page
     Given booking list button should be visible and clickable
 
-  Scenario: Filtering options are visible and clickable on the Booking List page
+  Scenario: Order request confirmation and filtering options
     Given the provider navigates to the Booking List page
     Then filtering options are visible and clickable
+    And the provider completes the service through Complete Request to user
 
-  Scenario: Order request confirmation, order cancellation and chat with user are available
+  Scenario: Order cancellation and chat with user are available
     Given the provider navigates to the Booking List page
-    Then the provider completes the service through Complete Request to user
-    Then the provider completes the service through Cancel the Service
+    Then the provider cancels the service through Cancel the Service
     And the provider chats with the user through Chat
 
   Scenario: Booking List page displays Booking date, User, Location and Staffs information

@@ -7,10 +7,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.Select;
 import pages.BasePage;
 import pages.HomePage;
 import pages.ProviderPage;
@@ -425,8 +423,31 @@ public class ProviderSteps {
 
     @And("the provider should be able to edit discount for a service")
     public void theProviderShouldBeAbleToEditDiscountForAService() {
+        ReusableMethods.bekle(2000);
         basePage.click(providerPage.editOfferButton);
-
+        ReusableMethods.bekle(2000);
+        providerPage.editOfferPercentageField.clear();
+        ReusableMethods.bekle(2000);
+        basePage.type(providerPage.editOfferPercentageField,"20");
+        ReusableMethods.bekle(2000);
+        providerPage.editOfferStartDate.clear();
+        ReusableMethods.bekle(2000);
+        basePage.type(providerPage.editOfferStartDate, "16-05-2025");
+        ReusableMethods.bekle(2000);
+        providerPage.editOfferStartDate.sendKeys(Keys.ENTER);
+        ReusableMethods.bekle(2000);
+        providerPage.editOfferEndDate.clear();
+        ReusableMethods.bekle(2000);
+        basePage.type(providerPage.editOfferEndDate, "17-05-2025");
+        ReusableMethods.bekle(2000);
+        providerPage.editOfferEndDate.sendKeys(Keys.ENTER);
+        ReusableMethods.bekle(2000);
+        Select selectStartTime = new Select(providerPage.editOfferStartTime);
+        ReusableMethods.bekle(2000);
+        selectStartTime.selectByValue("09:00 AM");
+        Select selectEndTime = new Select(providerPage.editOfferEndTime);
+        ReusableMethods.bekle(2000);
+        selectEndTime.selectByValue("10:00 AM");
         basePage.click(providerPage.editOfferSave);
     }
 
@@ -448,23 +469,41 @@ public class ProviderSteps {
         basePage.click(providerPage.bookingListLink);
     }
 
-    @Then("the provider completes the service through Complete Request to user")
+    @And("the provider completes the service through Complete Request to user")
     public void theProviderCompletesTheServiceThroughCompleteRequestToUser() {
         basePage.click(providerPage.completeRequestToUser);
+        ReusableMethods.bekle(5000);
         basePage.click(providerPage.completeRequestToUserConfirmation);
+        ReusableMethods.bekle(5000);
+        basePage.click(userPage.PaymentSuccessOkayButton);
+        ReusableMethods.bekle(2000);
     }
 
-    @Then("the provider completes the service through Cancel the Service")
-    public void theProviderCompletesTheServiceThroughCancelTheService() {
+    @Then("the provider cancels the service through Cancel the Service")
+    public void theProviderCancelsTheServiceThroughCancelTheService() {
         basePage.click(providerPage.cancelTheService);
+        basePage.type(providerPage.cancelReasonField,"Vazgectim");
+        ReusableMethods.bekle(1000);
         basePage.click(providerPage.cancelTheServiceConfirmation);
+        ReusableMethods.bekle(1000);
+        basePage.click(providerPage.cancelTheServiceWarningOkay);
+        ReusableMethods.bekle(1000);
     }
 
     @And("the provider chats with the user through Chat")
     public void theProviderChatsWithTheUserThroughChat() {
+        Select selectFilter = new Select(providerPage.bookingListDropDown);
+        ReusableMethods.bekle(5000);
+        selectFilter.selectByValue("2");
+        ReusableMethods.bekle(5000);
         basePage.click(providerPage.chatWithUser);
-
+        ReusableMethods.bekle(1000);
+        basePage.type(providerPage.chatMessageField,"Iyi gunler efendim");
+        ReusableMethods.bekle(1000);
         basePage.click(providerPage.chatSendButton);
+        ReusableMethods.bekle(1000);
+        Assert.assertTrue(providerPage.chatSentMessage.isDisplayed());
+        ReusableMethods.bekle(1000);
     }
 
     @Then("booking date, User, Location and Staffs information should be displayed")
@@ -473,5 +512,15 @@ public class ProviderSteps {
         Assert.assertTrue(providerPage.bookingListUser.isDisplayed());
         Assert.assertTrue(providerPage.location.isDisplayed());
         Assert.assertTrue(providerPage.staffs.isDisplayed());
+    }
+
+    @Then("filtering options are visible and clickable")
+    public void filteringOptionsAreVisibleAndClickable() {
+        Assert.assertTrue(providerPage.bookingListDropDown.isDisplayed());
+        Assert.assertTrue(providerPage.bookingListDropDown.isEnabled());
+        Select selectFilter = new Select(providerPage.bookingListDropDown);
+        ReusableMethods.bekle(5000);
+        selectFilter.selectByValue("2");
+        ReusableMethods.bekle(5000);
     }
 }

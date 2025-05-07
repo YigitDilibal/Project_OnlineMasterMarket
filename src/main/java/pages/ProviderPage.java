@@ -312,5 +312,14 @@ public class ProviderPage extends BasePage{
     @FindBy(xpath = "(//span[text()='Staffs'])[1]")
     public WebElement staffs;
 
+    @FindBy(xpath = "//*[.='Iyi gunler efendim']")
+    public WebElement chatSentMessage;
+
+    @FindBy(xpath = "(//*[@class='form-control'])[3]")
+    public WebElement cancelReasonField;
+
+    @FindBy(xpath = "(//*[@class='swal-button swal-button--confirm'])")
+    public WebElement cancelTheServiceWarningOkay;
+
 
 }

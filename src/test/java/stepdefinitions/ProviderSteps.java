@@ -348,6 +348,88 @@ public class ProviderSteps {
     }
 
 
+    @Given("the provider navigates to the My Services page")
+    public void theProviderNavigatesToTheMyServicesPage() {
+        basePage.click(providerPage.myServicesLink);
+    }
 
+    @Then("Active Services button is visible and clickable")
+    public void activeServicesButtonIsVisibleAndClickable() {
+        Assert.assertTrue(providerPage.activeServicesButton.isDisplayed());
+        Assert.assertTrue(providerPage.activeServicesButton.isEnabled());
+    }
 
+    @And("Inactive Services button is visible and clickable")
+    public void inactiveServicesButtonIsVisibleAndClickable() {
+        Assert.assertTrue(providerPage.inactiveServicesButton.isDisplayed());
+        Assert.assertTrue(providerPage.inactiveServicesButton.isEnabled());
+    }
+
+    @And("the provider should be able to change the status to active or inactive")
+    public void theProviderShouldBeAbleToChangeTheStatusToActiveOrInactive() {
+        basePage.click(providerPage.serviceInactivation);
+        basePage.click(providerPage.serviceInactivationConfirmation);
+    }
+
+    @And("the provider should be able to create a discount for the service")
+    public void theProviderShouldBeAbleToCreateADiscountForTheService() {
+
+    }
+
+    @Given("the provider selects a service")
+    public void theProviderSelectsAService() {
+        basePage.click(providerPage.serviceSelection);
+    }
+
+    @And("service detail, edit service, price, service provider name, service availability, additional services, reviews, service gallery, related services are visible")
+    public void serviceDetailEditServicePriceServiceProviderNameServiceAvailabilityAdditionalServicesReviewsServiceGalleryRelatedServicesAreVisible() {
+        Assert.assertTrue(providerPage.serviceDetails.isDisplayed());
+        Assert.assertTrue(providerPage.editServiceFromSelectedService.isDisplayed());
+        Assert.assertTrue(providerPage.priceInformation.isDisplayed());
+        Assert.assertTrue(providerPage.serviceProviderName.isDisplayed());
+        Assert.assertTrue(providerPage.serviceAvailability.isDisplayed());
+        Assert.assertTrue(providerPage.additionalServices.isDisplayed());
+        Assert.assertTrue(providerPage.serviceReviews.isDisplayed());
+        Assert.assertTrue(providerPage.serviceGallery.isDisplayed());
+        Assert.assertTrue(providerPage.relatedServices.isDisplayed());
+    }
+
+    @And("edit service button is clickable")
+    public void editServiceButtonIsClickable() {
+        Assert.assertTrue(providerPage.editServiceFromSelectedService.isEnabled());
+    }
+
+    @Given("service offer history button should be visible and clickable")
+    public void service_offer_history_button_should_be_visible_and_clickable() {
+        ReusableMethods.bekle(500);
+        Assert.assertTrue(providerPage.serviceOfferHistoryLink.isDisplayed());
+        Assert.assertTrue(providerPage.serviceOfferHistoryLink.isEnabled());
+    }
+
+    @Given("the provider navigates to the Service Offer History page")
+    public void theProviderNavigatesToTheServiceOfferHistoryPage() {
+        basePage.click(providerPage.serviceOfferHistoryLink);
+    }
+
+    @Then("service name, amount, offer, start date, end date, time range, created date information are visible")
+    public void serviceNameAmountOfferStartDateEndDateTimeRangeCreatedDateInformationAreVisible() {
+        Assert.assertTrue(providerPage.serviceOfferServiceName.isDisplayed());
+        Assert.assertTrue(providerPage.serviceOfferServiceAmount.isDisplayed());
+        Assert.assertTrue(providerPage.serviceOfferServiceOffer.isDisplayed());
+        Assert.assertTrue(providerPage.serviceOfferServiceStartDate.isDisplayed());
+        Assert.assertTrue(providerPage.serviceOfferServiceEndDate.isDisplayed());
+        Assert.assertTrue(providerPage.serviceOfferServiceTimeRange.isDisplayed());
+        Assert.assertTrue(providerPage.serviceOfferServiceCreatedDate.isDisplayed());
+    }
+
+    @And("the provider should be able to edit discount for a service")
+    public void theProviderShouldBeAbleToEditDiscountForAService() {
+        basePage.click(providerPage.editOfferButton);
+    }
+
+    @And("the provider should be able to delete a discounted service")
+    public void theProviderShouldBeAbleToDeleteADiscountedService() {
+        basePage.click(providerPage.deleteOffer);
+        basePage.click(providerPage.deleteOfferConfirmation);
+    }
 }

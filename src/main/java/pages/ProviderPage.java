@@ -108,6 +108,9 @@ public class ProviderPage extends BasePage{
     @FindBy(xpath = "(//*[@class='sorting'])[4]")
     public WebElement amountSortingınPaymentsPage;
 
+    @FindBy(xpath = "(//*[@class='nav-item'])[2]")
+    public WebElement myServicesLink;
+
     @FindBy(xpath = "(//*[@class='nav-link active'])[2]")
     public WebElement activeServicesButton;
 
@@ -119,6 +122,54 @@ public class ProviderPage extends BasePage{
 
     @FindBy(xpath = "(//*[@class='btn btn-success si_accept_confirm'])")
     public WebElement serviceInactivationConfirmation;
+
+    @FindBy(xpath = "(//*[@class='text-success'])[1]")
+    public WebElement editServiceFromMyServices;
+
+    @FindBy(xpath = "(//*[@class='select2-selection__rendered'][1])")
+    public WebElement serviceCategoryDropDown;
+
+    @FindBy(xpath = "(//*[@class='select2-selection__rendered'][2])")
+    public WebElement serviceSubCategoryDropDown;
+
+    @FindBy(xpath = "(//*[@class='select2-selection__rendered'][3])")
+    public WebElement serviceShopsDropDown;
+
+    @FindBy(xpath = "(//*[@class='select2-selection__rendered'][4])")
+    public WebElement serviceStaff;
+
+    @FindBy(xpath = "(//*[@id='service_title'])")
+    public WebElement serviceNameField;
+
+    @FindBy(xpath = "(//*[@id='service_amount'])")
+    public WebElement serviceAmountField;
+
+    @FindBy(xpath = "(//*[@id='duration'])")
+    public WebElement serviceDurationField;
+
+    @FindBy(xpath = "(//*[@id='addi_name'])[1]")
+    public WebElement additionalServicesName;
+
+    @FindBy(xpath = "(//*[@id='addi_amnt'])[1]")
+    public WebElement additionalServicesAmount;
+
+    @FindBy(xpath = "(//*[@id='addi_dura'])[1]")
+    public WebElement additionalServicesDuration;
+
+    @FindBy(xpath = "(//*[@class='add-additional'])")
+    public WebElement addMoreadditionalServicesButton;
+
+    @FindBy(xpath = "(//*[@id='about'])")
+    public WebElement serviceDescriptionField;
+
+    @FindBy(xpath = "(//*[@id='images'])")
+    public WebElement serviceGalleryUploadImage;
+
+    @FindBy(xpath = "(//*[@class='file_close1 btn btn-icon btn-danger btn-sm delete_img'])")
+    public WebElement serviceGalleryDeleteImage;
+
+    @FindBy(xpath = "(//*[@class='submit-section'])")
+    public WebElement editServiceSubmit;
 
     @FindBy(xpath = "((//*[@class='btn btn-info btn-sm'])[1]")
     public WebElement applyOfferButton;
@@ -141,11 +192,14 @@ public class ProviderPage extends BasePage{
     @FindBy(xpath = "(//*[@class='btn btn-success'])[1]")
     public WebElement offerSave;
 
+    @FindBy(xpath = "(//*[@class='categorie-img'])[1]")
+    public WebElement serviceSelection;
+
     @FindBy(xpath = "(//*[@class='mb-0'])[1]")
     public WebElement serviceDetails;
 
     @FindBy(xpath = "(//*[@class='btn btn-primary btn-lg btn-block'])")
-    public WebElement editServiceButton;
+    public WebElement editServiceFromSelectedService;
 
     @FindBy(xpath = "(//*[@class='label-amount'])")
     public WebElement priceInformation;
@@ -167,6 +221,57 @@ public class ProviderPage extends BasePage{
 
     @FindBy(xpath = "(//*[@class='card-title service-related'])")
     public WebElement relatedServices;
+
+    @FindBy(xpath = "//*[@href='https://qa.onlinemastermarket.com/service-offer-history']")
+    public WebElement serviceOfferHistoryLink;
+
+    @FindBy(xpath = "//th[text()='Service']")
+    public WebElement serviceOfferServiceName;
+
+    @FindBy(xpath = "//th[text()='Amount']")
+    public WebElement serviceOfferServiceAmount;
+
+    @FindBy(xpath = "//th[text()='Offer']")
+    public WebElement serviceOfferServiceOffer;
+
+    @FindBy(xpath = "//th[text()='Start Date']")
+    public WebElement serviceOfferServiceStartDate;
+
+    @FindBy(xpath = "//th[text()='End Date']")
+    public WebElement serviceOfferServiceEndDate;
+
+    @FindBy(xpath = "//th[text()='Time Range']")
+    public WebElement serviceOfferServiceTimeRange;
+
+    @FindBy(xpath = "//th[text()='Created Date']")
+    public WebElement serviceOfferServiceCreatedDate;
+
+    @FindBy(xpath = "(//*[@class='form-control number eoffercls'])")
+    public WebElement editOfferPercentageField;
+
+    @FindBy(xpath = "(//*[@class='btn btn-sm bg-success-light editServiceOffers'])")
+    public WebElement editOfferButton;
+
+    @FindBy(xpath = "(//*[@class='form-control datetimepicker-start eoffercls'])")
+    public WebElement editOfferStartDate;
+
+    @FindBy(xpath = "(//*[@class='form-control datetimepicker-end eoffercls'])")
+    public WebElement editOfferEndDate;
+
+    @FindBy(xpath = "(//*[@class='form-control'])[1]")
+    public WebElement editOfferStartTime;
+
+    @FindBy(xpath = "(//*[@class='form-control'])[2]")
+    public WebElement editOfferEndTime;
+
+    @FindBy(xpath = "(//*[@class='btn btn-success'])")
+    public WebElement editOfferSave;
+
+    @FindBy(xpath = "(//*[@class='far fa-trash-alt'])")
+    public WebElement deleteOffer;
+
+    @FindBy(xpath = "(//*[@class='btn btn-success si_accept_confirm'])")
+    public WebElement deleteOfferConfirmation;
 
 
 }

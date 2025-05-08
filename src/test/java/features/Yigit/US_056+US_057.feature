@@ -35,14 +35,16 @@ Feature: Service Booking and Payment Flow
 
   @E2E
   Scenario: User completes payment with valid card details and sees success confirmation
-    And the User selects "11-05-2025" as Date
+    And the User selects "14-05-2025" as Date
     And the User selects Time Slot as "05:00 PM-05:50 PM"
     And the User clicks the Confirm Booking button
     Then the User should see a confirmation message
     And the User's reservation should be saved
     Then The user is redirected to the Checkout page
+    And The user copies the Coupon Code and activates
     Given The user clicks the Stripe option
     Then The Email, Card Number, MMYY, and CVC fields should be visible and enabled
     And The Pay button should be visible and enabled
     When The user enters valid payment details and clicks Pay
     Then The Payment Success text should be displayed
+

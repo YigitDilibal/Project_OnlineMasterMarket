@@ -207,6 +207,16 @@ public class UserPage extends BasePage {
     @FindBy(xpath = "//*[@class='btn btn-primary applycode']")
     public WebElement couponCodeApply;
 
+    @FindBy(xpath = "//*[.='Booking List']")
+    public WebElement userDashboardBookingList;
+
+    @FindBy(xpath = "(//*[@data-status='6'])[1]")
+    public WebElement completeRequestAccept;
+
+    @FindBy(xpath = "//*[.='confirm']")
+    public WebElement confirm;
+
+
 
 
 

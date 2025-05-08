@@ -765,4 +765,28 @@ public class UserSteps {
 
 
     }
+
+    @Given("the user clicks the Booking List link")
+    public void theUserClicksTheBookingListLink() {
+        ReusableMethods.bekle(2000);
+        basePage.click(userPage.userDashboardBookingList);
+    }
+
+    @Then("the user clicks Complete Request Accept button")
+    public void theUserClicksCompleteRequestAcceptButton() {
+        ReusableMethods.bekle(2000);
+        basePage.click(userPage.completeRequestAccept);
+    }
+
+    @And("the user clicks Confirm button")
+    public void theUserClicksConfirmButton() {
+        ReusableMethods.bekle(2000);
+        basePage.click(userPage.confirm);
+    }
+
+    @And("the user clicks Okay button")
+    public void theUserClicksOkayButton() {
+        ReusableMethods.bekle(2000);
+        basePage.click(userPage.OkayButton);
+    }
 }

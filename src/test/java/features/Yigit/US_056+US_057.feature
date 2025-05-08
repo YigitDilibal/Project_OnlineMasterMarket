@@ -33,9 +33,9 @@ Feature: Service Booking and Payment Flow
     When The user clicks the Stripe option
     Then The Service Booking window should open
 
-  @E2E
+
   Scenario: User completes payment with valid card details and sees success confirmation
-    And the User selects "14-05-2025" as Date
+    And the User selects "15-05-2025" as Date
     And the User selects Time Slot as "05:00 PM-05:50 PM"
     And the User clicks the Confirm Booking button
     Then the User should see a confirmation message

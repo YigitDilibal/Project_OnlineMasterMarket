@@ -43,3 +43,7 @@
 2025-05-07 17:38:49 [main] INFO  stepdefinitions.HomeSteps - Service ikonuna tıklandı
 2025-05-07 17:38:51 [main] INFO  stepdefinitions.HomeSteps - Deep Cleanin ikonuna tıklandı
 2025-05-07 17:38:51 [main] INFO  stepdefinitions.HomeSteps - Açılan Deep Cleanin Service sayfasında Book Service ikonu görünür ve aktif
+2025-05-08 22:02:15 [main] INFO  runners.TestRunner - Cucumber Test Runner Baslatiliyor..
+2025-05-08 22:04:16 [main] INFO  runners.TestRunner - Cucumber Test Runner Baslatiliyor..
+2025-05-08 22:13:48 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the url address
+2025-05-08 22:14:58 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address

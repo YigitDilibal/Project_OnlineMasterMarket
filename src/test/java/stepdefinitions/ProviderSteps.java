@@ -17,6 +17,8 @@ import utils.JSUtilities;
 import utils.ReusableMethods;
 import config.DataReader;
 import io.cucumber.java.en.And;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,6 +26,7 @@ import java.util.List;
 
 public class ProviderSteps {
 
+    private static final Logger logger = LogManager.getLogger(ProviderSteps.class);
     WebDriver driver = stepdefinitions.Hooks.getDriver();
     ProviderPage providerPage = new ProviderPage (driver);
     UserPage userPage = new UserPage(driver);

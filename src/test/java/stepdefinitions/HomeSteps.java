@@ -29,6 +29,7 @@ public class HomeSteps {
     @Given("the user navigates to the {string} address")
     public void kullanici_adresine_gider(String url) {
 
+        logger.info("The user navigates to the {} address", ConfigReader.getProperty("url"));
         driver.get(config.ConfigReader.getProperty("url"));
 
     }

@@ -365,13 +365,41 @@ public class ProviderSteps {
 
     @And("the provider should be able to change the status to active or inactive")
     public void theProviderShouldBeAbleToChangeTheStatusToActiveOrInactive() {
+        ReusableMethods.bekle(1000);
+        JSUtilities.scrollToElement(driver, providerPage.serviceInactivation);
+        ReusableMethods.bekle(1000);
         basePage.click(providerPage.serviceInactivation);
+        ReusableMethods.bekle(1000);
         basePage.click(providerPage.serviceInactivationConfirmation);
     }
 
     @And("the provider should be able to create a discount for the service")
     public void theProviderShouldBeAbleToCreateADiscountForTheService() {
-
+        ReusableMethods.bekle(1000);
+        basePage.click(providerPage.applyOfferButton);
+        ReusableMethods.bekle(1000);
+        providerPage.offerPercentageField.click();
+        ReusableMethods.bekle(1000);
+        providerPage.offerPercentageField.sendKeys("30");
+        ReusableMethods.bekle(1000);
+        providerPage.startDate.click();
+        ReusableMethods.bekle(1000);
+        providerPage.startDate.sendKeys(Keys.CONTROL + "a");
+        ReusableMethods.bekle(1000);
+        providerPage.startDate.sendKeys("11-05-2025");
+        ReusableMethods.bekle(2000);
+        providerPage.endDate.click();
+        ReusableMethods.bekle(1000);
+        providerPage.endDate.sendKeys(Keys.CONTROL + "a");
+        ReusableMethods.bekle(1000);
+        providerPage.endDate.sendKeys("12-05-2025");
+        ReusableMethods.bekle(1000);
+        Select selectStartTime = new Select(providerPage.startTime);
+        ReusableMethods.bekle(1000);
+        selectStartTime.selectByValue("12:00 PM");
+        Select selectEndTime = new Select(providerPage.endTime);
+        ReusableMethods.bekle(1000);
+        selectEndTime.selectByValue("03:00 PM");
         basePage.click(providerPage.offerSave);
     }
 
@@ -426,21 +454,23 @@ public class ProviderSteps {
         ReusableMethods.bekle(2000);
         basePage.click(providerPage.editOfferButton);
         ReusableMethods.bekle(2000);
-        providerPage.editOfferPercentageField.clear();
+        providerPage.editOfferPercentageField.click();
+        ReusableMethods.bekle(1000);
+        providerPage.editOfferPercentageField.sendKeys(Keys.CONTROL + "a");
+        ReusableMethods.bekle(1000);
+        providerPage.editOfferPercentageField.sendKeys("30");
         ReusableMethods.bekle(2000);
-        basePage.type(providerPage.editOfferPercentageField,"20");
+        providerPage.editOfferStartDate.click();
+        ReusableMethods.bekle(1000);
+        providerPage.editOfferStartDate.sendKeys(Keys.CONTROL + "a");
+        ReusableMethods.bekle(1000);
+        providerPage.editOfferStartDate.sendKeys("16-05-2025");
         ReusableMethods.bekle(2000);
-        providerPage.editOfferStartDate.clear();
-        ReusableMethods.bekle(2000);
-        basePage.type(providerPage.editOfferStartDate, "16-05-2025");
-        ReusableMethods.bekle(2000);
-        providerPage.editOfferStartDate.sendKeys(Keys.ENTER);
-        ReusableMethods.bekle(2000);
-        providerPage.editOfferEndDate.clear();
-        ReusableMethods.bekle(2000);
-        basePage.type(providerPage.editOfferEndDate, "17-05-2025");
-        ReusableMethods.bekle(2000);
-        providerPage.editOfferEndDate.sendKeys(Keys.ENTER);
+        providerPage.editOfferEndDate.click();
+        ReusableMethods.bekle(1000);
+        providerPage.editOfferEndDate.sendKeys(Keys.CONTROL + "a");
+        ReusableMethods.bekle(1000);
+        providerPage.editOfferEndDate.sendKeys("17-05-2025");
         ReusableMethods.bekle(2000);
         Select selectStartTime = new Select(providerPage.editOfferStartTime);
         ReusableMethods.bekle(2000);
@@ -453,8 +483,11 @@ public class ProviderSteps {
 
     @And("the provider should be able to delete a discounted service")
     public void theProviderShouldBeAbleToDeleteADiscountedService() {
+        ReusableMethods.bekle(2000);
         basePage.click(providerPage.deleteOffer);
+        ReusableMethods.bekle(2000);
         basePage.click(providerPage.deleteOfferConfirmation);
+        ReusableMethods.bekle(2000);
     }
 
     @Given("booking list button should be visible and clickable")
@@ -522,5 +555,76 @@ public class ProviderSteps {
         ReusableMethods.bekle(5000);
         selectFilter.selectByValue("2");
         ReusableMethods.bekle(5000);
+    }
+
+    @Then("the selected service should be editable")
+    public void theSelectedServiceShouldBeEditable() {
+        basePage.click(providerPage.editServiceFromSelectedService);
+        Select selectCategories = new Select(providerPage.serviceCategoryDropDown);
+        ReusableMethods.bekle(1000);
+        selectCategories.selectByValue("2");
+        Select selectSubCategories = new Select(providerPage.serviceSubCategoryDropDown);
+        ReusableMethods.bekle(1000);
+        selectSubCategories.selectByValue("7");
+        providerPage.serviceNameField.click();
+        ReusableMethods.bekle(1000);
+        providerPage.serviceNameField.sendKeys(Keys.CONTROL + "a");
+        ReusableMethods.bekle(1000);
+        providerPage.serviceNameField.sendKeys("English Teaching");
+        ReusableMethods.bekle(1000);
+        Select selectShops = new Select(providerPage.serviceShopsDropDown);
+        ReusableMethods.bekle(1000);
+        selectShops.selectByValue("14");
+        ReusableMethods.bekle(1000);
+        Select selectStaffs = new Select(providerPage.serviceStaff);
+        ReusableMethods.bekle(1000);
+        selectStaffs.selectByValue("47");
+        ReusableMethods.bekle(1000);
+        providerPage.serviceAmountField.click();
+        ReusableMethods.bekle(1000);
+        providerPage.serviceAmountField.sendKeys(Keys.CONTROL + "a");
+        ReusableMethods.bekle(1000);
+        providerPage.serviceAmountField.sendKeys("250");
+        ReusableMethods.bekle(1000);
+        providerPage.serviceDurationField.click();
+        ReusableMethods.bekle(1000);
+        providerPage.serviceDurationField.sendKeys(Keys.CONTROL + "a");
+        ReusableMethods.bekle(1000);
+        providerPage.serviceDurationField.sendKeys("60");
+        ReusableMethods.bekle(1000);
+        providerPage.additionalServicesName.click();
+        ReusableMethods.bekle(1000);
+        providerPage.additionalServicesName.sendKeys(Keys.CONTROL + "a");
+        ReusableMethods.bekle(1000);
+        providerPage.additionalServicesName.sendKeys("Gardening");
+        ReusableMethods.bekle(1000);
+        providerPage.additionalServicesAmount.click();
+        ReusableMethods.bekle(1000);
+        providerPage.additionalServicesAmount.sendKeys(Keys.CONTROL + "a");
+        ReusableMethods.bekle(1000);
+        providerPage.additionalServicesAmount.sendKeys("300");
+        ReusableMethods.bekle(1000);
+        providerPage.additionalServicesDuration.click();
+        ReusableMethods.bekle(1000);
+        providerPage.additionalServicesDuration.sendKeys(Keys.CONTROL + "a");
+        ReusableMethods.bekle(1000);
+        providerPage.additionalServicesDuration.sendKeys("45");
+        ReusableMethods.bekle(1000);
+        JSUtilities.scrollToElement(driver, providerPage.serviceDescriptionField);
+        ReusableMethods.bekle(1000);
+        providerPage.serviceDescriptionField.clear();
+        ReusableMethods.bekle(1000);
+        providerPage.serviceDescriptionField.sendKeys("We are the best in the industry");
+        ReusableMethods.bekle(1000);
+        JSUtilities.scrollToBottom(driver);
+        ReusableMethods.bekle(1000);
+        basePage.click(providerPage.editServiceSubmit);
+        ReusableMethods.bekle(1000);
+
+    }
+
+    @Then("the list of active services should be displayed")
+    public void theListOfActiveServicesShouldBeDisplayed() {
+        Assert.assertFalse(providerPage.activeServicesList.isEmpty());
     }
 }

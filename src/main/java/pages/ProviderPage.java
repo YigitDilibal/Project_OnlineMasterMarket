@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class ProviderPage extends BasePage{
 
     public ProviderPage(WebDriver driver) {
@@ -126,19 +128,19 @@ public class ProviderPage extends BasePage{
     @FindBy(xpath = "(//*[@class='text-success'])[1]")
     public WebElement editServiceFromMyServices;
 
-    @FindBy(xpath = "(//*[@class='select2-selection__rendered'][1])")
+    @FindBy(xpath = "(//*[@class='form-control select select2-hidden-accessible'])[1]")
     public WebElement serviceCategoryDropDown;
 
-    @FindBy(xpath = "(//*[@class='select2-selection__rendered'][2])")
+    @FindBy(xpath = "(//*[@class='form-control select select2-hidden-accessible'])[2]")
     public WebElement serviceSubCategoryDropDown;
 
     @FindBy(xpath = "(//*[@id='service_title'])")
     public WebElement serviceNameField;
 
-    @FindBy(xpath = "(//*[@class='select2-selection__rendered'][3])")
+    @FindBy(xpath = "(//*[@class='form-control select services_shop_id select2-hidden-accessible'])")
     public WebElement serviceShopsDropDown;
 
-    @FindBy(xpath = "(//*[@class='select2-selection__rendered'][4])")
+    @FindBy(xpath = "(//*[@class='form-control select select2-hidden-accessible'])[3]")
     public WebElement serviceStaff;
 
     @FindBy(xpath = "(//*[@id='service_amount'])")
@@ -168,7 +170,7 @@ public class ProviderPage extends BasePage{
     @FindBy(xpath = "(//*[@class='file_close1 btn btn-icon btn-danger btn-sm delete_img'])")
     public WebElement serviceGalleryDeleteImage;
 
-    @FindBy(xpath = "(//*[@class='submit-section'])")
+    @FindBy(xpath = "(//*[@class='btn btn-primary submit-btn'])")
     public WebElement editServiceSubmit;
 
     @FindBy(xpath = "((//*[@class='btn btn-info btn-sm'])[1]")
@@ -267,7 +269,7 @@ public class ProviderPage extends BasePage{
     @FindBy(xpath = "(//*[@class='btn btn-success'])")
     public WebElement editOfferSave;
 
-    @FindBy(xpath = "(//*[@class='far fa-trash-alt'])")
+    @FindBy(xpath = "(//*[@class='btn btn-sm bg-danger-light ml-2 me-2 offers-delete'])[1]")
     public WebElement deleteOffer;
 
     @FindBy(xpath = "(//*[@class='btn btn-success si_accept_confirm'])")
@@ -320,6 +322,9 @@ public class ProviderPage extends BasePage{
 
     @FindBy(xpath = "(//*[@class='swal-button swal-button--confirm'])")
     public WebElement cancelTheServiceWarningOkay;
+
+    @FindBy(xpath = "(//*[@class='categorie-img'])")
+    public List<WebElement> activeServicesList;
 
 
 }

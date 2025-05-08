@@ -13,8 +13,8 @@ Feature: Service Booking and Payment Flow
 
 
   Scenario: User should access the checkout page and view selected services and prices
-    And the User selects "29-05-2025" as Date
-    And the User selects Time Slot as "07:00 AM-07:50 AM"
+    And the User selects "10-05-2025" as Date
+    And the User selects Time Slot as "01:40 PM-02:30 PM"
     And the User clicks the Confirm Booking button
     Then the User should see a confirmation message
     And the User's reservation should be saved
@@ -23,8 +23,8 @@ Feature: Service Booking and Payment Flow
     And The reserved service name and price should be clearly visible
 
   Scenario: User must select a payment type and be able to open the service booking modal
-    And the User selects "29-05-2025" as Date
-    And the User selects Time Slot as "08:40 AM-09:30 AM"
+    And the User selects "10-05-2025" as Date
+    And the User selects Time Slot as "03:20 PM-04:10 PM"
     And the User clicks the Confirm Booking button
     Then the User should see a confirmation message
     And the User's reservation should be saved
@@ -35,8 +35,8 @@ Feature: Service Booking and Payment Flow
 
   @E2E
   Scenario: User completes payment with valid card details and sees success confirmation
-    And the User selects "30-05-2025" as Date
-    And the User selects Time Slot as "10:20 AM-11:10 AM"
+    And the User selects "11-05-2025" as Date
+    And the User selects Time Slot as "05:00 PM-05:50 PM"
     And the User clicks the Confirm Booking button
     Then the User should see a confirmation message
     And the User's reservation should be saved

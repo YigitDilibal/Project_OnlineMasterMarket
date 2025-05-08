@@ -745,5 +745,24 @@ public class UserSteps {
     }
 
 
+    @And("The user copies the Coupon Code and activates")
+    public void theUserCopiesTheCouponCodeAndActivates() {
 
+        String couponCode = userPage.couponCode.getText();
+
+        couponCode = couponCode.substring(14);
+
+        ReusableMethods.bekle(2000);
+
+        basePage.type(userPage.couponCodetextBox, couponCode);
+        ReusableMethods.bekle(2000);
+        basePage.click(userPage.couponCodeApply);
+
+        ReusableMethods.bekle(2000);
+
+
+
+
+
+    }
 }

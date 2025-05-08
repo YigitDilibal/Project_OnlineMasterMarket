@@ -198,6 +198,14 @@ public class UserPage extends BasePage {
     @FindBy(xpath = "(//*[@class='rating'])[1]")
     public WebElement reviewsFirstRating;
 
+    @FindBy(xpath = "//*[@class='coupon-code']")
+    public WebElement couponCode;
+
+    @FindBy(xpath = "//*[@id='codeval']")
+    public WebElement couponCodetextBox;
+
+    @FindBy(xpath = "//*[@class='btn btn-primary applycode']")
+    public WebElement couponCodeApply;
 
 
 

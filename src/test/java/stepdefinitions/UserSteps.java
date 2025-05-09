@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import config.ConfigReader;
 import config.DataReader;
 import io.cucumber.java.bs.A;
 import io.cucumber.java.en.*;
@@ -35,6 +36,8 @@ public class UserSteps {
 
     @Then("the user should be redirected to the Dashboard page")
     public void the_user_should_be_redirected_to_the_dashboard_page() {
+        logger.info("the user is redirected to the Dashboard page");
+
         basePage.click(userPage.sagUstProfilButonu);
         basePage.click(userPage.dropdownDashboardButonu);
     }
@@ -365,16 +368,19 @@ public class UserSteps {
     @Given("the User clicks the Home Services button")
     public void the_user_clicks_the_home_services_button() {
         ReusableMethods.bekle(1000);
+        logger.info("the User clicks the Home Services button");
         basePage.click(homePage.anasayfaHomeServicesButonu);
     }
 
     @Given("the User clicks Deep Cleaning Service button")
     public void the_user_clicks_deep_cleaning_service_button() {
+        logger.info("the User clicks Deep Cleaning Service button");
         basePage.click(userPage.DeepCleaningService);
     }
 
     @Then("the User clicks the Book Service button")
     public void the_user_clicks_the_book_service_button() {
+        logger.info("the User clicks the Book Service button");
         basePage.click(userPage.BookServiceButton);
     }
 
@@ -413,12 +419,14 @@ public class UserSteps {
 
     @Given("the User selects a Staff from the list")
     public void the_user_selects_a_staff_from_the_list() {
+        logger.info("the User selects Bella Maison as Staff from the list");
         Select selectStaff = new Select(userPage.SelectStaffddm);
         selectStaff.selectByVisibleText("Bella Maison");
     }
 
     @And("the User selects {string} as Date")
     public void theUserSelectsADate(String date) {
+        logger.info("the User selects {} as Date", date);
         basePage.type(userPage.BookingDateInput, date);
         userPage.BookingDateInput.sendKeys(Keys.ENTER);
     }
@@ -431,12 +439,14 @@ public class UserSteps {
 
     @And("the User selects Time Slot as {string}")
     public void theUserSelectsTimeSlotAs(String timeSlot) {
+        logger.info("the User selects Time Slot as {}", timeSlot);
         Select selectTime = new Select(userPage.SelectTimeSlotddm);
         selectTime.selectByValue(timeSlot);
     }
 
     @Given("the User clicks the Confirm Booking button")
     public void the_user_clicks_the_confirm_booking_button() {
+        logger.info("the User clicks the Confirm Booking button");
         JSUtilities.scrollToElement(driver, userPage.ConfirmBooking);
         ReusableMethods.bekle(500);
         basePage.click(userPage.ConfirmBooking);
@@ -445,18 +455,33 @@ public class UserSteps {
 
     @Then("the User should see a confirmation message")
     public void the_user_should_see_a_confirmation_message() {
-        Assert.assertTrue(userPage.BookingAvailable.isDisplayed());
+
+
+        if (userPage.BookingAvailable.isDisplayed()){
+            logger.info("A confirmation message is displayed to the user");
+            Assert.assertTrue(userPage.BookingAvailable.isDisplayed());
+        }else {
+            logger.info("the User didn't see confirmation message");
+            Assert.assertTrue(userPage.BookingAvailable.isDisplayed());
+        }
     }
 
     @Then("the User's reservation should be saved")
     public void the_user_s_reservation_should_be_saved() {
         basePage.click(userPage.OkayButton);
-        Assert.assertTrue(userPage.ProceedToPayment.isDisplayed());
+        try {
+            Assert.assertTrue(userPage.ProceedToPayment.isDisplayed());
+            logger.info("the User's reservation is saved");
+        } catch (Exception e) {
+            logger.info("the User's reservation didnt save");
+            throw e;
+        }
     }
 
 
     @Then("The user is redirected to the Checkout page")
     public void theUserIsRedirectedToTheCheckoutPage() {
+        logger.info("The user is redirected to the Checkout page");
         basePage.click(userPage.ProceedToPayment);
         ReusableMethods.bekle(1000);
         basePage.click(userPage.PaymentSuccessOkayButton);
@@ -480,6 +505,7 @@ public class UserSteps {
 
     @When("The user clicks the Stripe option")
     public void theUserClicksTheStripeOption() {
+        logger.info("The user clicks the Stripe option");
         basePage.click(userPage.StripeButton);
     }
 
@@ -503,21 +529,38 @@ public class UserSteps {
         driver.switchTo().frame(iFrame);
         ReusableMethods.bekle(1000);
 
-        Assert.assertTrue(userPage.PaymentWindowEmail.isEnabled());
-        Assert.assertTrue(userPage.PaymentWindowCardNumber.isEnabled());
-        Assert.assertTrue(userPage.PaymentWindowMMYY.isEnabled());
-        Assert.assertTrue(userPage.PaymentWindowCVC.isEnabled());
+        try {
+            Assert.assertTrue(userPage.PaymentWindowEmail.isEnabled());
+            Assert.assertTrue(userPage.PaymentWindowCardNumber.isEnabled());
+            Assert.assertTrue(userPage.PaymentWindowMMYY.isEnabled());
+            Assert.assertTrue(userPage.PaymentWindowCVC.isEnabled());
+
+            logger.info("The Email, Card Number, MMYY, and CVC fields are visible and enabled");
+        } catch (Exception e) {
+            logger.info("The Email, Card Number, MMYY, and CVC fields are not visible or enabled");
+            throw e;
+        }
     }
 
     @And("The Pay button should be visible and enabled")
     public void thePayButtonShouldBeVisibleAndEnabled() {
         ReusableMethods.bekle(1000);
-        Assert.assertTrue(userPage.PaymentWindowPayButton.isDisplayed());
-        Assert.assertTrue(userPage.PaymentWindowPayButton.isEnabled());
+
+        try {
+            Assert.assertTrue(userPage.PaymentWindowPayButton.isDisplayed());
+            Assert.assertTrue(userPage.PaymentWindowPayButton.isEnabled());
+            logger.info("The Pay button is visible and enabled");
+        } catch (Exception e) {
+            logger.info("The Pay button is not visible or enabled");
+            throw e;
+        }
     }
 
     @When("The user enters valid payment details and clicks Pay")
     public void theUserEntersValidPaymentDetailsAndClicksPay() {
+
+        logger.info("The user enters valid payment details and clicks Pay");
+
         basePage.type(userPage.PaymentWindowEmail, DataReader.getData("ValidEmail"));
         ReusableMethods.bekle(500);
         basePage.type(userPage.PaymentWindowCardNumber,"4242");
@@ -547,7 +590,16 @@ public class UserSteps {
 
     @Then("The Payment Success text should be displayed")
     public void thePaymentSuccessTextShouldBeDisplayed() {
-        Assert.assertTrue(userPage.PaymentSuccess.isDisplayed());
+
+        try {
+            Assert.assertTrue(userPage.PaymentSuccess.isDisplayed());
+            logger.info("The Payment Success text is displayed");
+        } catch (Exception e) {
+            logger.info("The Payment Success text did not display");
+            throw e;
+        }
+
+
         ReusableMethods.bekle(1000);
         basePage.click(userPage.PaymentSuccessOkayButton);
         ReusableMethods.bekle(2000);
@@ -748,6 +800,8 @@ public class UserSteps {
     @And("The user copies the Coupon Code and activates")
     public void theUserCopiesTheCouponCodeAndActivates() {
 
+        logger.info("The user copies the Coupon Code and activates");
+
         String couponCode = userPage.couponCode.getText();
 
         couponCode = couponCode.substring(14);
@@ -768,24 +822,34 @@ public class UserSteps {
 
     @Given("the user clicks the Booking List link")
     public void theUserClicksTheBookingListLink() {
+        logger.info("the user clicks the Booking List link");
+
         ReusableMethods.bekle(2000);
         basePage.click(userPage.userDashboardBookingList);
     }
 
     @Then("the user clicks Complete Request Accept button")
     public void theUserClicksCompleteRequestAcceptButton() {
+        logger.info("the user clicks Complete Request Accept button");
+
         ReusableMethods.bekle(2000);
         basePage.click(userPage.completeRequestAccept);
     }
 
     @And("the user clicks Confirm button")
     public void theUserClicksConfirmButton() {
+
+        logger.info("the user clicks Confirm button");
+
+
         ReusableMethods.bekle(2000);
         basePage.click(userPage.confirm);
     }
 
     @And("the user clicks Okay button")
     public void theUserClicksOkayButton() {
+        logger.info("the user clicks Okay button, Service completed Successfully.");
+
         ReusableMethods.bekle(2000);
         basePage.click(userPage.OkayButton);
     }

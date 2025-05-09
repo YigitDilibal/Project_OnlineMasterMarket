@@ -122,6 +122,7 @@ public class ProviderSteps {
 
     @Then("the user clicks on the Profile icon")
     public void the_user_clicks_on_the_profile_icon() {
+        logger.info("the user clicks on the Profile icon");
         basePage.click(userPage.sagUstProfilButonu);
         ReusableMethods.bekle(500);
 
@@ -144,6 +145,7 @@ public class ProviderSteps {
 
     @Then("the provider navigates to the Dashboard page")
     public void the_provider_navigates_to_the_dashboard_page() {
+        logger.info("the provider navigates to the Dashboard page");
         ReusableMethods.bekle(1000);
         basePage.click(userPage.dropdownDashboardButonu);
     }
@@ -502,11 +504,14 @@ public class ProviderSteps {
 
     @Given("the provider navigates to the Booking List page")
     public void theProviderNavigatesToTheBookingListPage() {
+        logger.info("the provider navigates to the Booking List page");
         basePage.click(providerPage.bookingListLink);
     }
 
     @And("the provider completes the service through Complete Request to user")
     public void theProviderCompletesTheServiceThroughCompleteRequestToUser() {
+        logger.info("the provider completes the service through Complete Request to user");
+
         basePage.click(providerPage.completeRequestToUser);
         ReusableMethods.bekle(5000);
         basePage.click(providerPage.completeRequestToUserConfirmation);
@@ -552,8 +557,16 @@ public class ProviderSteps {
 
     @Then("filtering options are visible and clickable")
     public void filteringOptionsAreVisibleAndClickable() {
-        Assert.assertTrue(providerPage.bookingListDropDown.isDisplayed());
-        Assert.assertTrue(providerPage.bookingListDropDown.isEnabled());
+
+        try {
+            Assert.assertTrue(providerPage.bookingListDropDown.isDisplayed());
+            Assert.assertTrue(providerPage.bookingListDropDown.isEnabled());
+            logger.info("filtering options are visible and clickable");
+        } catch (Exception e) {
+            logger.info("filtering options are not visible or clickable");
+            throw e;
+        }
+
         Select selectFilter = new Select(providerPage.bookingListDropDown);
         ReusableMethods.bekle(5000);
         selectFilter.selectByValue("2");

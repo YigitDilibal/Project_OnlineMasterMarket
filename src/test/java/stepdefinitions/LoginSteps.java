@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import config.ConfigReader;
 import config.DataReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -28,6 +29,7 @@ public class LoginSteps {
 	@Given("the user logs in with username {string} and password {string}")
 	public void the_user_logs_in_with_username_and_password(String email, String pass) {
 
+		logger.info("the user logs in with username {}", ConfigReader.getProperty("email"));
 		loginPage.login(email,pass);
 
 	}

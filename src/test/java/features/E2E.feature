@@ -8,7 +8,7 @@ Feature: Promotional Home Cleaning Service Purchase and Approval Process
     And the User clicks Deep Cleaning Service button
     Then the User clicks the Book Service button
     Given the User selects a Staff from the list
-    And the User selects "16-05-2025" as Date
+    And the User selects "18-05-2025" as Date
     And the User selects Time Slot as "05:00 PM-05:50 PM"
     And the User clicks the Confirm Booking button
     Then the User should see a confirmation message

@@ -11,7 +11,7 @@ public class JSUtilities {
 
     // A function that scrolls the page up to the specified element.
     public static void scrollToElement(WebDriver driver, WebElement element) {
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
     }
 
     // A function that clicks the specified element using the JavaScriptExecutor.

@@ -7,10 +7,7 @@ import io.cucumber.java.en.*;
 import lombok.extern.log4j.Log4j;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 import pages.BasePage;
 import pages.HomePage;
@@ -36,6 +33,7 @@ public class UserSteps {
 
     @Then("the user should be redirected to the Dashboard page")
     public void the_user_should_be_redirected_to_the_dashboard_page() {
+        ReusableMethods.bekle(3500);
         logger.info("the user is redirected to the Dashboard page");
 
         basePage.click(userPage.sagUstProfilButonu);
@@ -367,6 +365,8 @@ public class UserSteps {
 
     @Given("the User clicks the Home Services button")
     public void the_user_clicks_the_home_services_button() {
+        ReusableMethods.bekle(3500);
+        JSUtilities.scrollToElement(driver,homePage.anasayfaHomeServicesButonu);
         ReusableMethods.bekle(1000);
         logger.info("the User clicks the Home Services button");
         basePage.click(homePage.anasayfaHomeServicesButonu);
@@ -374,12 +374,14 @@ public class UserSteps {
 
     @Given("the User clicks Deep Cleaning Service button")
     public void the_user_clicks_deep_cleaning_service_button() {
+        ReusableMethods.bekle(3500);
         logger.info("the User clicks Deep Cleaning Service button");
         basePage.click(userPage.DeepCleaningService);
     }
 
     @Then("the User clicks the Book Service button")
     public void the_user_clicks_the_book_service_button() {
+        ReusableMethods.bekle(3500);
         logger.info("the User clicks the Book Service button");
         basePage.click(userPage.BookServiceButton);
     }
@@ -419,6 +421,7 @@ public class UserSteps {
 
     @Given("the User selects a Staff from the list")
     public void the_user_selects_a_staff_from_the_list() {
+        ReusableMethods.bekle(3500);
         logger.info("the User selects Bella Maison as Staff from the list");
         Select selectStaff = new Select(userPage.SelectStaffddm);
         selectStaff.selectByVisibleText("Bella Maison");
@@ -426,6 +429,7 @@ public class UserSteps {
 
     @And("the User selects {string} as Date")
     public void theUserSelectsADate(String date) {
+        ReusableMethods.bekle(3500);
         logger.info("the User selects {} as Date", date);
         basePage.type(userPage.BookingDateInput, date);
         userPage.BookingDateInput.sendKeys(Keys.ENTER);
@@ -439,6 +443,7 @@ public class UserSteps {
 
     @And("the User selects Time Slot as {string}")
     public void theUserSelectsTimeSlotAs(String timeSlot) {
+        ReusableMethods.bekle(3500);
         logger.info("the User selects Time Slot as {}", timeSlot);
         Select selectTime = new Select(userPage.SelectTimeSlotddm);
         selectTime.selectByValue(timeSlot);
@@ -446,6 +451,7 @@ public class UserSteps {
 
     @Given("the User clicks the Confirm Booking button")
     public void the_user_clicks_the_confirm_booking_button() {
+        ReusableMethods.bekle(3500);
         logger.info("the User clicks the Confirm Booking button");
         JSUtilities.scrollToElement(driver, userPage.ConfirmBooking);
         ReusableMethods.bekle(500);
@@ -455,6 +461,7 @@ public class UserSteps {
 
     @Then("the User should see a confirmation message")
     public void the_user_should_see_a_confirmation_message() {
+        ReusableMethods.bekle(3500);
 
 
         if (userPage.BookingAvailable.isDisplayed()){
@@ -468,6 +475,7 @@ public class UserSteps {
 
     @Then("the User's reservation should be saved")
     public void the_user_s_reservation_should_be_saved() {
+        ReusableMethods.bekle(3500);
         basePage.click(userPage.OkayButton);
         try {
             Assert.assertTrue(userPage.ProceedToPayment.isDisplayed());
@@ -481,6 +489,7 @@ public class UserSteps {
 
     @Then("The user is redirected to the Checkout page")
     public void theUserIsRedirectedToTheCheckoutPage() {
+        ReusableMethods.bekle(3500);
         logger.info("The user is redirected to the Checkout page");
         basePage.click(userPage.ProceedToPayment);
         ReusableMethods.bekle(1000);
@@ -505,6 +514,7 @@ public class UserSteps {
 
     @When("The user clicks the Stripe option")
     public void theUserClicksTheStripeOption() {
+        ReusableMethods.bekle(3500);
         logger.info("The user clicks the Stripe option");
         basePage.click(userPage.StripeButton);
     }
@@ -524,6 +534,7 @@ public class UserSteps {
 
     @Then("The Email, Card Number, MMYY, and CVC fields should be visible and enabled")
     public void theEmailCardNumberMMYYAndCVCFieldsShouldBeVisibleAndEnabled() {
+        ReusableMethods.bekle(3500);
         ReusableMethods.bekle(1000);
         WebElement iFrame = driver.findElement(By.xpath("(//iframe)[1]"));
         driver.switchTo().frame(iFrame);
@@ -544,6 +555,7 @@ public class UserSteps {
 
     @And("The Pay button should be visible and enabled")
     public void thePayButtonShouldBeVisibleAndEnabled() {
+        ReusableMethods.bekle(3500);
         ReusableMethods.bekle(1000);
 
         try {
@@ -558,6 +570,7 @@ public class UserSteps {
 
     @When("The user enters valid payment details and clicks Pay")
     public void theUserEntersValidPaymentDetailsAndClicksPay() {
+        ReusableMethods.bekle(3500);
 
         logger.info("The user enters valid payment details and clicks Pay");
 
@@ -590,6 +603,7 @@ public class UserSteps {
 
     @Then("The Payment Success text should be displayed")
     public void thePaymentSuccessTextShouldBeDisplayed() {
+        ReusableMethods.bekle(3500);
 
         try {
             Assert.assertTrue(userPage.PaymentSuccess.isDisplayed());
@@ -799,6 +813,7 @@ public class UserSteps {
 
     @And("The user copies the Coupon Code and activates")
     public void theUserCopiesTheCouponCodeAndActivates() {
+        ReusableMethods.bekle(3500);
 
         logger.info("The user copies the Coupon Code and activates");
 
@@ -822,6 +837,7 @@ public class UserSteps {
 
     @Given("the user clicks the Booking List link")
     public void theUserClicksTheBookingListLink() {
+        ReusableMethods.bekle(3500);
         logger.info("the user clicks the Booking List link");
 
         ReusableMethods.bekle(2000);
@@ -830,6 +846,7 @@ public class UserSteps {
 
     @Then("the user clicks Complete Request Accept button")
     public void theUserClicksCompleteRequestAcceptButton() {
+        ReusableMethods.bekle(3500);
         logger.info("the user clicks Complete Request Accept button");
 
         ReusableMethods.bekle(2000);
@@ -838,7 +855,7 @@ public class UserSteps {
 
     @And("the user clicks Confirm button")
     public void theUserClicksConfirmButton() {
-
+        ReusableMethods.bekle(3500);
         logger.info("the user clicks Confirm button");
 
 
@@ -848,6 +865,7 @@ public class UserSteps {
 
     @And("the user clicks Okay button")
     public void theUserClicksOkayButton() {
+        ReusableMethods.bekle(3500);
         logger.info("the user clicks Okay button, Service completed Successfully.");
 
         ReusableMethods.bekle(2000);

@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.bs.A;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -122,6 +123,7 @@ public class ProviderSteps {
 
     @Then("the user clicks on the Profile icon")
     public void the_user_clicks_on_the_profile_icon() {
+        ReusableMethods.bekle(3500);
         logger.info("the user clicks on the Profile icon");
         basePage.click(userPage.sagUstProfilButonu);
         ReusableMethods.bekle(500);
@@ -145,6 +147,7 @@ public class ProviderSteps {
 
     @Then("the provider navigates to the Dashboard page")
     public void the_provider_navigates_to_the_dashboard_page() {
+        ReusableMethods.bekle(3500);
         logger.info("the provider navigates to the Dashboard page");
         ReusableMethods.bekle(1000);
         basePage.click(userPage.dropdownDashboardButonu);
@@ -504,12 +507,14 @@ public class ProviderSteps {
 
     @Given("the provider navigates to the Booking List page")
     public void theProviderNavigatesToTheBookingListPage() {
+        ReusableMethods.bekle(3500);
         logger.info("the provider navigates to the Booking List page");
         basePage.click(providerPage.bookingListLink);
     }
 
     @And("the provider completes the service through Complete Request to user")
     public void theProviderCompletesTheServiceThroughCompleteRequestToUser() {
+        ReusableMethods.bekle(3500);
         logger.info("the provider completes the service through Complete Request to user");
 
         basePage.click(providerPage.completeRequestToUser);
@@ -557,6 +562,7 @@ public class ProviderSteps {
 
     @Then("filtering options are visible and clickable")
     public void filteringOptionsAreVisibleAndClickable() {
+        ReusableMethods.bekle(3500);
 
         try {
             Assert.assertTrue(providerPage.bookingListDropDown.isDisplayed());

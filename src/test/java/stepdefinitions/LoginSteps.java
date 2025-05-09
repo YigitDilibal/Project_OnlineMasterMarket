@@ -28,7 +28,7 @@ public class LoginSteps {
 
 	@Given("the user logs in with username {string} and password {string}")
 	public void the_user_logs_in_with_username_and_password(String email, String pass) {
-
+		ReusableMethods.bekle(3500);
 		logger.info("the user logs in with username {}", ConfigReader.getProperty("email"));
 		loginPage.login(email,pass);
 

@@ -119,3 +119,201 @@
 2025-05-09 20:58:16 [main] INFO  stepdefinitions.UserSteps - the user clicks Complete Request Accept button
 2025-05-09 20:58:22 [main] INFO  stepdefinitions.UserSteps - the user clicks Confirm button
 2025-05-09 20:58:27 [main] INFO  stepdefinitions.UserSteps - the user clicks Okay button, Service completed Successfully.
+2025-05-10 08:17:44 [main] INFO  runners.TestRunner - E2E Test Running..
+2025-05-10 08:17:50 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address
+2025-05-10 08:17:58 [main] INFO  stepdefinitions.LoginSteps - the user logs in with username null
+2025-05-10 08:18:04 [main] INFO  stepdefinitions.UserSteps - the User clicks the Home Services button
+2025-05-10 08:18:09 [main] INFO  stepdefinitions.UserSteps - the User clicks Deep Cleaning Service button
+2025-05-10 08:18:13 [main] INFO  stepdefinitions.UserSteps - the User clicks the Book Service button
+2025-05-10 08:18:17 [main] INFO  stepdefinitions.UserSteps - the User selects Bella Maison as Staff from the list
+2025-05-10 08:18:21 [main] INFO  stepdefinitions.UserSteps - the User selects 19-05-2025 as Date
+2025-05-10 08:18:25 [main] INFO  stepdefinitions.UserSteps - the User selects Time Slot as 05:00 PM-05:50 PM
+2025-05-10 08:18:28 [main] INFO  stepdefinitions.UserSteps - the User clicks the Confirm Booking button
+2025-05-10 08:18:35 [main] INFO  stepdefinitions.UserSteps - A confirmation message is displayed to the user
+2025-05-10 08:18:38 [main] INFO  stepdefinitions.UserSteps - the User's reservation is saved
+2025-05-10 08:18:42 [main] INFO  stepdefinitions.UserSteps - The user is redirected to the Checkout page
+2025-05-10 08:18:49 [main] INFO  stepdefinitions.UserSteps - The user copies the Coupon Code and activates
+2025-05-10 08:18:58 [main] INFO  stepdefinitions.UserSteps - The user clicks the Stripe option
+2025-05-10 08:19:04 [main] INFO  stepdefinitions.UserSteps - The Email, Card Number, MMYY, and CVC fields are visible and enabled
+2025-05-10 08:19:09 [main] INFO  stepdefinitions.UserSteps - The Pay button is visible and enabled
+2025-05-10 08:19:12 [main] INFO  stepdefinitions.UserSteps - The user enters valid payment details and clicks Pay
+2025-05-10 08:19:22 [main] INFO  stepdefinitions.UserSteps - The Payment Success text is displayed
+2025-05-10 08:19:30 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address
+2025-05-10 08:19:36 [main] INFO  stepdefinitions.LoginSteps - the user logs in with username null
+2025-05-10 08:19:41 [main] INFO  stepdefinitions.ProviderSteps - the user clicks on the Profile icon
+2025-05-10 08:19:46 [main] INFO  stepdefinitions.ProviderSteps - the provider navigates to the Dashboard page
+2025-05-10 08:19:52 [main] INFO  stepdefinitions.ProviderSteps - the provider navigates to the Booking List page
+2025-05-10 08:19:56 [main] INFO  stepdefinitions.ProviderSteps - filtering options are visible and clickable
+2025-05-10 08:20:09 [main] INFO  stepdefinitions.ProviderSteps - the provider completes the service through Complete Request to user
+2025-05-10 08:20:27 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address
+2025-05-10 08:20:33 [main] INFO  stepdefinitions.LoginSteps - the user logs in with username null
+2025-05-10 08:20:38 [main] INFO  stepdefinitions.UserSteps - the user is redirected to the Dashboard page
+2025-05-10 08:20:44 [main] INFO  stepdefinitions.UserSteps - the user clicks the Booking List link
+2025-05-10 08:20:50 [main] INFO  stepdefinitions.UserSteps - the user clicks Complete Request Accept button
+2025-05-10 08:20:55 [main] INFO  stepdefinitions.UserSteps - the user clicks Confirm button
+2025-05-10 08:21:01 [main] INFO  stepdefinitions.UserSteps - the user clicks Okay button, Service completed Successfully.
+2025-05-10 17:26:24 [main] INFO  runners.TestRunner - E2E Test Running..
+2025-05-10 17:26:35 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address
+2025-05-10 17:27:06 [main] INFO  stepdefinitions.LoginSteps - the user logs in with username null
+2025-05-10 17:27:12 [main] INFO  stepdefinitions.UserSteps - the User clicks the Home Services button
+2025-05-10 17:27:18 [main] INFO  stepdefinitions.UserSteps - the User clicks Deep Cleaning Service button
+2025-05-10 17:27:24 [main] INFO  stepdefinitions.UserSteps - the User clicks the Book Service button
+2025-05-10 17:27:28 [main] INFO  stepdefinitions.UserSteps - the User selects Bella Maison as Staff from the list
+2025-05-10 17:27:32 [main] INFO  stepdefinitions.UserSteps - the User selects 20-05-2025 as Date
+2025-05-10 17:27:35 [main] INFO  stepdefinitions.UserSteps - the User selects Time Slot as 05:00 PM-05:50 PM
+2025-05-10 17:27:39 [main] INFO  stepdefinitions.UserSteps - the User clicks the Confirm Booking button
+2025-05-10 17:27:45 [main] INFO  stepdefinitions.UserSteps - A confirmation message is displayed to the user
+2025-05-10 17:27:49 [main] INFO  stepdefinitions.UserSteps - the User's reservation is saved
+2025-05-10 17:27:52 [main] INFO  stepdefinitions.UserSteps - The user is redirected to the Checkout page
+2025-05-10 17:28:00 [main] INFO  stepdefinitions.UserSteps - The user copies the Coupon Code and activates
+2025-05-10 17:28:10 [main] INFO  stepdefinitions.UserSteps - The user clicks the Stripe option
+2025-05-10 17:28:15 [main] INFO  stepdefinitions.UserSteps - The Email, Card Number, MMYY, and CVC fields are visible and enabled
+2025-05-10 17:28:20 [main] INFO  stepdefinitions.UserSteps - The Pay button is visible and enabled
+2025-05-10 17:28:23 [main] INFO  stepdefinitions.UserSteps - The user enters valid payment details and clicks Pay
+2025-05-10 17:28:33 [main] INFO  stepdefinitions.UserSteps - The Payment Success text is displayed
+2025-05-10 17:28:41 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address
+2025-05-10 17:28:49 [main] INFO  stepdefinitions.LoginSteps - the user logs in with username null
+2025-05-10 17:28:55 [main] INFO  stepdefinitions.ProviderSteps - the user clicks on the Profile icon
+2025-05-10 17:28:59 [main] INFO  stepdefinitions.ProviderSteps - the provider navigates to the Dashboard page
+2025-05-10 17:29:04 [main] INFO  stepdefinitions.ProviderSteps - the provider navigates to the Booking List page
+2025-05-10 17:29:08 [main] INFO  stepdefinitions.ProviderSteps - filtering options are visible and clickable
+2025-05-10 17:29:22 [main] INFO  stepdefinitions.ProviderSteps - the provider completes the service through Complete Request to user
+2025-05-10 17:29:39 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address
+2025-05-10 17:29:46 [main] INFO  stepdefinitions.LoginSteps - the user logs in with username null
+2025-05-10 17:29:52 [main] INFO  stepdefinitions.UserSteps - the user is redirected to the Dashboard page
+2025-05-10 17:29:56 [main] INFO  stepdefinitions.UserSteps - the user clicks the Booking List link
+2025-05-10 17:30:03 [main] INFO  stepdefinitions.UserSteps - the user clicks Complete Request Accept button
+2025-05-10 17:30:09 [main] INFO  stepdefinitions.UserSteps - the user clicks Confirm button
+2025-05-10 17:30:14 [main] INFO  stepdefinitions.UserSteps - the user clicks Okay button, Service completed Successfully.
+2025-05-10 17:57:46 [main] INFO  runners.TestRunner - E2E Test Running..
+2025-05-10 17:57:50 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address
+2025-05-10 17:57:55 [main] INFO  stepdefinitions.LoginSteps - the user logs in with username null
+2025-05-10 17:58:01 [main] INFO  stepdefinitions.UserSteps - the User clicks the Home Services button
+2025-05-10 17:58:05 [main] INFO  stepdefinitions.UserSteps - the User clicks Deep Cleaning Service button
+2025-05-10 17:58:09 [main] INFO  stepdefinitions.UserSteps - the User clicks the Book Service button
+2025-05-10 17:58:12 [main] INFO  stepdefinitions.UserSteps - the User selects Bella Maison as Staff from the list
+2025-05-10 17:58:14 [main] INFO  stepdefinitions.UserSteps - the User selects 21-05-2025 as Date
+2025-05-10 17:58:16 [main] INFO  stepdefinitions.UserSteps - the User selects Time Slot as 05:00 PM-05:50 PM
+2025-05-10 17:58:20 [main] INFO  stepdefinitions.UserSteps - the User clicks the Confirm Booking button
+2025-05-10 17:58:26 [main] INFO  stepdefinitions.UserSteps - A confirmation message is displayed to the user
+2025-05-10 17:58:30 [main] INFO  stepdefinitions.UserSteps - the User's reservation is saved
+2025-05-10 17:58:33 [main] INFO  stepdefinitions.UserSteps - The user is redirected to the Checkout page
+2025-05-10 17:58:40 [main] INFO  stepdefinitions.UserSteps - The user copies the Coupon Code and activates
+2025-05-10 17:58:49 [main] INFO  stepdefinitions.UserSteps - The user clicks the Stripe option
+2025-05-10 17:58:55 [main] INFO  stepdefinitions.UserSteps - The Email, Card Number, MMYY, and CVC fields are visible and enabled
+2025-05-10 17:58:59 [main] INFO  stepdefinitions.UserSteps - The Pay button is visible and enabled
+2025-05-10 17:59:03 [main] INFO  stepdefinitions.UserSteps - The user enters valid payment details and clicks Pay
+2025-05-10 17:59:12 [main] INFO  stepdefinitions.UserSteps - The Payment Success text is displayed
+2025-05-10 17:59:19 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address
+2025-05-10 17:59:25 [main] INFO  stepdefinitions.LoginSteps - the user logs in with username null
+2025-05-10 17:59:30 [main] INFO  stepdefinitions.ProviderSteps - the user clicks on the Profile icon
+2025-05-10 17:59:34 [main] INFO  stepdefinitions.ProviderSteps - the provider navigates to the Dashboard page
+2025-05-10 17:59:39 [main] INFO  stepdefinitions.ProviderSteps - the provider navigates to the Booking List page
+2025-05-10 17:59:43 [main] INFO  stepdefinitions.ProviderSteps - filtering options are visible and clickable
+2025-05-10 17:59:57 [main] INFO  stepdefinitions.ProviderSteps - the provider completes the service through Complete Request to user
+2025-05-10 18:00:13 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address
+2025-05-10 18:00:19 [main] INFO  stepdefinitions.LoginSteps - the user logs in with username null
+2025-05-10 18:00:24 [main] INFO  stepdefinitions.UserSteps - the user is redirected to the Dashboard page
+2025-05-10 18:00:28 [main] INFO  stepdefinitions.UserSteps - the user clicks the Booking List link
+2025-05-10 18:00:34 [main] INFO  stepdefinitions.UserSteps - the user clicks Complete Request Accept button
+2025-05-10 18:00:40 [main] INFO  stepdefinitions.UserSteps - the user clicks Confirm button
+2025-05-10 18:00:46 [main] INFO  stepdefinitions.UserSteps - the user clicks Okay button, Service completed Successfully.
+2025-05-10 19:51:01 [main] INFO  runners.TestRunner - E2E Test Running..
+2025-05-10 19:51:06 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address
+2025-05-10 19:51:13 [main] INFO  stepdefinitions.LoginSteps - the user logs in with username null
+2025-05-10 19:51:19 [main] INFO  stepdefinitions.UserSteps - the User clicks the Home Services button
+2025-05-10 19:51:23 [main] INFO  stepdefinitions.UserSteps - the User clicks Deep Cleaning Service button
+2025-05-10 19:51:28 [main] INFO  stepdefinitions.UserSteps - the User clicks the Book Service button
+2025-05-10 19:51:30 [main] INFO  stepdefinitions.UserSteps - the User selects Bella Maison as Staff from the list
+2025-05-10 19:51:32 [main] INFO  stepdefinitions.UserSteps - the User selects 22-05-2025 as Date
+2025-05-10 19:51:35 [main] INFO  stepdefinitions.UserSteps - the User selects Time Slot as 05:00 PM-05:50 PM
+2025-05-10 19:51:38 [main] INFO  stepdefinitions.UserSteps - the User clicks the Confirm Booking button
+2025-05-10 19:51:44 [main] INFO  stepdefinitions.UserSteps - A confirmation message is displayed to the user
+2025-05-10 19:51:48 [main] INFO  stepdefinitions.UserSteps - the User's reservation is saved
+2025-05-10 19:51:52 [main] INFO  stepdefinitions.UserSteps - The user is redirected to the Checkout page
+2025-05-10 19:51:59 [main] INFO  stepdefinitions.UserSteps - The user copies the Coupon Code and activates
+2025-05-10 19:52:08 [main] INFO  stepdefinitions.UserSteps - The user clicks the Stripe option
+2025-05-10 19:52:13 [main] INFO  stepdefinitions.UserSteps - The Email, Card Number, MMYY, and CVC fields are visible and enabled
+2025-05-10 19:52:18 [main] INFO  stepdefinitions.UserSteps - The Pay button is visible and enabled
+2025-05-10 19:52:21 [main] INFO  stepdefinitions.UserSteps - The user enters valid payment details and clicks Pay
+2025-05-10 19:52:31 [main] INFO  stepdefinitions.UserSteps - The Payment Success text is displayed
+2025-05-10 19:52:38 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address
+2025-05-10 19:52:44 [main] INFO  stepdefinitions.LoginSteps - the user logs in with username null
+2025-05-10 19:52:49 [main] INFO  stepdefinitions.ProviderSteps - the user clicks on the Profile icon
+2025-05-10 19:52:53 [main] INFO  stepdefinitions.ProviderSteps - the provider navigates to the Dashboard page
+2025-05-10 19:52:58 [main] INFO  stepdefinitions.ProviderSteps - the provider navigates to the Booking List page
+2025-05-10 19:53:00 [main] INFO  stepdefinitions.ProviderSteps - filtering options are visible and clickable
+2025-05-10 19:53:14 [main] INFO  stepdefinitions.ProviderSteps - the provider completes the service through Complete Request to user
+2025-05-10 19:53:30 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address
+2025-05-10 19:53:36 [main] INFO  stepdefinitions.LoginSteps - the user logs in with username null
+2025-05-10 19:53:41 [main] INFO  stepdefinitions.UserSteps - the user is redirected to the Dashboard page
+2025-05-10 19:53:45 [main] INFO  stepdefinitions.UserSteps - the user clicks the Booking List link
+2025-05-10 19:53:51 [main] INFO  stepdefinitions.UserSteps - the user clicks Complete Request Accept button
+2025-05-10 19:53:57 [main] INFO  stepdefinitions.UserSteps - the user clicks Confirm button
+2025-05-10 19:54:02 [main] INFO  stepdefinitions.UserSteps - the user clicks Okay button, Service completed Successfully.
+2025-05-10 20:12:54 [main] INFO  runners.TestRunner - E2E Test Running..
+2025-05-10 20:12:58 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address
+2025-05-10 20:13:03 [main] INFO  stepdefinitions.LoginSteps - the user logs in with username null
+2025-05-10 20:13:10 [main] INFO  stepdefinitions.UserSteps - the User clicks the Home Services button
+2025-05-10 20:13:14 [main] INFO  stepdefinitions.UserSteps - the User clicks Deep Cleaning Service button
+2025-05-10 20:13:18 [main] INFO  stepdefinitions.UserSteps - the User clicks the Book Service button
+2025-05-10 20:13:21 [main] INFO  stepdefinitions.UserSteps - the User selects Bella Maison as Staff from the list
+2025-05-10 20:13:23 [main] INFO  stepdefinitions.UserSteps - the User selects 24-05-2025 as Date
+2025-05-10 20:13:25 [main] INFO  stepdefinitions.UserSteps - the User selects Time Slot as 05:00 PM-05:50 PM
+2025-05-10 20:13:29 [main] INFO  stepdefinitions.UserSteps - the User clicks the Confirm Booking button
+2025-05-10 20:13:35 [main] INFO  stepdefinitions.UserSteps - A confirmation message is displayed to the user
+2025-05-10 20:13:39 [main] INFO  stepdefinitions.UserSteps - the User's reservation is saved
+2025-05-10 20:13:42 [main] INFO  stepdefinitions.UserSteps - The user is redirected to the Checkout page
+2025-05-10 20:13:49 [main] INFO  stepdefinitions.UserSteps - The user copies the Coupon Code and activates
+2025-05-10 20:13:58 [main] INFO  stepdefinitions.UserSteps - The user clicks the Stripe option
+2025-05-10 20:14:04 [main] INFO  stepdefinitions.UserSteps - The Email, Card Number, MMYY, and CVC fields are visible and enabled
+2025-05-10 20:14:08 [main] INFO  stepdefinitions.UserSteps - The Pay button is visible and enabled
+2025-05-10 20:14:12 [main] INFO  stepdefinitions.UserSteps - The user enters valid payment details and clicks Pay
+2025-05-10 20:14:22 [main] INFO  stepdefinitions.UserSteps - The Payment Success text is displayed
+2025-05-10 20:14:29 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address
+2025-05-10 20:14:34 [main] INFO  stepdefinitions.LoginSteps - the user logs in with username null
+2025-05-10 20:14:39 [main] INFO  stepdefinitions.ProviderSteps - the user clicks on the Profile icon
+2025-05-10 20:14:43 [main] INFO  stepdefinitions.ProviderSteps - the provider navigates to the Dashboard page
+2025-05-10 20:14:49 [main] INFO  stepdefinitions.ProviderSteps - the provider navigates to the Booking List page
+2025-05-10 20:14:51 [main] INFO  stepdefinitions.ProviderSteps - filtering options are visible and clickable
+2025-05-10 20:15:04 [main] INFO  stepdefinitions.ProviderSteps - the provider completes the service through Complete Request to user
+2025-05-10 20:15:21 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address
+2025-05-10 20:15:26 [main] INFO  stepdefinitions.LoginSteps - the user logs in with username null
+2025-05-10 20:15:31 [main] INFO  stepdefinitions.UserSteps - the user is redirected to the Dashboard page
+2025-05-10 20:15:36 [main] INFO  stepdefinitions.UserSteps - the user clicks the Booking List link
+2025-05-10 20:15:42 [main] INFO  stepdefinitions.UserSteps - the user clicks Complete Request Accept button
+2025-05-10 20:15:47 [main] INFO  stepdefinitions.UserSteps - the user clicks Confirm button
+2025-05-10 20:15:53 [main] INFO  stepdefinitions.UserSteps - the user clicks Okay button, Service completed Successfully.
+2025-05-10 20:48:18 [main] INFO  runners.TestRunner - E2E Test Running..
+2025-05-10 20:48:23 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address
+2025-05-10 20:48:30 [main] INFO  stepdefinitions.LoginSteps - the user logs in with username null
+2025-05-10 20:48:36 [main] INFO  stepdefinitions.UserSteps - the User clicks the Home Services button
+2025-05-10 20:48:41 [main] INFO  stepdefinitions.UserSteps - the User clicks Deep Cleaning Service button
+2025-05-10 20:48:48 [main] INFO  stepdefinitions.UserSteps - the User clicks the Book Service button
+2025-05-10 20:48:51 [main] INFO  stepdefinitions.UserSteps - the User selects Bella Maison as Staff from the list
+2025-05-10 20:48:53 [main] INFO  stepdefinitions.UserSteps - the User selects 26-05-2025 as Date
+2025-05-10 20:48:55 [main] INFO  stepdefinitions.UserSteps - the User selects Time Slot as 05:00 PM-05:50 PM
+2025-05-10 20:48:58 [main] INFO  stepdefinitions.UserSteps - the User clicks the Confirm Booking button
+2025-05-10 20:49:05 [main] INFO  stepdefinitions.UserSteps - A confirmation message is displayed to the user
+2025-05-10 20:49:08 [main] INFO  stepdefinitions.UserSteps - the User's reservation is saved
+2025-05-10 20:49:12 [main] INFO  stepdefinitions.UserSteps - The user is redirected to the Checkout page
+2025-05-10 20:49:19 [main] INFO  stepdefinitions.UserSteps - The user copies the Coupon Code and activates
+2025-05-10 20:49:28 [main] INFO  stepdefinitions.UserSteps - The user clicks the Stripe option
+2025-05-10 20:49:33 [main] INFO  stepdefinitions.UserSteps - The Email, Card Number, MMYY, and CVC fields are visible and enabled
+2025-05-10 20:49:38 [main] INFO  stepdefinitions.UserSteps - The Pay button is visible and enabled
+2025-05-10 20:49:41 [main] INFO  stepdefinitions.UserSteps - The user enters valid payment details and clicks Pay
+2025-05-10 20:49:51 [main] INFO  stepdefinitions.UserSteps - The Payment Success text is displayed
+2025-05-10 20:49:58 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address
+2025-05-10 20:50:04 [main] INFO  stepdefinitions.LoginSteps - the user logs in with username null
+2025-05-10 20:50:09 [main] INFO  stepdefinitions.ProviderSteps - the user clicks on the Profile icon
+2025-05-10 20:50:15 [main] INFO  stepdefinitions.ProviderSteps - the provider navigates to the Dashboard page
+2025-05-10 20:50:23 [main] INFO  stepdefinitions.ProviderSteps - the provider navigates to the Booking List page
+2025-05-10 20:50:29 [main] INFO  stepdefinitions.ProviderSteps - filtering options are visible and clickable
+2025-05-10 20:50:42 [main] INFO  stepdefinitions.ProviderSteps - the provider completes the service through Complete Request to user
+2025-05-10 20:51:01 [main] INFO  stepdefinitions.HomeSteps - The user navigates to the https://qa.onlinemastermarket.com/ address
+2025-05-10 20:51:07 [main] INFO  stepdefinitions.LoginSteps - the user logs in with username null
+2025-05-10 20:51:12 [main] INFO  stepdefinitions.UserSteps - the user is redirected to the Dashboard page
+2025-05-10 20:51:16 [main] INFO  stepdefinitions.UserSteps - the user clicks the Booking List link
+2025-05-10 20:51:22 [main] INFO  stepdefinitions.UserSteps - the user clicks Complete Request Accept button
+2025-05-10 20:51:28 [main] INFO  stepdefinitions.UserSteps - the user clicks Confirm button
+2025-05-10 20:51:33 [main] INFO  stepdefinitions.UserSteps - the user clicks Okay button, Service completed Successfully.

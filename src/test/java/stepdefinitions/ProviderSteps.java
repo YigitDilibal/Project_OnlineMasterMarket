@@ -1,6 +1,6 @@
 package stepdefinitions;
 
-import com.github.javafaker.Faker;
+
 import io.cucumber.java.bs.A;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -562,7 +562,7 @@ public class ProviderSteps {
 
     @Then("filtering options are visible and clickable")
     public void filteringOptionsAreVisibleAndClickable() {
-        ReusableMethods.bekle(3500);
+        ReusableMethods.bekle(1500);
 
         try {
             Assert.assertTrue(providerPage.bookingListDropDown.isDisplayed());

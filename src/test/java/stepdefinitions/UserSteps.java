@@ -421,7 +421,7 @@ public class UserSteps {
 
     @Given("the User selects a Staff from the list")
     public void the_user_selects_a_staff_from_the_list() {
-        ReusableMethods.bekle(3500);
+        ReusableMethods.bekle(2000);
         logger.info("the User selects Bella Maison as Staff from the list");
         Select selectStaff = new Select(userPage.SelectStaffddm);
         selectStaff.selectByVisibleText("Bella Maison");
@@ -429,7 +429,7 @@ public class UserSteps {
 
     @And("the User selects {string} as Date")
     public void theUserSelectsADate(String date) {
-        ReusableMethods.bekle(3500);
+        ReusableMethods.bekle(2000);
         logger.info("the User selects {} as Date", date);
         basePage.type(userPage.BookingDateInput, date);
         userPage.BookingDateInput.sendKeys(Keys.ENTER);
@@ -443,7 +443,7 @@ public class UserSteps {
 
     @And("the User selects Time Slot as {string}")
     public void theUserSelectsTimeSlotAs(String timeSlot) {
-        ReusableMethods.bekle(3500);
+        ReusableMethods.bekle(2000);
         logger.info("the User selects Time Slot as {}", timeSlot);
         Select selectTime = new Select(userPage.SelectTimeSlotddm);
         selectTime.selectByValue(timeSlot);
@@ -514,7 +514,7 @@ public class UserSteps {
 
     @When("The user clicks the Stripe option")
     public void theUserClicksTheStripeOption() {
-        ReusableMethods.bekle(3500);
+        ReusableMethods.bekle(2500);
         logger.info("The user clicks the Stripe option");
         basePage.click(userPage.StripeButton);
     }
